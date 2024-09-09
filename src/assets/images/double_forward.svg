@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="22px"
+   height="22px"
+   viewBox="0 0 22 22"
+   version="1.1"
+   id="svg301"
+   sodipodi:docname="double_forward.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview303"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="37.681818"
+     inkscape:cx="6.0904704"
+     inkscape:cy="11.013269"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg301" />
+  <title
+     id="title276">chevron_double_forward</title>
+  <defs
+     id="defs286">
+    <rect
+       id="path-1"
+       x="0"
+       y="0"
+       width="22"
+       height="22" />
+    <linearGradient
+       x1="0.427331458%"
+       y1="50%"
+       x2="98.69675%"
+       y2="50%"
+       id="linearGradient-3">
+      <stop
+         stop-color="#FFB255"
+         offset="0%"
+         id="stop279" />
+      <stop
+         stop-color="#FF503E"
+         offset="41.0403805%"
+         id="stop281" />
+      <stop
+         stop-color="#C300F2"
+         offset="100%"
+         id="stop283" />
+    </linearGradient>
+  </defs>
+  <g
+     id="Page-1"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd"
+     style="fill:#000000;fill-opacity:1">
+    <g
+       id="FAIRBET_Markets_Subscription"
+       transform="translate(-1242.000000, -1085.000000)"
+       style="fill:#000000;fill-opacity:1">
+      <g
+         id="group-20copy"
+         transform="translate(606.000000, 994.000000)"
+         style="fill:#000000;fill-opacity:1">
+        <g
+           id="group-15"
+           transform="translate(48.000000, 62.000000)"
+           style="fill:#000000;fill-opacity:1">
+          <g
+             id="group-13"
+             transform="translate(104.000000, 18.000000)"
+             style="fill:#000000;fill-opacity:1">
+            <g
+               id="group-19"
+               transform="translate(310.000000, 11.000000)"
+               style="fill:#000000;fill-opacity:1">
+              <g
+                 id="chevron_double_forward"
+                 transform="translate(174.000000, 0.000000)"
+                 style="fill:#000000;fill-opacity:1">
+                <mask
+                   id="mask-2"
+                   fill="white">
+                  <use
+                     xlink:href="#path-1"
+                     id="use288" />
+                </mask>
+                <g
+                   id="chevron_double_forward-(Background/Mask)"
+                   style="fill:#000000;fill-opacity:1" />
+                <path
+                   d="M8.70833153,7.56249863 L14.0184836,12.8726518 L19.3286368,7.56249863 C19.6866171,7.20451789 20.2670187,7.20451789 20.624999,7.56249863 C20.9829802,7.92047932 20.9829802,8.5008808 20.624999,8.85886149 L15.3148471,14.1690152 C14.5988848,14.8849772 13.4380816,14.8849754 12.722121,14.1690147 L7.41196895,8.85886149 C7.05398828,8.5008808 7.05398828,7.92047932 7.41196895,7.56249863 C7.76994956,7.20451789 8.35035092,7.20451789 8.70833153,7.56249863 Z"
+                   id="Vector-474-(Stroke)"
+                   fill="url(#linearGradient-3)"
+                   mask="url(#mask-2)"
+                   transform="translate(14.018484, 10.999999) scale(-1, -1) rotate(90.000009) translate(-14.018484, -10.999999) "
+                   style="fill:#000000;fill-opacity:1" />
+                <path
+                   d="M2.97916486,7.56249863 L8.28931696,12.8726518 L13.5994702,7.56249863 C13.9574504,7.20451789 14.5378521,7.20451789 14.8958324,7.56249863 C15.2538135,7.92047932 15.2538135,8.5008808 14.8958324,8.85886149 L9.58568047,14.1690152 C8.86971816,14.8849772 7.7089149,14.8849754 6.99295433,14.1690147 L1.68280228,8.85886149 C1.32482162,8.5008808 1.32482162,7.92047932 1.68280228,7.56249863 C2.04078289,7.20451789 2.62118425,7.20451789 2.97916486,7.56249863 Z"
+                   id="Vector-475-(Stroke)"
+                   fill="url(#linearGradient-3)"
+                   mask="url(#mask-2)"
+                   transform="translate(8.289317, 10.999999) scale(-1, -1) rotate(90.000009) translate(-8.289317, -10.999999) "
+                   style="fill:#000000;fill-opacity:1" />
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

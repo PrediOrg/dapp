@@ -1,0 +1,310 @@
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+.flex_row {
+    display: flex;
+    flex-direction: row;
+}
+.display-block{
+  display: block;
+}
+.display-none{
+  display: none;
+}
+
+.flex_space {
+    flex: 1;
+}
+.flex_none {
+  flex:none;
+}
+.relative{
+   position: relative;
+ }
+.absolute{
+  position: absolute;
+}
+@for $i from 0 through 35 {
+  .ts-#{10 + $i * 2} {
+    font-size: #{10 + $i * 2}px!important;
+  }
+}
+
+@for $i from 0 to 10 {
+  .opacity-#{$i} {
+    opacity: #{$i / 10};
+  }
+  .tw-#{$i} {
+    font-weight: #{$i * 100};
+  }
+}
+
+.tw-b {
+  font-weight: bold;
+}
+
+.tw-n {
+  font-weight: normal;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex-box {
+  display: flex;
+  align-items: center;
+  &.inline {
+      display: inline-flex;
+  }
+  &.space-center {
+      justify-content: center;
+  }
+  &.space-start {
+      justify-content: flex-start;
+  }
+  &.space-end {
+      justify-content: flex-end;
+  }
+  &.space-between {
+      justify-content: space-between;
+  }
+  &.space-around {
+      justify-content: space-around;
+  }
+  &.align-start {
+      align-items: flex-start;
+  }
+  &.align-end {
+      align-items: flex-end;
+  }
+  &.align-baseline {
+      align-items: baseline;
+  }
+  &.flex-column {
+      flex-direction: column;
+  }
+  &.flex-wrap {
+      flex-wrap: wrap;
+  }
+  @for $i from 1 through 9 {
+      .flex-#{$i} {
+          flex: #{$i};
+      }
+  }
+}
+
+@for $i from 0 through 20 {
+  .mg-t#{$i * 4} {
+    margin-top: #{$i * 4}px!important;
+  }
+  .mg-b#{$i * 4} {
+    margin-bottom: #{$i * 4}px!important;
+  }
+  .mg-l#{$i * 4} {
+    margin-left: #{$i * 4}px!important;
+  }
+  .mg-r#{$i * 4} {
+    margin-right: #{$i * 4}px!important;
+  }
+
+  .pd-t#{$i * 4} {
+    padding-top: #{$i * 4}px!important;
+  }
+  .pd-b#{$i * 4} {
+    padding-bottom: #{$i * 4}px!important;
+  }
+  .pd-l#{$i * 4} {
+    padding-left: #{$i * 4}px!important;
+  }
+  .pd-r#{$i * 4} {
+    padding-right: #{$i * 4}px!important;
+  }
+
+  .mg-tb#{$i * 4} {
+    margin-top: #{$i * 4}px!important;
+    margin-bottom: #{$i * 4}px!important;
+  }
+  .mg-lr#{$i * 4} {
+    margin-left: #{$i * 4}px!important;
+    margin-right: #{$i * 4}px!important;
+  }
+
+  .pd-tb#{$i * 4} {
+    padding-top: #{$i * 4}px!important;
+    padding-bottom: #{$i * 4}px!important;
+  }
+  .pd-lr#{$i * 4} {
+    padding-left: #{$i * 4}px!important;
+    padding-right: #{$i * 4}px!important;
+  }
+}
+
+.cursor-pointer, .cursor {
+  cursor: pointer;
+}
+.color-0E1D51{
+  color: #0E1D51;
+}
+.color-1CAA3D{
+  color: #1CAA3D;
+}
+.color-CC2929{
+  color: #CC2929;
+}
+.color-8F97AA{
+  color: #8F97AA;
+}
+.color-FFFFFF{
+  color: #FFFFFF;
+}
+.color-2DCBED{
+  color: #2DCBED;
+}
+.color-000000{
+  color: #000000;
+}
+.color-00FFAB{
+  color:#00D871;
+  [data-theme="night"] & {
+    color: #00FFAB;
+  }
+}
+.color-00D871{
+  color:#00D871
+}
+.color-FF503E{
+  color:#4F8FEF;
+}
+.color-FFB255{
+  color:#4F8FEF;
+}
+.color-D434C4{
+  color:#4F8FEF;
+}
+.color-8535D3{
+  color:#4F8FEF;
+}
+.color-F23B97{
+  color: #4F8FEF;
+}
+.color-7DEBF4{
+  color: #7DEBF4;
+}
+.ant-dropdown-menu{
+  @include bg_color_important($background-color-change3,$background-color-change4);
+  border-radius: 10px;
+  a{
+    @include font_color($font-color-s,$font-color-s1);
+  }
+  .ant-dropdown-menu-item,.ant-dropdown-menu-submenu-title{
+    &:hover{
+      background-color: transparent;
+    }
+  }
+  .ant-dropdown-menu-item-active{
+    @include font_color($font-color-s,$font-color-s1);
+    background: none!important;
+    font-family: "Gotham-Medium";
+  }
+  .ant-dropdown-menu-item-disabled{
+    @include font_color($font-color-s,$font-color-s1);
+    @include bg_color_important($background-color-change3,$background-color-change4);
+  }
+}
+.ant-select-dropdown{
+  @include bg_color_important($background-color-change3,$background-color-change4);
+  @include font_color($font-color-s,$font-color-s1);
+  border-radius: 10px;
+  .ant-select-dropdown-menu-item-disabled{
+    @include font_color($font-color-s,$font-color-s1);
+    @include bg_color_important($background-color-change3,$background-color-change4);
+  }
+  .ant-select-dropdown-menu{
+    padding:8px;
+    border-radius: 4px;
+    .ant-select-dropdown-menu-item{
+      @include font_color($font-color-s,$font-color-s1);
+      .network-icon{
+        width: 16px;
+        height: 16px;
+      }
+      .network-span{
+        padding-left: 8px;
+      }
+      &:hover:not(.ant-select-dropdown-menu-item-disabled){
+        background: none;
+      }
+      &.ant-select-dropdown-menu-item-selected{
+        background: none;
+        font-weight: normal;
+        font-family: "Lucida-Grande-Bold";
+      }
+      &.ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled){
+        background: none;
+      }
+      .ant-empty-description{
+        @include font_color($font-color-s,$font-color-s1);
+      }
+    }
+  }
+}
+.ant-pagination{
+  li{
+    &.ant-pagination-item{
+      @include bg_color_change($background-color-change3, $background-color-change4);
+      @include font_color($font-color-s2, $font-color-s1);
+      border: none;
+      border-radius: 100%;
+      &.ant-pagination-item-active{
+        a{
+          color:#333;
+        }
+      }
+    }
+    a{
+      &.ant-pagination-item-link{
+        @include bg_color_change($background-color-change3, $background-color-change4);
+        @include border_color($border-color-s2, $border-color-s10);
+        .ant-pagination-item-ellipsis{
+          @include font_color($font-color-s2, $font-color-s3)
+        }
+        .ant-pagination-item-link-icon{
+          @include font_color($font-color-s2, $font-color-s1)
+        }
+      }
+      @include font_color($font-color-s2, $font-color-s3);
+    }
+    &:hover{
+      @include border_color($border-color-s7, $border-color-s8);
+      a{
+        &.ant-pagination-item-link{
+          @include font_color($font-color-s, $font-color-s1);
+          @include border_color($border-color-s7, $border-color-s8);
+        }
+        @include font_color($font-color-s, $font-color-s1);
+      }
+    }
+  }
+
+}
+.ant-menu{
+  .ant-menu-item-selected{
+    background-color: transparent !important;
+  }
+}

@@ -1,0 +1,23 @@
+.home-header{
+  background-color:#252630 ;
+  .home-logo{
+    width: 1260px;
+    height: 96px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    .logo{
+      width: 64px;
+      height: 64px;
+    }
+    ul{
+      li{
+        font-size: 24px;
+        color: #8DED9F;
+        height: 32px;
+        line-height: 32px;
+        padding:0 32px;
+      }
+    }
+  }
+}

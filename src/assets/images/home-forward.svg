@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="40px"
+   height="40px"
+   viewBox="0 0 40 40"
+   version="1.1"
+   id="svg1596"
+   sodipodi:docname="home-forward.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1598"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="20.725"
+     inkscape:cx="12.086852"
+     inkscape:cy="19.975875"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1596" />
+  <title
+     id="title1575">arrow_forward</title>
+  <defs
+     id="defs1585">
+    <rect
+       id="path-1"
+       x="0"
+       y="0"
+       width="40"
+       height="40" />
+    <linearGradient
+       x1="0.427331458%"
+       y1="50%"
+       x2="98.69675%"
+       y2="50%"
+       id="linearGradient-3">
+      <stop
+         stop-color="#FFB255"
+         offset="0%"
+         id="stop1578" />
+      <stop
+         stop-color="#FF503E"
+         offset="41.0403805%"
+         id="stop1580" />
+      <stop
+         stop-color="#C300F2"
+         offset="100%"
+         id="stop1582" />
+    </linearGradient>
+  </defs>
+  <g
+     id="Page-1"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd"
+     style="fill:#222286;fill-opacity:1">
+    <g
+       id="FAIRBET_home"
+       transform="translate(-648.000000, -1772.000000)"
+       style="fill:#222286;fill-opacity:1">
+      <g
+         id="group-14"
+         transform="translate(360.000000, 1748.000000)"
+         style="fill:#222286;fill-opacity:1">
+        <g
+           id="arrow_forward"
+           transform="translate(288.000000, 24.000000)"
+           style="fill:#222286;fill-opacity:1">
+          <mask
+             id="mask-2"
+             fill="white">
+            <use
+               xlink:href="#path-1"
+               id="use1587" />
+          </mask>
+          <g
+             id="arrow_forward-(Background/Mask)"
+             style="fill:#222286;fill-opacity:1" />
+          <path
+             d="M22.1548223,32.0118443 C22.8056955,32.6627191 23.8609711,32.6627191 24.5118443,32.0118443 L34.1666667,22.3570236 C35.468413,21.0552772 35.4684162,18.944726 34.1666667,17.6429764 L24.5118443,7.98815613 C23.8609711,7.33728136 22.8056955,7.33728131 22.1548223,7.98815608 C21.5039492,8.63902926 21.5039492,9.69430486 22.1548223,10.345178 L30.142978,18.3333333 L6.66666667,18.3333333 C5.74619214,18.3333333 5,19.0795255 5,20 C5,20.9204753 5.74619204,21.6666667 6.66666667,21.6666667 L30.142978,21.6666667 L22.1548223,29.6548223 C21.5039476,30.3056955 21.5039476,31.3609711 22.1548223,32.0118443 Z"
+             id="Union"
+             fill="url(#linearGradient-3)"
+             fill-rule="nonzero"
+             mask="url(#mask-2)"
+             style="fill:#222286;fill-opacity:1" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Rectangle 30</title>
+    <defs>
+        <pattern id="pattern-1" patternUnits="objectBoundingBox" x="-6.81818182%" width="106.818182%" height="100%">
+            <use xlink:href="#image-2" transform="scale(0.363636364,0.363636364)"></use>
+        </pattern>
+        <image id="image-2" width="50" height="44" xlink:href="data:image/png;base64,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"></image>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="FAIRBET_markets" transform="translate(-1314.000000, -558.000000)" fill="url(#pattern-1)">
+            <g id="group-10" transform="translate(360.000000, 418.000000)">
+                <g id="Group-40copy-3" transform="translate(816.000000, 0.000000)">
+                    <g id="group-34" transform="translate(138.000000, 114.000000)">
+                        <path d="M0,26 L16,26 L16,42 L0,42 L0,26 Z" id="Rectangle-30"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg
+  width="100"
+  height="30"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="1.1"
+  style="fill:#000000; background:#ffffff00;"
+>
+  <style>
+    @keyframes loading {
+      0% {
+        opacity: 0.2;
+    
+      }
+      50% {
+        opacity: 1;
+  
+      }
+      100% {
+        opacity: 0.2;
+  
+      }
+    }
+    .dot {
+      animation: loading 2s infinite ease-in-out;
+      animation-delay: 0s;
+    }
+    .dot:nth-child(2) {
+      animation-delay: 0.7s;
+    }
+    .dot:nth-child(3) {
+      animation-delay: 1.4s;
+    }
+  </style>
+  <circle  class="dot" cx="10" cy="17" r="3" />
+  <circle class="dot" cx="20" cy="17" r="3" />
+  <circle class="dot" cx="30" cy="17" r="3" />
+</svg>

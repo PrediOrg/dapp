@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>sort</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="22" height="22"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="FAIRBET" transform="translate(-1826.000000, -46.000000)">
+            <g id="group-2" transform="translate(1802.000000, 32.000000)">
+                <g id="sort" transform="translate(35.000000, 25.000000) scale(-1, 1) translate(-35.000000, -25.000000) translate(24.000000, 14.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="sort-(Background/Mask)"></g>
+                    <path d="M5,5 L20,5 C20.5522852,5 21,5.44771522 21,6 C21,6.55228478 20.5522852,7 20,7 L5,7 C4.44771522,7 4,6.55228478 4,6 C4,5.44771522 4.44771522,5 5,5 Z" id="Path-13-Copy-5-(Stroke)" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                    <path d="M5,11 L15,11 C15.5522852,11 16,11.4477152 16,12 C16,12.5522848 15.5522852,13 15,13 L5,13 C4.44771522,13 4,12.5522848 4,12 C4,11.4477152 4.44771522,11 5,11 Z" id="Path-13-Copy-6-(Stroke)" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                    <path d="M5,17 L11,17 C11.5522847,17 12,17.4477152 12,18 C12,18.5522848 11.5522847,19 11,19 L5,19 C4.44771522,19 4,18.5522848 4,18 C4,17.4477152 4.44771522,17 5,17 Z" id="Path-13-Copy-7-(Stroke)" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

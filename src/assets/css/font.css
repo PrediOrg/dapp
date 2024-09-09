@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "Gotham-Light";
+  src: url("../font/Gotham-Light.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham-Bold";
+  src: url("../font/Gotham-Bold.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham-Medium";
+  src: url("../font/Gotham-Medium.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lucida-Grande";
+  src: url("../font/LucidaGrande.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lucida-Grande-Bold";
+  src: url("../font/LucidaGrandeBold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "RoBoto-Medium";
+  src: url("../font/RobotoMedium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@font-face {
+  font-family: "RussoOneRegular";
+  src: url("../font/RussoOneRegular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../font/Roboto-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Orelega One-Regular;
+  src: url("../font/OrelegaOne-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>chevron_down</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="22" height="22"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="FAIRBET_markets" transform="translate(-1545.000000, -46.000000)">
+            <g id="Group-31" transform="translate(1388.000000, 32.000000)">
+                <g id="chevron_down" transform="translate(157.000000, 14.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="chevron_down-(Background/Mask)"></g>
+                    <path d="M5.68984868,7.8309843 L11.0000007,13.1411367 L16.3101538,7.8309843 C16.6681341,7.47300361 17.2485357,7.47300361 17.606516,7.8309843 C17.9644971,8.18896494 17.9644971,8.76936634 17.606516,9.12734698 L12.2963642,14.4374999 C11.5804019,15.1534618 10.4195986,15.1534601 9.70363808,14.4374995 L4.39348613,9.12734698 C4.03550547,8.76936634 4.03550547,8.18896494 4.39348613,7.8309843 C4.75146673,7.47300361 5.33186808,7.47300361 5.68984868,7.8309843 Z" id="Vector-474-(Stroke)" fill="#FFFFFF" mask="url(#mask-2)" transform="translate(11.000001, 11.268485) rotate(-0.000010) translate(-11.000001, -11.268485) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

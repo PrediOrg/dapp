@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="22px"
+   height="22px"
+   viewBox="0 0 22 22"
+   version="1.1"
+   id="svg1067"
+   sodipodi:docname="forward.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1069"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="37.681818"
+     inkscape:cx="2.3220748"
+     inkscape:cy="11.013269"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1067" />
+  <title
+     id="title1034">arrow_forward</title>
+  <defs
+     id="defs1052">
+    <rect
+       id="path-1"
+       x="0"
+       y="0"
+       width="22"
+       height="22" />
+    <linearGradient
+       x1="0%"
+       y1="50%"
+       x2="100%"
+       y2="50%"
+       id="linearGradient-3">
+      <stop
+         stop-color="#FFB255"
+         offset="0.427331458%"
+         id="stop1037" />
+      <stop
+         stop-color="#FF503E"
+         offset="41.0403805%"
+         id="stop1039" />
+      <stop
+         stop-color="#C300F2"
+         offset="98.69675%"
+         id="stop1041" />
+    </linearGradient>
+    <path
+       d="M12.1058407,17.0729836 C12.4513265,17.4201168 13.0114706,17.4201168 13.3569564,17.0729836 L18.4817705,11.9237459 C19.1727421,11.2294812 19.1727437,10.1038539 18.4817705,9.40958744 L13.3569564,4.26034994 C13.0114706,3.91321672 12.4513265,3.9132167 12.1058407,4.26034991 C11.7603549,4.60748227 11.7603549,5.17029593 12.1058407,5.51742829 L16.3459822,9.77777778 L3.8846726,9.77777778 C3.39608144,9.77777778 3,10.1757469 3,10.6666667 C3,11.1575868 3.39608139,11.5555556 3.8846726,11.5555556 L16.3459822,11.5555556 L12.1058407,15.8159053 C11.7603541,16.1630376 11.7603541,16.7258513 12.1058407,17.0729836 Z"
+       id="path-4" />
+    <filter
+       x="-0.97500001"
+       y="-1.17"
+       width="3.325"
+       height="3.565"
+       filterUnits="objectBoundingBox"
+       id="filter-5">
+      <feOffset
+         dx="6"
+         dy="3"
+         in="SourceAlpha"
+         result="shadowOffsetOuter1"
+         id="feOffset1045" />
+      <feGaussianBlur
+         stdDeviation="6.5"
+         in="shadowOffsetOuter1"
+         result="shadowBlurOuter1"
+         id="feGaussianBlur1047" />
+      <feColorMatrix
+         values="0 0 0 0 0.97254902   0 0 0 0 0.278431373   0 0 0 0 0.329411765  0 0 0 0.260503169 0"
+         type="matrix"
+         in="shadowBlurOuter1"
+         id="feColorMatrix1049" />
+    </filter>
+  </defs>
+  <g
+     id="Page-1"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd"
+     style="fill:#100e5a;fill-opacity:0.87064672">
+    <g
+       id="FAIRBET_markets"
+       transform="translate(-376.000000, -46.000000)"
+       style="fill:#100e5a;fill-opacity:0.87064672">
+      <g
+         id="group-3"
+         transform="translate(292.000000, 32.000000)"
+         style="fill:#100e5a;fill-opacity:0.87064672">
+        <g
+           id="arrow_forward"
+           transform="translate(84.000000, 14.000000)"
+           style="fill:#100e5a;fill-opacity:0.87064672">
+          <mask
+             id="mask-2"
+             fill="white">
+            <use
+               xlink:href="#path-1"
+               id="use1054" />
+          </mask>
+          <g
+             id="arrow_forward-(Background/Mask)"
+             style="fill:#100e5a;fill-opacity:0.87064672" />
+          <g
+             id="Union"
+             fill-rule="nonzero"
+             mask="url(#mask-2)"
+             style="fill:#100e5a;fill-opacity:0.87064672">
+            <use
+               fill="black"
+               fill-opacity="1"
+               filter="url(#filter-5)"
+               xlink:href="#path-4"
+               id="use1058"
+               style="fill:#100e5a;fill-opacity:0.87064672" />
+            <use
+               fill="url(#linearGradient-3)"
+               xlink:href="#path-4"
+               id="use1060"
+               style="fill:#100e5a;fill-opacity:0.87064672" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
