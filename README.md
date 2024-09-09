@@ -1,4 +1,4 @@
-# clearclaim
+# Predi Dapp
 
 ## Project setup
 ```
