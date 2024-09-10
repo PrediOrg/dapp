@@ -6,7 +6,7 @@
         <div class="logo">
           <img src="./assets/logo.png" alt="Predi Logo" />
         </div>
-        <button class="launch-button">Launch App</button>
+        <button class="launch-button" @click="$router.push('/nft/')">Launch App</button>
       </header>
     </div>
     <div class="home-app">
@@ -17,7 +17,7 @@
           <p>
             Predi is a community-driven prediction market contract framework designed to provide users with diverse and engaging prediction experiences. Predi aims to establish a fair, transparent, and efficient prediction market infrastructure, fostering the vibrant development of internet computer ecosystem.
           </p>
-          <button class="cta-button">Launch App</button>
+          <button class="cta-button" @click="$router.push('/nft/')">Launch App</button>
         </div>
         <div class="illustration-container">
           <img class="illustration1_bg" src="./assets/illustration1_bg.png"  alt="">
@@ -41,7 +41,7 @@
     <!-- Features Section -->
     <div class=" bg">
       <div class="home-app">
-        <section class="features-section bg">
+        <section class="features-section bg pc">
           <div class="features-grid">
             <div class="feature-card" style="margin-bottom: 50px">
               <div class="icon-box">
@@ -66,7 +66,45 @@
             </div>
           </div>
         </section>
+        <section class="features-section bg mobile">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="feature-card">
+                  <div class="icon-box">
+                    <img src="./assets/icon1.png" alt="" class="icon">
+                  </div>
+                  <h3>Community-Driven</h3>
+                  <p>A community-driven prediction market platform where users can participate in decision-making and share analyses to foster platform development.</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="feature-card">
+                  <div class="icon-box">
+                    <img src="./assets/icon2.png" alt="" class="icon">
+                  </div>
+                  <h3>Diverse Prediction Options</h3>
+                  <p>Predi offers a wide range of prediction experiences covering various fields such as cryptocurrency prices, political elections, sports events, and more.</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="feature-card">
+                  <div class="icon-box">
+                    <img src="./assets/icon3.png" alt="" class="icon">
+                  </div>
+                  <h3>Innovative Incentive Model</h3>
+                  <p>Integration of a novel incentive model combining judgment monetization and behavior mining to transform users' analytical abilities into profits.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
 
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </section>
       </div>
     </div>
     <div class="home-app">
@@ -86,22 +124,176 @@
     </div>
     <!-- Footer -->
     <footer class="footer">
+      <div class="logo">
+        <img src="./assets/logo.png" alt="">
+      </div>
+      <div class="links">
+        <ul class="wrapper">
+
+          <li class="icon twitter" @click="goPage('https://x.com/prediorg')">
+            <span class="tooltip">Twitter</span>
+            <span><i class="fab fa-twitter"></i></span>
+          </li>
+          <li class="icon github"  @click="goPage('https://github.com/PrediOrg/dapp')">
+            <span class="tooltip">Github</span>
+            <span><i class="fab fa-github"></i></span>
+          </li>
+
+        </ul>
+      </div>
       <div class="social-links">
-        <a href="#">Terms of Service</a>
-        <a href="#">Privacy Policy</a>
+        <p>
+          © 2024 Predi.
+        </p>
       </div>
     </footer>
   </div>
 </template>
 
 <script>
+import {Swiper} from "vue-awesome-swiper/src";
 export default {
   name: "App",
+  methods:{
+    goPage(url){
+      window.open(url)
+    }
+  },
+  mounted(){
+    new Swiper('.swiper-container', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+.links{
+  /*
+     Auther: Abdelrhman Said
+ */
+
+  @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  *:focus,
+  *:active {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  margin-top: 20px;
+
+  .wrapper {
+    display: inline-flex;
+    list-style: none;
+  }
+
+  .wrapper .icon {
+    position: relative;
+    background: #393E46;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #ffffff;
+  }
+
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #ffffff;
+  }
+
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #E4405F;
+    color: #ffffff;
+  }
+
+  .wrapper .github:hover,
+  .wrapper .github:hover .tooltip,
+  .wrapper .github:hover .tooltip::before {
+    background: #333333;
+    color: #ffffff;
+  }
+
+  .wrapper .youtube:hover,
+  .wrapper .youtube:hover .tooltip,
+  .wrapper .youtube:hover .tooltip::before {
+    background: #CD201F;
+    color: #ffffff;
+  }
+}
 .home-box{
   background-color: #1E1E2E;
   width: 100%;
@@ -233,6 +425,9 @@ p {
   background-color: #1e1e2e;
   color: white;
 }
+.mobile{
+  display: none;
+}
 .bg{
   background: url("./assets/bg.png");
 }
@@ -327,4 +522,45 @@ h1,h2{
   text-decoration: none;
   font-size: 14px;
 }
+@media (max-width: 1024px) {
+  .home-app, .header {
+    width: 100%;
+    padding: 20px 20px;
+  }
+  .illustration{
+    width: 60%;
+  }
+  .illustration1_bg{
+    width: 70%;
+  }
+  .features-section{
+    width: 100%!important;
+    padding: 0;
+  }
+  .main-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  .illustration-container {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mobile{
+    display: block;
+  }
+  .pc{
+    display: none;
+  }
+}
+
 </style>
