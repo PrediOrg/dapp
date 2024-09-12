@@ -25,24 +25,24 @@
 <!--            <img class="donate-icon" src="@/assets/images/donate-icon.png" alt="">-->
 <!--          </div>-->
           <div class="icon-list">
-            <a href="https://twitter.com/FairBetClub" target="_black">
+            <a href="https://x.com/prediorg" target="_black">
               <img src="@/assets/images/twitter.svg" alt="" class="icon">
             </a>
-            <a href="https://t.me/+n_g8Iq3BJrU5MDll" target="_black">
+            <a href="https://t.me/PrediOfficial" target="_black">
               <img src="@/assets/images/telegram.svg" alt="" class="icon">
             </a>
-            <a href="https://discord.gg/UsVNfk36VK" target="_black">
+            <!--a href="https://discord.gg/UsVNfk36VK" target="_black">
               <img src="@/assets/images/discord.svg" alt="" class="icon">
-            </a>
-            <a href="https://github.com/FairBetClub" target="_black">
+            </a-->
+            <a href="https://github.com/PrediOrg" target="_black">
               <img src="@/assets/images/github.svg" alt="" class="icon">
             </a>
-            <a href="https://medium.com/@predi" target="_black">
+            <a href="https://medium.com/@prediorg" target="_black">
               <img src="@/assets/images/medium.svg" alt="" class="icon">
             </a>
-            <a href="https://predi.gitbook.io/predi/" target="_black">
+            <!--a href="https://predi.gitbook.io/predi/" target="_black">
               <img src="@/assets/images/gitbook.svg" alt="" class="icon">
-            </a>
+            </a-->
           </div>
         </div>
 
