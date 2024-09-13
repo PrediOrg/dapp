@@ -719,6 +719,7 @@ button {
   white-space: nowrap;
 }
 @import "../css/font.css";
+//change
 html,
 body {
   width: 100%;
@@ -727,7 +728,7 @@ body {
     background:$background-color-night;
   }
   [data-theme="day"] & {
-    background:$background-linear-color2;
+    background:$background-color-night;
   }
 }
 .font-bold {
