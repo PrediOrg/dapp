@@ -22,32 +22,6 @@ for (var _name in ChainIdMap) {
 }
 const ChainMapById = chainMapById;
 const Network = {
-  '0xaa36a7': {
-    chainId: CHAIN_ID,
-    chainType: '1',
-    chainName: 'ICPCHAIN',
-    icon: 'ETH',
-    chainNameMobile: 'ETH',
-    rpcUrls: ['https://eth-sepolia.public.blastapi.io'],
-    blockExplorerUrls: ['https://sepolia.etherscan.io/'],
-    nativeCurrency: {
-      name: 'ETH',
-      symbol: 'ETH',
-      decimals: 18,
-    },
-    ferc20: {
-      name: 'FERC20',
-      address: FERC20,
-      decimals: 18,
-      icon: '/images/FERC20.jpg',
-    },
-    payToken: {
-      name: 'FBET',
-      address: FBET,
-      decimals: 18,
-      icon: '/images/FBET.jpg',
-    },
-  },
   '0x61': {
     chainId: CHAIN_ID,
     chainType: '1',

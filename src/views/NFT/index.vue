@@ -76,22 +76,21 @@
                 <label>{{ $t('NFT.price') }}</label>
                 <!--              <img class="trade-input-icon mg-r8" :src="ferc20.icon"/>-->
                 <span class="default">
-                  <img class="icon" v-if="curCoin == 'ICP'" src="@/assets/images/ethIcon.png" alt="" />
-                  <img class="icon" v-else src="/images/FERC20.jpg" alt="" />
-                  <strong>{{ curCoin == 'ICP' ? ethPrice : fercPrice }} {{ curCoin }}</strong>
+                  <img class="icon"  src="@/assets/images/USDT.png" alt="" />
+                  <strong>USDT</strong>
                   <img class="downIcon" src="@/assets/images/arrow-down-bold.svg" alt="" />
                 </span>
               </p>
               <div class="choose-box" v-show="showChoosePrice">
                 <div class="mask" @click.stop="showChoosePrice = false"></div>
                 <div class="choose-content animate__animated animate__fadeIn">
-                  <div class="choose-item" @click.stop="chooseCoin(1)">
-                    <img src="@/assets/images/ethIcon.png" alt="" />
-                    <strong>{{ ethPrice }} ICP</strong>
-                  </div>
+<!--                  <div class="choose-item" @click.stop="chooseCoin(1)">-->
+<!--                    <img src="@/assets/images/ethIcon.png" alt="" />-->
+<!--                    <strong>{{ ethPrice }} ICP</strong>-->
+<!--                  </div>-->
                   <div class="choose-item" @click.stop="chooseCoin(2)">
-                    <img src="/images/FERC20.jpg" alt="" />
-                    <strong>{{ fercPrice }} PRDT</strong>
+                    <img src="@/assets/images/USDT.png" alt="" />
+                    <strong>{{ fercPrice }} USDT</strong>
                   </div>
                 </div>
               </div>
@@ -310,7 +309,7 @@ export default {
         message.warn('Please connect wallet');
         return;
       }
-      const desireChainId = ChainIdMap.ICP;
+      const desireChainId = ChainIdMap.BSC;
       if (this.chainId != '') {
         await this.switchNetwork(desireChainId);
       }

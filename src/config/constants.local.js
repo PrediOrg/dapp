@@ -1,53 +1,47 @@
-// env: local;
-const Ticket_CONTRACT = '0x6E97DA2c9c0B900C1131FCe5eD004dF912360cea';
-const TicketSale_CONTRACT = '0xC8a7e4d643A30c259e7dDA03235dCc0B6BC314BE';
-const TicketMarket_CONTRACT = '0xb29DB4B0e0e97b94635f2D0acC474b68Cce002Db';
-const FERC20 = '0x3B87efB636dEc8190F4e3d9fE3Dd9c2990521e6B';
-const FBET = '0xB78173ED390C82690A40eE81A69a8A9b462e2b09';
-const BridgeAddr = '';
-const Vault_CONTRACT = '0x6C4Ca3cE0D09A95a7f7eD42D2593b0bc73aa9d04';
-const CHAIN_ID = '0x539';
+// env: production;
+const Ticket_CONTRACT = '0xc4F3b652917e9B8A12c96B2990b5C5e8531C3440';
+const TicketSale_CONTRACT = '0x033956F3d53c72f24C11bDC38C88177fBDEA0B4E';
+const TicketMarket_CONTRACT = '';
+const Vault_CONTRACT = '0xB6390e82Ab79950E9e4Cc6e9f1131a322Fb87015';
+const FERC20 = '0xfDEe9CD7090f8A30fa6Df9De3871A94392f6b10b';
+const BridgeAddr = '0x8B20023accFC177D05E1c28157cEda9e49Fc51f1';
+const CHAIN_ID = '0x1';
+const baseURL = '';
+const Network = {
+  '0x38': {
+    chainId: '0x38',
+    chainType: '2',
+    chainName: 'BSC',
+    icon: 'BNB',
+    chainNameMobile: 'BSC',
+    rpcUrls: ['https://eth.llamarpc.com'],
+    blockExplorerUrls: ['https://etherscan.io'],
+    nativeCurrency: {
+      name: 'ETH',
+      symbol: 'ETH',
+      decimals: 18,
+    },
+    ferc20: {
+      name: 'FERC20',
+      address: FERC20,
+      decimals: 18,
+      icon: '/images/FERC20.jpg',
+    },
+    payToken: {
+      name: 'USDT',
+      address: '0x55d398326f99059ff775485246999027b3197955',
+      decimals: 18,
+      icon: '/images/FBET.jpg',
+    },
+  },
+};
 const EtherScanMap = {
-  ETH: 'https://sepolia.etherscan.io/',
-  BSC: 'https://testnet.bscscan.com/',
+  BSC: 'https://bscscan.com',
 };
 const ChainIdMap = {
-  ETH: CHAIN_ID,
-  BSC: '0x61',
+  BSC: '0x38',
 };
-let chainMapById = {};
-for (var _name in ChainIdMap) {
-  chainMapById[ChainIdMap[_name]] = _name;
-}
-const ChainMapById = chainMapById;
-const baseURL = '';
-const network_local = {
-  chainId: CHAIN_ID,
-  chainType: '1',
-  chainName: 'ICPCHAIN',
-  icon: 'ETH',
-  chainNameMobile: 'ETH',
-  rpcUrls: ['http://127.0.0.1:7545'],
-  blockExplorerUrls: ['https://etherscan.io'],
-  nativeCurrency: {
-    name: 'ETH',
-    symbol: 'ETH',
-    decimals: 18,
-  },
-  ferc20: {
-    name: 'FERC20',
-    address: FERC20,
-    decimals: 18,
-    icon: '/images/FERC20.jpg',
-  },
-  payToken: {
-    name: 'FBET',
-    address: FBET,
-    decimals: 18,
-    icon: '/images/FBET.jpg',
-  },
+const ChainMapById = {
+  '0x38': 'BSC',
 };
-let network = {};
-network[CHAIN_ID] = network_local;
-const Network = network;
-export { ChainIdMap, ChainMapById, EtherScanMap, Network, Ticket_CONTRACT, TicketSale_CONTRACT, Vault_CONTRACT, TicketMarket_CONTRACT, baseURL, BridgeAddr };
+export { ChainIdMap, ChainMapById, EtherScanMap, Network, Ticket_CONTRACT, TicketSale_CONTRACT, Vault_CONTRACT, TicketMarket_CONTRACT, BridgeAddr, baseURL };

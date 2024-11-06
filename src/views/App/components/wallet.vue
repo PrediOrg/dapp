@@ -103,15 +103,7 @@
           <div class="choose-box" v-show="showChooseNetWork">
             <div class="mask" @click.stop="showChooseNetWork = false"></div>
             <div class="choose-content animate__animated animate__fadeIn">
-              <div
-                class="choose-item"
-                @click.stop="
-                  switchNetwork(Object.keys(Network)[0]);
-                  showChooseNetWork = false;
-                "
-              >
-                <strong>ETH</strong>
-              </div>
+
               <div
                 class="choose-item"
                 @click.stop="
