@@ -536,7 +536,7 @@ export default {
         border-radius: 10px;
         font-size: 16px;
         height: 42px;
-        color: #333;
+        color: #fff;
         &[disabled] {
           @include bg_color_change($background-color-change13, $background-color-change12);
           //@include font_color($font-color-s10, $font-color-s12);
