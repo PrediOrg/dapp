@@ -298,12 +298,7 @@ export default {
   background-color: #1E1E2E;
   width: 100%;
 }
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background-color: #1E1E2E;
-  color: white;
-}
+
 
 .home-app {
   text-align: center;

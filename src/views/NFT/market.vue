@@ -83,7 +83,7 @@
               <div class="markets-info-intro">
                 <div class="flex-box space-between">
                   <div class="id-box">
-                    <label>Smooth Fox&nbsp;</label>
+                    <label>Predi License&nbsp;</label>
                     <span>#{{ item.token_id }}</span>
                   </div>
                   <div class="status" :class="{rent:item.owner_status == 1}">
@@ -121,7 +121,7 @@
                 <img class="logo" :src="item.thumb_image_400" :alt="item.token_id" :title="item.token_id"/>
               </div>
               <div class="name">
-                Smooth Fox
+                Predi License
                 #{{ item.token_id }}
               </div>
             </div>

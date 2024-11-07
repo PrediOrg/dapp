@@ -31,7 +31,7 @@
               </div>
               <div class="title-box">
                 <div class="id-box">
-                  <span>Smooth Fox&nbsp;</span>
+                  <span>Predi License&nbsp;</span>
                   <span>#{{ detail.token_id }}</span>
                 </div>
               </div>

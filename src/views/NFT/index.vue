@@ -140,7 +140,7 @@
               <div>Selected</div>
             </div>
           </div>
-          <div class="swiper-slide-Id">Smooth Fox #{{ ticketId }}</div>
+          <div class="swiper-slide-Id">Predi License #{{ ticketId }}</div>
         </div>
         <div class="cyrox-modal-btn">
           <!--          <a-button @click="issue">-->

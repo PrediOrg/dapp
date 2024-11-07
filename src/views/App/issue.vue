@@ -44,7 +44,7 @@
                 <div class="swiper-slide-info-img">
                   <img style="width: 100%; height: 100%" :src="item.thumb_image_400" :data-id="item.token_id" />
                 </div>
-                <div class="swiper-slide-Id" :class="item.token_id == ticketId ? 'swiper-slide-selectId' : ''">Smooth Fox #{{ item.token_id }}</div>
+                <div class="swiper-slide-Id" :class="item.token_id == ticketId ? 'swiper-slide-selectId' : ''">Predi License #{{ item.token_id }}</div>
 
                 <div class="markets-info-rent">
                   <count-down v-if="item.is_owner != 1 && item.owner_status == 0" :value="availableTime(item.expired_at)" :hide-second="true"></count-down>

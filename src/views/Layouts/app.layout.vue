@@ -21,16 +21,16 @@
 <!--          </div>-->
           <wallet></wallet>
         </div>
-        <div class="fund-box-m">
-          <div class="fund-item" @click="$router.push('/deposit')">
-            <div class="value">$ {{ statics.portfolio | decimals(2) }}</div>
-            <div class="name">Portfolio</div>
-          </div>
-          <div class="fund-item">
-            <div class="value">$ {{ statics.cash | decimals(2) }}</div>
-            <div class="name">Cash</div>
-          </div>
-        </div>
+<!--        <div class="fund-box-m">-->
+<!--          <div class="fund-item" @click="$router.push('/deposit')">-->
+<!--            <div class="value">$ {{ statics.portfolio | decimals(2) }}</div>-->
+<!--            <div class="name">Portfolio</div>-->
+<!--          </div>-->
+<!--          <div class="fund-item">-->
+<!--            <div class="value">$ {{ statics.cash | decimals(2) }}</div>-->
+<!--            <div class="name">Cash</div>-->
+<!--          </div>-->
+<!--        </div>-->
       </div>
     </header>
     <div class="markets-banner-layout" />

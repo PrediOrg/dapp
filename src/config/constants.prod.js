@@ -10,7 +10,7 @@ const baseURL = 'https://api.predi.org';
 const Network = {
   '0x38': {
     chainId: '0x38',
-    chainType: '2',
+    chainType: '1',
     chainName: 'BSC',
     icon: 'BNB',
     chainNameMobile: 'BSC',
