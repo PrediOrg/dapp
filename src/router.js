@@ -42,11 +42,11 @@ export default new Router({
           name: 'bridge',
           component: () => import('./views/TokenMove/index.vue'),
         },
-        // {
-        //   path: '/deposit',
-        //   name: 'deposit',
-        //   component: () => import('./views/Fund/Deposit.vue'),
-        // },
+        {
+          path: '/deposit',
+          name: 'deposit',
+          component: () => import('./views/Fund/Deposit.vue'),
+        },
         {
           path: '/issue',
           name: 'issue',
