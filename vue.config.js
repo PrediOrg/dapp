@@ -16,7 +16,7 @@ module.exports = {
       '^/api': {
         historyApiFallback: true,
         // target: 'https://testnet.predi.social',
-        target: 'https://www.predi.social',
+        target: 'https://api.predi.org',
         // target: 'http://localhost',
         ws: true,
         changeOrigin: true,

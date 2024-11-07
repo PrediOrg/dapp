@@ -39,6 +39,7 @@ export default new Vuex.Store({
       if (!chainId) {
         return {};
       }
+      console.log(Network[chainId])
       return Network[chainId]['payToken'];
     },
     chainName(state) {
@@ -48,6 +49,7 @@ export default new Vuex.Store({
       }
       return Network[chainId]['chainName'];
     },
+
     ferc20(state) {
       let chainId = state.desireChainId;
       if (!chainId) {

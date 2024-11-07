@@ -17,12 +17,8 @@
             <div class="in-line">
               <div class="value">
                 <div class="reward-box">
-                  <img class="icon" src="/images/FERC20.jpg" alt="" />
-                  {{ reward | decimalsPrecision(ferc20.decimals, 4) }}
-                </div>
-                <div class="reward-box">
-                  <img class="icon" src="@/assets/images/ethIcon.png" alt="" />
-                  {{ rewardEth | decimalsPrecision(ferc20.decimals, 4) }}
+                  <img class="icon" src="@/assets/images/USDT.png" alt="" />
+                  {{ rewardEth | decimalsPrecision(payToken.decimals, 4) }}
                 </div>
               </div>
               <!--              v-if="parseFloat(reward) !== 0"-->
@@ -43,12 +39,8 @@
               <div class="name">Referral Rewards</div>
               <div class="value">
                 <div class="reward-box">
-                  <img class="icon" src="/images/FERC20.jpg" alt="" />
-                  {{ reward | decimalsPrecision(ferc20.decimals, 4) }}
-                </div>
-                <div class="reward-box">
-                  <img class="icon" src="@/assets/images/ethIcon.png" alt="" />
-                  {{ rewardEth | decimalsPrecision(ferc20.decimals, 4) }}
+                  <img class="icon" src="@/assets/images/USDT.png" alt="" />
+                  {{ rewardEth | decimalsPrecision(payToken.decimals, 4) }}
                 </div>
               </div>
             </div>
@@ -77,7 +69,7 @@
                 <!--              <img class="trade-input-icon mg-r8" :src="ferc20.icon"/>-->
                 <span class="default">
                   <img class="icon"  src="@/assets/images/USDT.png" alt="" />
-                  <strong>USDT</strong>
+                  <strong>{{price}}USDT</strong>
                   <img class="downIcon" src="@/assets/images/arrow-down-bold.svg" alt="" />
                 </span>
               </p>
@@ -184,12 +176,11 @@ export default {
       nftList: [],
       inviter: '',
       getTicket: {},
-      price: '0',
-      curCoin: 'ICP',
+      price: '200',
+      curCoin: 'USDT',
       collectLoading: false,
       reward: '0',
       rewardEth: 0,
-      selectCoin: 'ICP',
       ethPrice: 0,
       fercPrice: 100,
       remain: 0,
@@ -208,7 +199,7 @@ export default {
     copyShareLink() {
       return window.location.origin + window.location.pathname + '?inviter=' + this.account;
     },
-    ...mapGetters(['chainType', 'ferc20', 'chainName']),
+    ...mapGetters(['chainType', 'payToken','ferc20', 'chainName']),
   },
   watch: {
     account: {
@@ -264,7 +255,7 @@ export default {
         this.curCoin = 'ICP';
       } else {
         this.price = this.fercPrice;
-        this.curCoin = 'FERC';
+        this.curCoin = 'USDT';
       }
       this.showChoosePrice = false;
     },
@@ -325,7 +316,6 @@ export default {
         });
         return;
       }
-      console.log('whiteList');
       const isW = await cdsSdk.whiteList(this.account);
       this.loading = true;
       try {
@@ -345,8 +335,8 @@ export default {
           return;
         }
 
-        const allowance = await cdsSdk.allowance(this.ferc20.address, this.account, TicketSale_CONTRACT);
-        const tokenBalance = await cdsSdk.balanceOf(this.ferc20.address, this.account);
+        const allowance = await cdsSdk.allowance(this.payToken.address, this.account, TicketSale_CONTRACT);
+        const tokenBalance = await cdsSdk.balanceOf(this.payToken.address, this.account);
 
         if (!isW && nftPrice.gt(tokenBalance.toString())) {
           this.$notification['error']({
@@ -360,7 +350,8 @@ export default {
           return;
         }
 
-        let tx = await cdsSdk.approve(this.ferc20.address, TicketSale_CONTRACT, tokenBalance);
+        let tx = await cdsSdk.approve(this.payToken.address, TicketSale_CONTRACT, tokenBalance);
+
         let receipt = await cdsSdk.waitForTransaction(tx.hash);
         if (receipt.status != 0) {
           await this.buyNFT(isW);

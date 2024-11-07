@@ -6,7 +6,7 @@ const Vault_CONTRACT = '0xB6390e82Ab79950E9e4Cc6e9f1131a322Fb87015';
 const PRDS = '0xfDEe9CD7090f8A30fa6Df9De3871A94392f6b10b';
 const BridgeAddr = '0x8B20023accFC177D05E1c28157cEda9e49Fc51f1';
 
-const baseURL = '';
+const baseURL = 'https://api.predi.org';
 const Network = {
   '0x38': {
     chainId: '0x38',
@@ -31,7 +31,7 @@ const Network = {
       name: 'USDT',
       address: '0x55d398326f99059ff775485246999027b3197955',
       decimals: 18,
-      icon: '/images/FBET.jpg',
+      icon: '/images/USDT.png',
     },
   },
 };
