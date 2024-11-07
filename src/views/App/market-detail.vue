@@ -287,7 +287,7 @@
           <a-button type="primary" :loading="loadingConfirm" @click="confirmAppeal">
             <div class="flex-box justify-content_flex-center">
               <img :src="`${detail.token_icon}`" width="20" height="20" class="mg-r8" />
-              Pay {{ detail['challenge_amount'] | decimals(4, false) }} FBET to Challenge
+              Pay {{ detail['challenge_amount'] | decimals(4, false) }} PRDS to Challenge
             </div>
           </a-button>
         </div>
