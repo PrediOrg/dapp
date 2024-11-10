@@ -18,7 +18,7 @@
               <div class="value">
                 <div class="reward-box">
                   <img class="icon" src="@/assets/images/USDT.png" alt="" />
-                  {{ rewardEth | decimalsPrecision(payToken.decimals, 4) }}
+                  {{ reward | decimalsPrecision(payToken.decimals, 4) }}
                 </div>
               </div>
               <!--              v-if="parseFloat(reward) !== 0"-->
@@ -260,10 +260,10 @@ export default {
       this.showChoosePrice = false;
     },
     async init() {
-      if (this.chainId == this.$store.state.desireChainId && this.account && this.chainName == 'ICPCHAIN') {
-        let { reward, rewardEth } = await cdsSdk.rewardQuery(this.account);
+      if (this.chainId == this.$store.state.desireChainId && this.account ) {
+        let { reward,  } = await cdsSdk.rewardQuery(this.account);
         this.reward = reward.toString();
-        this.rewardEth = rewardEth.toString();
+
       }
       this.loadData();
     },
