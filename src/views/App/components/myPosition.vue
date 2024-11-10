@@ -20,7 +20,7 @@
         {{ payToken.symbol }}
       </p>
     </div>
-    
+
     <div class="in-line" v-if="userDealt.challenge > 0">
       <label>Challenge credit</label>
       <p class="flex-box">

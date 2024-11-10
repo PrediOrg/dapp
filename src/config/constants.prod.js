@@ -14,8 +14,8 @@ const Network = {
     chainName: 'BSC',
     icon: 'BNB',
     chainNameMobile: 'BSC',
-    rpcUrls: ['https://eth.llamarpc.com'],
-    blockExplorerUrls: ['https://etherscan.io'],
+    rpcUrls: ['https://bsc-dataseed.binance.org'],
+    blockExplorerUrls: ['https://bscscan.com'],
     nativeCurrency: {
       name: 'BNB',
       symbol: 'BNB',
