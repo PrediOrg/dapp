@@ -149,7 +149,6 @@ export default {
       border-radius: 10px;
       height: calc(100% - 10px);
       width: 100%;
-      background: linear-gradient(360deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
       .btn {
         position: absolute;
         bottom: 26px;
@@ -165,7 +164,7 @@ export default {
         cursor: pointer;
 
         &:nth-child(1) {
-          left: calc(50% - 130px);
+          left: calc(50% - 60px);
         }
         &:nth-child(2) {
           left: calc(50% + 10px);
