@@ -129,9 +129,11 @@ export default {
   .depositView {
     display: flex;
     justify-content: center;
+    flex-direction: column!important;
+    align-items: center;
     .deposit-panel {
       width: var(--content-width);
-      margin: 0 auto;
+      margin:  20px auto;
       overflow: hidden;
       padding: 0.4rem;
       .select-box {
