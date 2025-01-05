@@ -526,7 +526,7 @@ export default {
     .submit {
       width: 380px;
       height: 50px;
-      background: linear-gradient( 270deg, #EC1E79 0%, #552683 100%);
+      background: #573EF3;
       border-radius: 17px 17px 17px 17px;
       margin: 20px auto;
       font-size: 16px;
@@ -616,7 +616,7 @@ export default {
           width: 50px;
           position: absolute;
           right: 0px;
-          background: linear-gradient( 270deg, #EC1E79 0%, #552683 100%);
+          background: #573EF3;
           height: 30px;
           font-size: 14px;
           justify-content: center;

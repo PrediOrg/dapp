@@ -5,7 +5,6 @@
         <p><span>Betting Markets</span></p>
       </div>
       <div class="market-select">
-        <div></div>
         <div class="market-select-item flex-box">
           <div class="market-select-category">
             <label>{{ $t('category') }}</label>
@@ -19,19 +18,13 @@
               <a-select-option v-for="(item, index) in sortList" :key="index" :value="index">{{ item.name }} </a-select-option>
             </a-select>
           </div>
+
+        </div>
+        <div class="market-select-item flex-box">
           <div class="market-select-resolved">
             <a-checkbox @change="endChange">History</a-checkbox>
           </div>
           <a-input-search v-model="searchValue" placeholder="input search text" @search="onSearch" />
-        </div>
-        <div class="market-select-button">
-          <a-button type="primary" size="large" @click="issue">
-            {{ $t('issue') }}
-            <a-icon type="plus" />
-          </a-button>
-          <!-- <router-link class="market-select-ticket" to="/nft"
-            ><span>{{ $t('ticket') }}<i></i></span
-          ></router-link> -->
         </div>
       </div>
     </div>
@@ -295,7 +288,6 @@ export default {
 
   .market-select {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
     max-width: var(--content-width);

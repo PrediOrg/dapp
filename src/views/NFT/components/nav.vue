@@ -84,7 +84,7 @@ export default {
     border-bottom: none;
     .ant-tabs-tab:hover {
       //@include font_color($main-font-color, #fff);
-      color: #EC1E79;
+      color: #573EF3;
     }
     .ant-tabs-nav {
       font-size: 18px;
@@ -98,12 +98,12 @@ export default {
       }
       .ant-tabs-tab-active {
         font-size: 18px;
-        color: #EC1E79;
+        color: #573EF3;
         opacity: 1;
       }
 
       .ant-tabs-ink-bar {
-        background: #EC1E79;
+        background: #573EF3;
       }
 
       .ant-tabs-tab {

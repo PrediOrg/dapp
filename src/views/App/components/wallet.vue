@@ -5,12 +5,12 @@
     <template v-if="device == 'mobile'">
       <template v-if="account">
         <template v-if="!isOnRightChain">
-          <a-button @click="switchNetwork(desireChainId)" :loading="connectedLoading"> Wrong Network</a-button>
+          <a-button @click="switchNetwork(desireChainId)" :loading="connectedLoading">Wrong Network</a-button>
         </template>
         <template v-else>
           <a-popover placement="bottomRight">
             <a-button :loading="connectedLoading">
-              {{ account | showAddress }}
+              <span> {{ account | showAddress }}</span>
             </a-button>
             <template slot="content">
               <p @click="disConnect" class="color-0E1D51 ts-16 cursor">
@@ -21,7 +21,9 @@
           </a-popover>
         </template>
       </template>
-      <a-button class="connection" v-else @click="connect" :loading="connectedLoading"> Connect Wallet</a-button>
+      <a-button class="connection" v-else @click="connect" :loading="connectedLoading">
+        <span>Connect Wallet</span>
+      </a-button>
       <!--      <p class="header-more-title" @click="drawerClick">-->
       <!--        <span :class="{ 'header-more-close': drawerVisible }"></span>-->
       <!--      </p>-->
@@ -90,7 +92,7 @@
       <!--          </div>-->
       <!--        </a-select-option>-->
       <!--      </a-select>-->
-      <a-button class="select-chain" @click="switchNetwork(desireChainId)">
+      <a-button class="select-chain"   @click="switchNetwork(desireChainId)">
         <div class="flex-box choose-network" @click="showChooseNetWork = true">
           <i class="network-icon" :class="`icon-${networkObj[desireChainId].icon}`"></i>
           <span class="network-span">
@@ -99,11 +101,10 @@
           <div class="dot" :class="{ active: isConnected }">
             <div></div>
           </div>
-
+          <img src="@/assets/images/down.png" style="margin-left: 15px" width="20" alt="">
           <div class="choose-box" v-show="showChooseNetWork">
             <div class="mask" @click.stop="showChooseNetWork = false"></div>
             <div class="choose-content animate__animated animate__fadeIn">
-
               <div
                 class="choose-item"
                 @click.stop="
@@ -119,11 +120,15 @@
       </a-button>
       <template v-if="w3Account">
         <template v-if="!isConnected">
-          <a-button @click="switchNetwork(desireChainId)" :loading="connectedLoading"> Wrong Network</a-button>
+          <a-button @click="switchNetwork(desireChainId)" :loading="connectedLoading">
+            <span> Wrong Network</span>
+          </a-button>
         </template>
         <template v-else>
           <a-button :loading="connectedLoading" @click="w3mConnect">
-            {{ w3Account | showAddress }}
+            <span>
+              {{ w3Account | showAddress }}
+            </span>
           </a-button>
           <!--            <template slot="content">-->
           <!--              <p @click="disConnect" class="color-0E1D51 ts-16 cursor">-->
@@ -134,7 +139,9 @@
         </template>
       </template>
       <!--      connect-->
-      <a-button class="connection" v-else @click="w3mConnect" :loading="connectedLoading"> Connect Wallet</a-button>
+      <a-button class="connection" v-else @click="w3mConnect" :loading="connectedLoading">
+        <span class="connect-content">Connect Wallet</span>
+      </a-button>
     </template>
   </div>
 </template>
@@ -299,7 +306,7 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .choose-network {
   position: relative;
 
@@ -360,11 +367,19 @@ export default {
   }
 }
 
+
 .select-chain {
   width: auto !important;
   margin-right: 10px;
   padding: 0 20px;
 
+
+  &:active{
+    border: 1px solid #FFFFFF;
+  }
+  .network-span{
+    color: #344054;
+  }
   .dot {
     margin-left: 10px;
     width: 8px;
@@ -410,20 +425,25 @@ export default {
 button {
   width: 150px;
   height: 43px;
-  color: white;
-  border-radius: 10px;
-  background: $background-linear-color;
   font-size: 14px;
   font-family: 'Lucida-Grande-Bold';
-  border: none;
-
+  background: #FFFFFF;
+  box-shadow: 0px 1px 2px 0px rgba(16,24,40,0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08);
+  color: #344054;
+  span{
+    color: #344054;
+  }
   &:hover,
   &:focus,
   &:active {
-    background: $background-linear-color;
+    background: #fff;
   }
 }
-
+.connect-content{
+  color: #344054;
+}
 .network-icon {
   width: 22px;
   height: 22px;

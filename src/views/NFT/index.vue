@@ -53,7 +53,6 @@
           </div>
         </h1>
         <div class="mint-op">
-          <div class="mint-op-shadow"></div>
           <div class="mint-op-box">
             <div class="mint-header"></div>
             <div class="issue-tip">
@@ -514,7 +513,6 @@ export default {
       .ant-btn {
         width: 111px !important;
         height: 43px;
-        background: linear-gradient( 270deg, #EC1E79 0%, #552683 100%);
         border-radius: 9px 9px 9px 9px;
         opacity: 1;
       }
@@ -1056,7 +1054,7 @@ export default {
       button {
         border: none;
         height: 54px;
-        background: #4f8fef;
+        background: #573EF3;
         border-radius: 10px;
         font-size: 16px;
         font-family: 'Lucida-Grande-Bold';

@@ -9,22 +9,29 @@
           <template v-if="device != 'mobile'">
             <predi-nav></predi-nav>
           </template>
+          <div class="market-select-button">
+            <a-button type="primary" size="large" @click="issue">
+              {{ $t('issue') }}
+              <a-icon type="plus" />
+            </a-button>
+
+          </div>
           <div class="fund-box">
             <div class="fund-item" @click="$router.push('/deposit')">
               <div class="value">$ {{ statics.portfolio | decimals(2) }}</div>
-              <div class="name">Portfolio</div>
+              <div class="name">Balance</div>
             </div>
             <div class="fund-item">
               <div class="value">$ {{ statics.cash | decimals(2) }}</div>
               <div class="name">Cash</div>
             </div>
           </div>
-          <wallet></wallet>
+          <wallet style="position: relative;z-index: 1000"></wallet>
         </div>
         <div class="fund-box-m">
           <div class="fund-item" @click="$router.push('/deposit')">
             <div class="value">$ {{ statics.portfolio | decimals(2) }}</div>
-            <div class="name">Portfolio</div>
+            <div class="name">Balance</div>
           </div>
           <div class="fund-item">
             <div class="value">$ {{ statics.cash | decimals(2) }}</div>
@@ -34,7 +41,7 @@
       </div>
     </header>
     <div class="markets-banner-layout" />
-    <section style="flex-grow: 1">
+    <section style="flex-grow: 1;background: #F9FAFB;padding-bottom: 80px">
       <router-view />
     </section>
     <footer-content></footer-content>
@@ -91,6 +98,9 @@ export default {
   },
   methods: {
     ...mapActions(['getUserInfo']),
+    issue() {
+      this.$router.push('/issue');
+    },
     async requestUserInfo() {
       if (!this.account) {
         return;
@@ -109,7 +119,10 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+header{
+  border: 1px solid #EAECF0;
+}
 .predi-box {
   font-family: Orelega One-Regular, Orelega One;
   min-height: 100vh;
@@ -266,7 +279,7 @@ export default {
     z-index: 10;
 
     .header-content {
-      padding-top: 20px;
+      padding: 16px 0;
       margin: 0 auto;
 
       .logo {
@@ -293,14 +306,17 @@ export default {
         }
 
         .name {
-          font-size: 16px;
-          font-weight: 400;
-          color: rgba(114, 55, 0, 0.5);
+          font-weight: 500;
+          font-size: 14px;
+          color: rgba(0,0,0,0.4);
+          text-align: center;
         }
 
         .value {
-          font-weight: 400;
-          color: #146e51;
+          font-weight: normal;
+          font-size: 18px;
+          color: #573EF3;
+          text-align: center;
         }
       }
     }
@@ -316,6 +332,7 @@ export default {
 
 .predi-mobile {
   header {
+    border: none;
     margin: 0.2rem 0.4rem;
     display: flex;
     justify-content: space-between;

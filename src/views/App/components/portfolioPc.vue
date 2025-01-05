@@ -487,13 +487,13 @@ export default {
     height: 108px;
     color: #ffffff;
     font-family: 'Lucida-Grande-Bold';
-    background: var(--mainColor);
+    background: linear-gradient(to right, #4601BD 0%, #2D1C58 100%);
     border-radius: 10px;
     &.portfolio-col2 {
-      background: var(--mainColor);
+      background: linear-gradient(to right, #4601BD 0%, #2D1C58 100%);
     }
     &.portfolio-col3 {
-      background: var(--mainColor);
+      background: linear-gradient(to right, #4601BD 0%, #2D1C58 100%);
     }
     p:first-child {
       width: 45%;

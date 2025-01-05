@@ -835,7 +835,7 @@ export default {
 
     .detail-status-info {
       .detail-status-button {
-        color: #4f8fef;
+        color: #573EF3;
 
         button {
           margin-top: 10px;
@@ -886,7 +886,7 @@ export default {
           display: inline-block;
 
           &:first-child {
-            border: 2px solid #4f8fef;
+            border: 2px solid #573EF3;
             margin-right: 32px;
           }
         }
@@ -1275,7 +1275,7 @@ export default {
     margin-top: 28px;
     height: 46px;
     border-radius: 10px;
-    background: #4f8fef;
+    background: #573EF3;
 
     &[disabled] {
       @include bg_color_change($background-color-change13, $background-color-change12);
@@ -1332,7 +1332,7 @@ export default {
       font-size: 18px;
       font-family: 'Lucida-Grande-Bold';
       text-align: center;
-      color: #4f8fef;
+      color: #573EF3;
 
       span {
         color: #ffffff;

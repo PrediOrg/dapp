@@ -46,17 +46,18 @@ export default {
         //   enable: true,
         // },
         {
-          url: '/nft/packet',
-          text: 'NFT License',
-          badge: false,
-          enable: true,
-        },
-        {
           url: '/market',
           text: 'Market',
           badge: false,
           enable: true,
         },
+        {
+          url: '/nft/packet',
+          text: 'GET License',
+          badge: false,
+          enable: true,
+        },
+
         {
           url: '/portfolio',
           text: 'Portfolio',
@@ -100,10 +101,10 @@ export default {
     padding: 5px 15px;
 
     &.active {
-      background: rgba(255, 255, 255, 0.6)!important;
-      border-radius: 10px 10px 10px 10px;
       opacity: 1;
-      color: #EC1E79;
+      background: #F2F4F7;
+      color: #182230;
+      border-radius: 6px 6px 6px 6px;
     }
   }
   div {
@@ -126,9 +127,9 @@ export default {
     display: flex;
     align-items: center;
     &.active {
-      color: #000000;
+
       .predi-nav-text {
-        background: #EC1E79;
+        background: #182230;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }

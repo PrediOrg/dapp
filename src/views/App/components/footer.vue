@@ -1,7 +1,5 @@
 <template>
   <footer :class="{'predi-footer-mobile': device == 'mobile'}">
-    <div class="footer-bg1"/>
-    <div class="footer-bg2"/>
     <div class="footer-content">
       <div class="home-footer-con">
         <div class="left-part">
@@ -26,22 +24,22 @@
 <!--          </div>-->
           <div class="icon-list">
             <a href="https://x.com/prediorg" target="_black">
-              <img src="@/assets/images/twitter.svg" alt="" class="icon">
+              <img src="@/assets/images/twitter.png" alt="" class="icon">
             </a>
             <a href="https://t.me/PrediOfficial" target="_black">
-              <img src="@/assets/images/telegram.svg" alt="" class="icon">
+              <img src="@/assets/images/telegram.png" alt="" class="icon">
             </a>
             <!--a href="https://discord.gg/UsVNfk36VK" target="_black">
               <img src="@/assets/images/discord.svg" alt="" class="icon">
             </a-->
             <a href="https://github.com/PrediOrg" target="_black">
-              <img src="@/assets/images/github.svg" alt="" class="icon">
+              <img src="@/assets/images/github.png" alt="" class="icon">
             </a>
             <a href="https://medium.com/@prediorg" target="_black">
-              <img src="@/assets/images/medium.svg" alt="" class="icon">
+              <img src="@/assets/images/medium.png"  alt="" class="icon">
             </a>
             <!--a href="https://predi.gitbook.io/predi/" target="_black">
-              <img src="@/assets/images/gitbook.svg" alt="" class="icon">
+              <img src="@/assets/images/gitbook.png" alt="" class="icon">
             </a-->
           </div>
         </div>
@@ -99,13 +97,8 @@ export default {
 
 footer {
   width: 100%;
-  height: 228px;
-  margin-top: 80px;
-  position: relative;
-  background: linear-gradient(0deg, rgba(255, 64, 64, 0.05) 0%, rgba(255, 64, 64, 0) 100%);
   position: relative;
   overflow: hidden;
-
   .footer-bg1 {
     background: rgba(241, 140, 24, 0.05);
     position: absolute;
@@ -132,8 +125,7 @@ footer {
   .footer-content {
     width: var(--content-width);
     margin: 0 auto;
-    border-top: 1px solid #EAEAEA;
-    padding-top: 32px;
+    padding: 48px 0;
   }
 
 
@@ -156,10 +148,11 @@ footer {
       font-size: 17px;
       font-family: PingFang SC-Medium, PingFang SC;
       font-weight: 500;
-      color: #CCCCCC;
+      color: #667085;
 
       .info {
-        margin: 26px 0 10px;
+
+        margin-top: 64px;
       }
     }
 
@@ -169,7 +162,7 @@ footer {
         display: flex;
         justify-content: flex-end;
         overflow: hidden;
-        margin-top: 30px;
+        margin-top: 64px;
 
         a {
           margin-left: 10px;
@@ -180,8 +173,6 @@ footer {
           .icon {
             width: 30px;
             height: 30px;
-            filter: drop-shadow(1000px 0 #F28C18);
-            transform: translateX(-1000px);
 
           }
 
@@ -189,7 +180,6 @@ footer {
             opacity: 0.9;
 
             .icon {
-              filter: drop-shadow(1000px 0 #F28C18);
             }
           }
 
@@ -200,6 +190,13 @@ footer {
               margin-top: 2px;
             }
           }
+          &:nth-child(4){
+            .icon {
+              width: 30px;
+              height: 30px;
+              margin-top: 1px;
+            }
+          }
         }
 
       }
@@ -208,7 +205,7 @@ footer {
     .home-footer-nav {
       a {
         font-size: 16px;
-        color: #999999;
+        color: #475467;
         font-family: "Lucida-Grande-Bold";
         padding-left: 48px;
       }

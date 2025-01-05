@@ -1395,7 +1395,7 @@ export default {
         .right {
           min-width: 100px;
           height: 26px;
-          background: linear-gradient( 270deg, #EC1E79 0%, #552683 100%);
+          background: #573EF3;
           border-radius: 4px 4px 4px 4px;
           display: flex;
           justify-content: center;

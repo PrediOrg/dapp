@@ -450,11 +450,11 @@ export default {
       position: absolute;
       bottom: 0;
       height: 40px;
-      background: rgba(242, 140, 24, 0.1);
+      background: rgba(24, 140, 242,.1);
       width: 100%;
       font-family: Orelega One-Regular, Orelega One;
       font-weight: 400;
-      color: #F18C18;
+      color: #573EF3;
       display: flex;
       align-items: center;
       justify-content: center;

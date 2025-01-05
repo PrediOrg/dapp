@@ -531,7 +531,7 @@ export default {
         //@include bg_color_change($background-color-change3, $background-color-change12);
         //@include font_color($font-color-s, $font-color-s1);
         @include box_shadow_color;
-        background: linear-gradient( 270deg, #EC1E79 0%, #552683 100%);
+        background: #573EF3;
         font-family: Orelega One-Regular, Orelega One;
         border-radius: 10px;
         font-size: 16px;
@@ -675,7 +675,7 @@ export default {
       font-size: 18px;
       font-family: 'Lucida-Grande-Bold';
       text-align: center;
-      color: #4f8fef;
+      color: #573EF3;
 
       span {
         @include font_color($font-color-s, $font-color-s1);
@@ -703,7 +703,7 @@ export default {
       width: 100%;
 
       a:hover {
-        color: #4f8fef;
+        color: #573EF3;
         opacity: 0.8;
       }
     }

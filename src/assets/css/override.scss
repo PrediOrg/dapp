@@ -1,8 +1,8 @@
 .ant-btn {
-  background: linear-gradient( 270deg, #EC1E79 0%, #552683 100%) !important;
   border: none;
-
-
+  background: #573EF3;
+  box-shadow: 0px 1px 2px 0px rgba(16,24,40,0.05);
+  border-radius: 8px 8px 8px 8px;
   span {
     color: #FFFFFF;
     font-size: 17px;
@@ -10,12 +10,16 @@
     font-weight: 400;
   }
 
-  &:hover, &:active {
-    background: linear-gradient( 270deg, #EC1E79 0%, #552683 100%);
+  &:hover, &:active ,&:focus{
+    background: #5e45fc;
+    box-shadow: 0px 1px 2px 0px rgba(16,24,40,0.5);
   }
 }
 :root{
   --antd-wave-shadow-color: #782581;
+}
+:root {
+  --w3m-z-index: 9999!important;
 }
 .ant-select{
   font-family: Orelega One-Regular, Orelega One;
@@ -91,4 +95,9 @@
 }
 .ant-modal-content{
   border-radius: 15px;
+}
+@media screen and (max-width: 810px) {
+  .market-select-category,.market-select-sort {
+    border: none;
+  }
 }

@@ -317,7 +317,6 @@ export default {
   display: flex;
   padding: 20px 50px;
   align-items: center;
-
   justify-content: space-between;
 }
 
@@ -375,7 +374,7 @@ p {
 }
 
 .cta-button {
-  background: linear-gradient( 270deg, #EC1E79 0%, #552683 100%);
+  background: #573EF3;
   border: none;
   padding: 15px 50px;
   margin-top: 20px;
@@ -452,7 +451,7 @@ h1,h2{
 .icon-box{
   width: 70px;
   height: 70px;
-  background: linear-gradient( 270deg, #EC1E79 0%, #552683 100%);
+  background: #573EF3;
   border-radius: 20px 20px 20px 20px;
   display: flex;
   align-items: center;

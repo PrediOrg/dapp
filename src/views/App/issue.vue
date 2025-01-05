@@ -13,7 +13,9 @@
       <div v-else class="add-nft">
         <h3 class="title">
           {{ $t('verifiedNFT') }}（{{ ticketValid }}/{{ ticketList.length }}）
-          <a href="/nft" class="add-nft-moreNFT">{{ $t('moreNFT') }} <span>Go</span><i></i></a>
+          <a href="/nft" class="add-nft-moreNFT">{{ $t('moreNFT') }} <span>Go</span>
+            <i></i>
+          </a>
         </h3>
         <div class="nft-swiper" v-swiper:mySwiper="swiperOption" ref="mySwiperBox">
           <div class="swiper-wrapper">
@@ -808,6 +810,7 @@ export default {
       }
 
       .swiper-slide-info-img {
+        min-height: 50px;
         img {
           border-radius: 10px;
         }
@@ -834,7 +837,7 @@ export default {
           font-size: 16px;
           font-family: 'Lucida-Grande-Bold';
           height: 30px;
-          background: rgba(#f28c18, 0.5);
+          background: rgba(87,62,243,.5);
           border-radius: 0px 0px 10px 10px;
           color: #ffffff;
           margin-top: 157px;
@@ -952,7 +955,7 @@ export default {
       i {
         width: 16px;
         height: 16px;
-        background: url('~@/assets/images/right-icon.svg') no-repeat;
+        background: url('~@/assets/images/right.png') no-repeat;
         background-size: contain;
         margin-left: 6px;
       }
@@ -1159,7 +1162,7 @@ export default {
         }
 
         &.add-staking-active {
-          background: #ffa956;
+          background: #573EF3;
           color: #FFFFFF;
         }
       }
@@ -1193,7 +1196,7 @@ export default {
       button {
         border: none;
         height: 54px;
-        background: #4f8fef;
+        background: #573EF3;
         border-radius: 10px;
         font-size: 16px;
         font-family: 'Lucida-Grande-Bold';
@@ -1254,7 +1257,7 @@ export default {
         @include font_color($font-color-s10, $font-color-s3);
 
         span {
-          color: #4f8fef;
+          color: #573EF3;
           word-break: break-all;
         }
       }

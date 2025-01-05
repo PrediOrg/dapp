@@ -82,7 +82,7 @@ export default {
         text-align: center;
 
         &.active {
-          background: linear-gradient( 270deg, #EC1E79 0%, #552683 100%);
+          background: #573EF3;
           color: #FFFFFF;
         }
       }
