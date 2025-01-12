@@ -669,8 +669,8 @@ export default {
 
   p {
     font-size: 16px;
-    @include font_color($font-color-s, $font-color-s1);
-    font-family: 'Lucida-Grande-Bold';
+    color: var(--FontColor1);
+
     display: flex;
     align-items: center;
 
@@ -699,9 +699,9 @@ export default {
   .id-box {
     display: flex;
     font-size: 26px;
-    font-family: Orelega One-Regular, Orelega One;
+
     font-weight: 400;
-    color: #333333;
+    color: var(--FontColor1);;
     line-height: 50px;
   }
 
@@ -716,7 +716,7 @@ export default {
 
   .panel-container {
     padding: 10px 32px 24px;
-    background: #ffffff;
+    background: var(--MintBGColor);
     box-shadow: 0px 13px 43px 13px rgba(0, 0, 0, 0.05);
     border-radius: 17px;
     margin-top: 20px;
@@ -771,7 +771,7 @@ export default {
       .flex-box {
         display: flex;
         justify-content: space-between;
-        font-family: Orelega One-Regular, Orelega One;
+
         font-weight: 400;
 
         label {
@@ -781,7 +781,7 @@ export default {
 
       .detail-nft-p {
         font-size: 14px;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
 
       .detail-nft-id {
@@ -798,7 +798,7 @@ export default {
 
         p {
           font-size: 14px;
-          font-family: 'Lucida-Grande-Bold';
+
           background: #ffb356;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -812,7 +812,7 @@ export default {
 
     .detail-details {
       font-size: 14px;
-      font-family: Orelega One-Regular, Orelega One;
+
     }
   }
 
@@ -821,7 +821,7 @@ export default {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 
     .detail-status-text {
-      font-family: Orelega One-Regular, Orelega One;
+
       font-size: 18px;
       color: var(--mainColor);
 
@@ -844,10 +844,10 @@ export default {
           height: 46px;
           @include bg_color_change($background-color-change3, $background-color-change12);
           @include box_shadow_color;
-          @include font_color($font-color-s, $font-color-s1);
+          color: var(--FontColor1);
           border-radius: 10px;
           font-size: 16px;
-          font-family: 'Lucida-Grande-Bold';
+
         }
 
         button[disabled] {
@@ -881,7 +881,7 @@ export default {
           border-radius: 10px;
           border: 2px solid #393a3e;
           font-size: 16px;
-          font-family: 'Lucida-Grande-Bold';
+
           color: #ffffff;
           display: inline-block;
 
@@ -902,9 +902,9 @@ export default {
 
   .sub-title {
     font-size: 21px;
-    font-family: Orelega One-Regular, Orelega One;
+
     font-weight: 400;
-    color: #333333;
+    color: var(--FontColor1);;
     padding-bottom: 10px;
 
     &.flex-box {
@@ -919,7 +919,7 @@ export default {
   .detail-intro {
     margin-top: 24px;
     padding: 10px 32px 24px;
-    @include bg_color_change($background-color-change3, $background-color-change4);
+     background: var(--BGColor2);
     @include box_shadow_color_detail;
     border-radius: 10px;
 
@@ -932,13 +932,13 @@ export default {
 
       p {
         font-size: 12px;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
 
       div {
         margin-top: 24px;
         font-size: 16px;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
     }
 
@@ -948,7 +948,7 @@ export default {
 
       p {
         font-size: 12px;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
 
       .detail-times-th {
@@ -956,21 +956,21 @@ export default {
         font-size: 14px;
         line-height: 16px;
         @include font_color($font-color-s10, $font-color-s5);
-        font-family: Orelega One-Regular, Orelega One;
+
         font-weight: 400;
         color: #999999;
-        border-bottom: 1px solid #eaeaea;
+        border-bottom: 1px solid var(--LineColor2);
       }
 
       .detail-times-td {
         padding: 6px 0;
         font-size: 12px;
         line-height: 20px;
-        font-family: Orelega One-Regular, Orelega One;
+
         font-weight: 400;
         color: #000000;
-        border-bottom: 1px solid #eaeaea;
-        @include font_color($font-color-s, $font-color-s1);
+        border-bottom: 1px solid var(--LineColor2);
+        color: var(--FontColor1);
 
         &:last-child {
           border-bottom: none;
@@ -1008,10 +1008,10 @@ export default {
   .header-part {
     margin-top: 50px;
     padding: 20px;
-    background: #ffffff;
+    background: var(--MintBGColor);
     box-shadow: 0px 13px 43px 13px rgba(0, 0, 0, 0.05);
     border-radius: 17px 17px 17px 17px;
-    background: #ffffff;
+    background: var(--MintBGColor);
 
     .detail-nft {
       overflow: hidden;
@@ -1072,33 +1072,33 @@ export default {
     p {
       font-size: 26px;
       line-height: 32px;
-      font-family: 'Lucida-Grande-Bold';
-      @include font_color($font-color-s, $font-color-s1);
+
+      color: var(--FontColor1);
       padding: 12px 0;
     }
   }
 
   .detail-action {
-    @include bg_color_change($background-color-change3, $background-color-change4);
+     background: var(--BGColor2);
 
     .name {
       font-size: 21px;
-      font-family: Orelega One-Regular, Orelega One;
+
       font-weight: 400;
-      color: #333333;
+      color: var(--FontColor1);;
       padding-bottom: 15px;
     }
 
     p {
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
       line-height: 20px;
       font-size: 14px;
     }
 
     .detail-action-price {
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
       line-height: 26px;
-      font-family: 'Lucida-Grande-Bold';
+
       font-size: 20px;
       padding-bottom: 10px;
     }
@@ -1110,7 +1110,7 @@ export default {
       height: 46px;
       font-size: 16px;
       @include bg_color_change($background-color-change13, $background-color-change12);
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
       color: #333 !important;
 
       border: none;
@@ -1123,12 +1123,12 @@ export default {
         border: none !important;
         background: none;
         box-shadow: none;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
 
       .add-input-after {
         padding: 0 12px;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
 
       &.add-input-margin {
@@ -1142,7 +1142,7 @@ export default {
       }
       .detail-action-rent {
         label {
-          font-family: Orelega One-Regular, Orelega One;
+
           font-weight: 400;
           color: #999999;
           padding: 10px 0 0;
@@ -1152,7 +1152,7 @@ export default {
           padding-left: 12px;
           height: 46px;
           @include bg_color_change($background-color-change13, $background-color-change12);
-          @include font_color($font-color-s, $font-color-s1);
+          color: var(--FontColor1);
 
           [data-theme='night'] & {
             box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
@@ -1198,7 +1198,7 @@ export default {
           height: 42px;
           border: none;
           @include bg_color_change($background-color-change3, $background-color-change12);
-          @include font_color($font-color-s, $font-color-s1);
+          color: var(--FontColor1);
           @include box_shadow_color;
           border-radius: 10px;
           font-size: 16px;
@@ -1224,26 +1224,26 @@ export default {
 
   .rule-box {
     padding: 10px 32px 24px;
-    background: #ffffff;
+    background: var(--MintBGColor);
     box-shadow: 0px 13px 43px 13px rgba(0, 0, 0, 0.05);
     border-radius: 17px 17px 17px 17px;
     margin-top: 20px;
 
     .rule-title {
       font-size: 21px;
-      font-family: Orelega One-Regular, Orelega One;
+
       font-weight: 400;
-      color: #333333;
+      color: var(--FontColor1);;
     }
 
     .detail-rules {
-      font-family: Orelega One-Regular, Orelega One;
+
       border-radius: 10px;
-      @include bg_color_change($background-color-change3, $background-color-change4);
+       background: var(--BGColor2);
 
       h3 {
-        @include font_color($font-color-s, $font-color-s1);
-        font-family: 'Lucida-Grande-Bold';
+        color: var(--FontColor1);
+
         padding: 2px 0;
       }
 
@@ -1256,16 +1256,16 @@ export default {
 
   .trans-list {
     padding: 10px 32px 24px;
-    background: #ffffff;
+    background: var(--MintBGColor);
     box-shadow: 0px 13px 43px 13px rgba(0, 0, 0, 0.05);
     border-radius: 17px 17px 17px 17px;
     margin-top: 20px;
 
     .trans-title {
       font-size: 21px;
-      font-family: Orelega One-Regular, Orelega One;
+
       font-weight: 400;
-      color: #333333;
+      color: var(--FontColor1);;
     }
   }
 
@@ -1323,14 +1323,14 @@ export default {
   }
 
   .cyrox-modal-info {
-    @include bg_color_change($background-color-change3, $background-color-change4);
+     background: var(--BGColor2);
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 36px 48px 58px;
 
     .cyrox-modal-title {
       font-size: 18px;
-      font-family: 'Lucida-Grande-Bold';
+
       text-align: center;
       color: #573EF3;
 
@@ -1345,7 +1345,7 @@ export default {
       padding-top: 10px;
       font-size: 14px;
       line-height: 20px;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
 
       p {
         padding-top: 20px;
@@ -1362,7 +1362,7 @@ export default {
         @include box_shadow_color;
         border-radius: 10px;
         font-size: 20px;
-        font-family: 'Lucida-Grande-Bold';
+
         color: #ffffff;
         width: 100%;
       }
@@ -1406,11 +1406,11 @@ export default {
   .share-btn {
     width: 50px;
     height: 50px;
-    background: #ffffff;
+    background: var(--MintBGColor);
     box-shadow: 0px 22px 109px 22px rgba(0, 0, 0, 0.05);
     border-radius: 50%;
     opacity: 1;
-    border: 2px solid #eaeaea;
+    border: 2px solid var(--LineColor2);
 
     span {
       display: none;
@@ -1443,7 +1443,7 @@ export default {
 
       .detail-status-text {
         font-size: 0.32rem;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
 
       .detail-status-info {
@@ -1615,7 +1615,7 @@ export default {
     }
 
     .detail-action {
-      background: #ffffff;
+      background: var(--MintBGColor);
       box-shadow: 0px 15px 50px 15px rgba(0, 0, 0, 0.05);
       margin-top: 0.28rem;
       border-radius: 0.2rem;

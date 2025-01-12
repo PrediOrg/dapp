@@ -21,3 +21,104 @@
     }
   }
 }
+body {
+  --BGColor0: rgb(249, 250, 251);
+  --ButtonColor: rgb(87, 62, 243);
+  --FontColor1: rgb(20, 21, 25);
+  --LineColor: rgb(71, 84, 103);
+  --LineColor2: #EAECF0;
+  --BGColor2: rgb(255, 255, 255);
+  --Color2: rgb(255, 255, 255);
+  --token-84a176a1-3447-495e-9092-ed348eda5f49: rgb(64, 58, 187);
+  --token-eb5b0d19-1aa7-4883-8fb0-1863f8bd4814: rgba(0, 0, 0, .08);
+  --token-efb762cf-bc24-4fbd-92cb-b75ee53fdca8: rgb(102, 112, 133);
+  --token-b6f5e9f5-f1e5-4916-85f5-aefddf0d1516: rgb(102, 112, 133);
+  --NAVBGColor:#F2F4F7;
+  --FontColor3:rgba(0, 0, 0, 0.4);
+  --ButtonBGColor3: #e4e5e7;
+  --ButtonBGColor4: #fff;
+
+
+  --MintBGColor: rgb(255, 255, 255);
+  --MarketBottomItemBG:#F9FAFB;
+
+}
+
+
+
+@media (prefers-color-scheme: light) {
+  body {
+    --BGColor0: rgb(249, 250, 251);
+    --ButtonColor: rgb(87, 62, 243);
+    --FontColor1: rgb(20, 21, 25);
+    --LineColor: rgb(71, 84, 103);
+    --LineColor2: #EAECF0;
+    --BGColor2: rgb(255, 255, 255);
+    --Color2: rgb(255, 255, 255);
+    --token-84a176a1-3447-495e-9092-ed348eda5f49: rgb(64, 58, 187);
+    --token-eb5b0d19-1aa7-4883-8fb0-1863f8bd4814: rgba(0, 0, 0, .08);
+    --token-efb762cf-bc24-4fbd-92cb-b75ee53fdca8: rgb(102, 112, 133);
+    --token-b6f5e9f5-f1e5-4916-85f5-aefddf0d1516: rgb(102, 112, 133);
+    --NAVBGColor:#F2F4F7;
+    --FontColor3:rgba(0, 0, 0, 0.4);
+    --ButtonBGColor3: #e4e5e7;
+    --ButtonBGColor4: #fff;
+    --MintBGColor: rgb(255, 255, 255);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    --BGColor0: rgb(17, 21, 18);
+    --FontColor1: rgb(245, 245, 246);
+    --LineColor: rgb(148, 150, 156);
+    --LineColor2: #1F242F;
+    --BGColor2: rgb(20, 21, 25);
+    --Color2: rgb(255, 255, 255);
+    --token-eb5b0d19-1aa7-4883-8fb0-1863f8bd4814: rgb(41, 42, 47);
+    --token-efb762cf-bc24-4fbd-92cb-b75ee53fdca8: rgba(255, 255, 255, .3);
+    --token-b6f5e9f5-f1e5-4916-85f5-aefddf0d1516: rgb(133, 136, 142);
+    --NAVBGColor:#221A35;
+    --FontColor3:rgba(255, 255, 255, 0.40);
+    --ButtonBGColor3: #221a35;
+    --ButtonBGColor4: #221a35;
+    --MintBGColor: rgba(28, 26, 32, 1);
+    --MarketBottomItemBG: rgba(244,243,255,0.1);
+    --MarketOptionBgColor1: #FEDF89;
+  }
+}
+body[data-theme="dark"] {
+  --BGColor0: rgb(17, 21, 18);
+  --FontColor1: rgb(245, 245, 246);
+  --LineColor: rgb(148, 150, 156);
+  --BGColor2: rgb(20, 21, 25);
+  --Color2: rgb(255, 255, 255);
+  --LineColor2: #1F242F;
+  --token-eb5b0d19-1aa7-4883-8fb0-1863f8bd4814: rgb(41, 42, 47);
+  --token-efb762cf-bc24-4fbd-92cb-b75ee53fdca8: rgba(255, 255, 255, .3);
+  --token-b6f5e9f5-f1e5-4916-85f5-aefddf0d1516: rgb(133, 136, 142);
+  --NAVBGColor:#221A35;
+  --FontColor3:rgba(255, 255, 255, 0.40);
+  --ButtonBGColor3: #221a35;
+  --ButtonBGColor4: #221a35;
+  --MintBGColor: rgba(28, 26, 32, 1);
+  --MarketBottomItemBG: rgba(244,243,255,0.1);
+}
+body[data-theme="light"] {
+  --BGColor0: rgb(249, 250, 251);
+  --ButtonColor: rgb(87, 62, 243);
+  --FontColor1: rgb(20, 21, 25);
+  --LineColor: rgb(71, 84, 103);
+  --BGColor2: rgb(255, 255, 255);
+  --LineColor2: #EAECF0;
+  --Color2: rgb(255, 255, 255);
+  --token-84a176a1-3447-495e-9092-ed348eda5f49: rgb(64, 58, 187);
+  --token-eb5b0d19-1aa7-4883-8fb0-1863f8bd4814: rgba(0, 0, 0, .08);
+  --token-efb762cf-bc24-4fbd-92cb-b75ee53fdca8: rgb(102, 112, 133);
+  --token-b6f5e9f5-f1e5-4916-85f5-aefddf0d1516: rgb(102, 112, 133);
+  --NAVBGColor:#F2F4F7;
+  --FontColor3:rgba(0, 0, 0, 0.4);
+  --ButtonBGColor3: #e4e5e7;
+  --ButtonBGColor4: #fff;
+  --MintBGColor: rgb(255, 255, 255);
+  --MarketBottomItemBG:#F9FAFB;
+}

@@ -331,11 +331,11 @@ export default {
       top: 40px;
       left: -25px;
       z-index: 1000;
-      background: #fff;
+      background: var(--ButtonBGColor4);
       padding: 0 30px;
       box-shadow: 0px 15px 50px 15px rgba(0, 0, 0, 0.05);
       border-radius: 20px 20px 20px 20px;
-      border: 1px solid #eaeaea;
+      border: 1px solid var(--LineColor2);
       animation-duration: 0.3s;
     }
 
@@ -347,7 +347,7 @@ export default {
       cursor: pointer;
 
       &:last-child {
-        border-top: 1px #eaeaea solid;
+        border-top: 1px var(--LineColor2) solid;
       }
 
       img {
@@ -359,9 +359,9 @@ export default {
       strong {
         margin-left: 10px;
         font-size: 20px;
-        font-family: Orelega One-Regular, Orelega One;
+
         font-weight: 400;
-        color: #333333;
+        color: var(--FontColor1);;
       }
     }
   }
@@ -378,7 +378,7 @@ export default {
     border: 1px solid #FFFFFF;
   }
   .network-span{
-    color: #344054;
+    color:  var(--FontColor1);
   }
   .dot {
     margin-left: 10px;
@@ -426,23 +426,23 @@ button {
   width: 150px;
   height: 43px;
   font-size: 14px;
-  font-family: 'Lucida-Grande-Bold';
-  background: #FFFFFF;
+
+  background: var(--ButtonBGColor4);
   box-shadow: 0px 1px 2px 0px rgba(16,24,40,0.05);
   border-radius: 8px;
   border: 1px solid rgba(0,0,0,0.08);
-  color: #344054;
+  color: var(--FontColor1);
   span{
-    color: #344054;
+    color:  var(--FontColor1);
   }
   &:hover,
   &:focus,
   &:active {
-    background: #fff;
+    background: var(--ButtonBGColor4);
   }
 }
 .connect-content{
-  color: #344054;
+  color:  var(--FontColor1);
 }
 .network-icon {
   width: 22px;
@@ -477,8 +477,8 @@ button {
   align-items: center;
   width: 70px;
   height: 50px;
-  @include bg_color_change($background-color-change3, $background-color-change4);
-  @include font_color($font-color-s, $font-color-s1);
+   background: var(--BGColor2);
+  color: var(--FontColor1);
   border-radius: 10px;
   margin-left: 16px;
 
@@ -507,7 +507,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @include font_color($font-color-s, $font-color-s1);
+  color: var(--FontColor1);
 
   .header-more-span {
     width: 22px;
@@ -559,7 +559,7 @@ button {
   width: 160px;
   height: 50px;
   font-size: 16px;
-  font-family: 'Lucida-Grande-Bold';
+
 
   /deep/ .ant-select-focused {
     .ant-select-selection {
@@ -570,8 +570,8 @@ button {
 
   /deep/ .ant-select-selection--single {
     height: 50px;
-    @include bg_color_change($background-color-change3, $background-color-change4);
-    @include font_color($font-color-s, $font-color-s1);
+     background: var(--BGColor2);
+    color: var(--FontColor1);
     border: none;
     border-radius: 10px;
 
@@ -638,8 +638,8 @@ button {
     border-radius: 0.2rem;
     background: $background-linear-color;
     padding: 1px;
-    @include font_color($font-color-s, $font-color-s1);
-    font-family: 'Lucida-Grande-Bold';
+    color: var(--FontColor1);
+
     transition: ease-in-out, 0.2s, color;
 
     &:hover {
@@ -650,7 +650,7 @@ button {
       height: 100%;
       padding: 0 0.24rem;
       @include bg_color_change($background-color-theme, $background-color-night);
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
       border-radius: 0.2rem;
       display: flex;
       align-items: center;
@@ -684,7 +684,7 @@ button {
 
   .mobile-drawer-menu {
     margin-top: 0.28rem;
-    @include bg_color_change($background-color-change3, $background-color-change4);
+     background: var(--BGColor2);
     border-radius: 0.2rem;
     border: none;
   }

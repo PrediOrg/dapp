@@ -8,12 +8,10 @@
       <div class="header-part" v-if="device != 'mobile'" style="margin-top: -50px; padding-bottom: 20px; position: relative; z-index: 2">
         <div class="list-choose-box">
           <div class="list-choose" :class="{ active: listActive == 1 }" @click="listActive = 1">
-            <img v-show="listActive == 1" src="@/assets/images/list.svg" alt="" />
-            <img v-show="listActive != 1" src="@/assets/images/list_gray.svg" alt="" />
+            <img src="@/assets/images/list_gray.svg" alt="" />
           </div>
           <div class="list-choose" :class="{ active: listActive == 2 }" @click="listActive = 2">
-            <img v-show="listActive == 2" src="@/assets/images/listmenu.svg" alt="" />
-            <img v-show="listActive != 2" src="@/assets/images/listmenu_gray.svg" alt="" />
+            <img src="@/assets/images/listmenu_gray.svg" alt="" />
           </div>
         </div>
       </div>
@@ -39,21 +37,10 @@
           <!--                                  }"-->
           <!--          >-->
           <div class="markets-info">
-            <div :class="'markets-info-title nft-star-' + item.total_supply">
-              <div class="nft-star">
-                <span
-                  v-for="i in item.total_supply"
-                  :key="i"
-                  :class="{
-                    disabled: i > item.balance,
-                  }"
-                >
-                </span>
-              </div>
-            </div>
-
-            <div class="markets-info-img" :class="{ 'markets-info-img-padding': !item.thumb_image_400 }">
-              <img :src="item.thumb_image_400" style="width: 100%; height: 100%" />
+            <div class="markets-info-img " >
+<!--            <div class="markets-info-img " :class="{ 'markets-info-img-padding': !item.thumb_image_400 }">-->
+<!--              <img :src="item.thumb_image_400" style="width: 100%; height: 100%" />-->
+              <img class="logo" src="@/assets/images/nft.png" style="width: 70%" :alt="item.token_id" :title="item.token_id" />
             </div>
             <div class="markets-info-intro flex-box space-between">
               <div class="id-box">
@@ -66,6 +53,12 @@
               <p class="flex-box">
                 <img class="trade-input-icon mg-r8" :src="payToken.icon" />
                 {{ item.value | decimals }} {{ payToken.name }}
+              </p>
+            </div>
+            <div class="markets-info-intro price-box flex-box">
+              <label>Markets to Issue</label>
+              <p class="flex-box">
+                {{ item.balance }} Times
               </p>
             </div>
             <div class="markets-info-rent" v-if="item.is_owner != 1 && item.owner_status == 0">
@@ -87,7 +80,8 @@
           <div class="main-content">
             <div class="logo-box">
               <div class="square">
-                <img class="logo" :src="item.thumb_image_400" :alt="item.token_id" :title="item.token_id" />
+<!--                <img class="logo" :src="item.thumb_image_400" :alt="item.token_id" :title="item.token_id" />-->
+                <img class="logo" src="@/assets/images/nft.png" :alt="item.token_id" :title="item.token_id" />
               </div>
               <div class="name">Predi License #{{ item.token_id }}</div>
             </div>
@@ -427,10 +421,10 @@ export default {
   position: relative;
   z-index: 1;
   font-size: 43px;
-  font-family: Orelega One-Regular, Orelega One;
-  font-weight: 400;
-  color: #333333;
+  font-weight: 600;
+  color: var(--FontColor1);;
   display: flex;
+  font-style: normal;
   justify-content: space-between;
 }
 .header-part {
@@ -458,10 +452,10 @@ export default {
   }
 
   .markets-info {
-    padding: 0 10px;
+    padding: 24px 24px;
     border-radius: 20px;
     overflow: hidden;
-    @include bg_color_change($background-color-change3, $background-color-change4);
+     background: var(--BGColor2);
     @include box_shadow_color;
     box-shadow: 0px 15px 50px 15px rgba(0, 0, 0, 0.05);
     position: relative;
@@ -476,7 +470,9 @@ export default {
     .markets-info-img {
       width: 100%;
       @include bg_color_change($background-color-change7, $background-color-change8);
-
+      display: flex;
+      justify-content: center;
+      align-items: center;
       &.markets-info-img-padding {
         padding-bottom: 100%;
       }
@@ -484,14 +480,14 @@ export default {
       img {
         border-radius: 10px;
         aspect-ratio: 1;
-        width: 100%;
+        width: 80%;
       }
     }
 
     .price-box {
       justify-content: space-between;
       padding: 6px 0;
-      font-family: Orelega One-Regular, Orelega One;
+
       label {
         color: #999;
       }
@@ -502,13 +498,13 @@ export default {
         display: flex;
         margin-top: 10px;
         font-size: 20px;
-        font-family: Orelega One-Regular, Orelega One;
+
         font-weight: 400;
-        color: #000000;
+        color: var(--FontColor1);
       }
 
       p {
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
 
         small {
           font-size: 12px;
@@ -523,16 +519,15 @@ export default {
     }
 
     .markets-info-button {
-      padding: 10px 0;
-      padding-top: 40px;
+      padding-top: 10px;
       button {
         border: none;
         width: 46%;
         //@include bg_color_change($background-color-change3, $background-color-change12);
-        //@include font_color($font-color-s, $font-color-s1);
+        //color: var(--FontColor1);
         @include box_shadow_color;
         background: #573EF3;
-        font-family: Orelega One-Regular, Orelega One;
+
         border-radius: 10px;
         font-size: 16px;
         height: 42px;
@@ -627,7 +622,7 @@ export default {
   bottom: 40px;
   width: 100%;
   text-align: center;
-  @include font_color($font-color-s, $font-color-s1);
+  color: var(--FontColor1);
 }
 
 .cyrox-modal {
@@ -657,7 +652,7 @@ export default {
   }
 
   .cyrox-modal-info {
-    @include bg_color_change($background-color-change3, $background-color-change4);
+     background: var(--BGColor2);
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 36px 48px;
@@ -673,12 +668,12 @@ export default {
 
     .cyrox-modal-title {
       font-size: 18px;
-      font-family: 'Lucida-Grande-Bold';
+
       text-align: center;
       color: #573EF3;
 
       span {
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
         padding-bottom: 38px;
         display: block;
       }
@@ -699,7 +694,7 @@ export default {
 
     .cyrox-modal-content {
       font-size: 16px;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
       width: 100%;
 
       a:hover {
@@ -732,7 +727,7 @@ export default {
       padding-top: 10px;
       font-size: 14px;
       line-height: 20px;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
 
       p {
         padding-top: 20px;

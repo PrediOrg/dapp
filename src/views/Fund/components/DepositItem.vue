@@ -330,17 +330,17 @@ export default {
     margin-top: 60px;
     position: relative;
     padding: 30px 20px;
-    background: #ffffff;
+    background: var(--MintBGColor);
     box-shadow: 0px 15px 50px 15px rgba(0, 0, 0, 0.05);
     border-radius: 20px 20px 20px 20px;
     opacity: 1;
-    border: 1px solid #eaeaea;
+    border: 1px solid var(--LineColor2);
     z-index: 1;
 
     .title {
       font-size: 30px;
       font-weight: 400;
-      color: #333333;
+      color: var(--FontColor1);;
       line-height: 35px;
     }
 
@@ -352,7 +352,7 @@ export default {
         height: 50px;
 
         .name {
-          color: #999999;
+          color: var(--FontColor3);
         }
 
         .value {
@@ -362,7 +362,7 @@ export default {
         .value.orange {
           font-size: 30px;
           font-weight: 400;
-          color: #f18c18;
+             color: var(--FontColor1);
         }
       }
     }
@@ -370,7 +370,7 @@ export default {
     .select-box {
       display: flex;
 
-      background: #f4f4f4;
+      background: var(--BGColor2);
       width: 100%;
       border-radius: 10px;
 
@@ -380,10 +380,11 @@ export default {
         cursor: pointer;
         border-radius: 10px;
         text-align: center;
+        color: var(--FontColor1);
 
         &.active {
           background: #573EF3;
-          color: #FFFFFF;
+          color: #fff;
         }
       }
     }
@@ -393,16 +394,17 @@ export default {
       justify-content: space-between;
       align-items: center;
       padding: 15px 0;
+      color: var(--FontColor1);
 
       .right {
-        color: #f18c18;
+        color: var(--FontColor1);
       }
     }
 
     .input-box {
       margin: 0 0 13px 0;
       height: 60px;
-      background: #f4f4f4;
+      background: var(--BGColor2);
       border-radius: 10px;
 
       input {

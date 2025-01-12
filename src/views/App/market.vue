@@ -1,21 +1,27 @@
 <template>
   <div :class="{ 'predi-market-mobile': device == 'mobile' }">
     <div class="markets-banner">
-      <div class="markets-banner-text">
-        <p><span>Betting Markets</span></p>
+      <div class="markets-banner-text title">
+        Betting Markets
       </div>
       <div class="market-select">
         <div class="market-select-item flex-box">
           <div class="market-select-category">
             <label>{{ $t('category') }}</label>
             <a-select v-model="category" style="width: 140px" @change="selectChange($event, 'category')">
-              <a-select-option v-for="(item, index) in categoryList" :key="index" :value="item.cat_id">{{ item.cat_name }} </a-select-option>
+              <a-select-option v-for="(item, index) in categoryList" :key="index" :value="item.cat_id">{{
+                  item.cat_name
+                }}
+              </a-select-option>
             </a-select>
           </div>
           <div class="market-select-sort">
             <label>{{ $t('sortBy') }}</label>
             <a-select v-model="sortBy" style="width: 140px" @change="selectChange($event, 'sortBy')">
-              <a-select-option v-for="(item, index) in sortList" :key="index" :value="index">{{ item.name }} </a-select-option>
+              <a-select-option v-for="(item, index) in sortList" :key="index" :value="index">{{
+                  item.name
+                }}
+              </a-select-option>
             </a-select>
           </div>
 
@@ -24,15 +30,16 @@
           <div class="market-select-resolved">
             <a-checkbox @change="endChange">History</a-checkbox>
           </div>
-          <a-input-search v-model="searchValue" placeholder="input search text" @search="onSearch" />
+          <a-input-search v-model="searchValue" placeholder="input search text" @search="onSearch"/>
         </div>
       </div>
     </div>
-    <div v-infinite-scroll="handleInfiniteOnLoad" class="demo-infinite-container" :infinite-scroll-disabled="busy" :infinite-scroll-distance="10">
-      <a-list class="markets-add-list" :grid="{ gutter: 12, xs: 1, sm: 1, md: 2, lg: 4 }" :data-source="eventList">
+    <div v-infinite-scroll="handleInfiniteOnLoad" class="demo-infinite-container" :infinite-scroll-disabled="busy"
+         :infinite-scroll-distance="10">
+      <a-list class="markets-add-list" :grid="{ gutter: 24, xs: 1, sm: 1, md: 2, lg: 3 }" :data-source="eventList">
         <a-list-item slot="renderItem" slot-scope="item">
           <router-link
-            :to="{
+              :to="{
               name: 'market-detail',
               params: {
                 id: item.id,
@@ -42,33 +49,41 @@
             <div class="markets-info">
               <div class="markets-info-title flex-box">
                 <div class="logo">
-                  <img v-if="!item.image" src="@/assets/images/battle-default.png" alt="" />
-                  <img v-else :src="item.image" alt="" />
+                  <img v-if="!item.image" src="@/assets/images/battle-default.png" alt=""/>
+                  <img v-else :src="item.image" alt=""/>
                 </div>
                 <p class="underlying">{{ item.underlying }}</p>
               </div>
-              <div class="markets-info-row mg-t20">
-                <label>Issuer</label>
-                <div class="address">{{ item.issuer | showAddress }}</div>
+              <div class="option-list">
+                <div class="option-tip">
+                  See More ↓
+                </div>
+                <div class="option-tip-bg">
+                </div>
+                <div class="item-list">
+                  <div class="item" v-for="(option, index) in item.options" :key="index">
+                    <div class="left">
+                      {{ option.name }}
+                    </div>
+                    <div class="right">{{ BigNumber(option.amount).toFixed(2) }} {{ item.base_token }}</div>
+                  </div>
+                </div>
               </div>
-              <div class="markets-info-row">
-                <label>{{ $t('subscribeEndDate') }}</label>
-                <p class="markets-common-p" :class="{ red: BigNumber(new Date().getTime() / 1000).gt(item.close_date) }">
+              <div class="markets-info-bottom">
+                <div class="bottom-item address">{{ item.issuer | showAddress }}</div>
+                <div class="bottom-item" :class="{ red: BigNumber(new Date().getTime() / 1000).gt(item.close_date) }">
                   {{ item.close_date | timeFormat('MMM. DD,YYYY') }}
-                </p>
-              </div>
-              <div class="markets-info-row">
-                <label>{{ $t('marketEndDate') }}</label>
-                <p class="markets-common-p" :class="{ red: BigNumber(new Date().getTime() / 1000).gt(item.maturity_date) }">
-                  {{ item.maturity_date | timeFormat('MMM. DD,YYYY') }}
-                </p>
-              </div>
-              <div class="markets-info-row">
-                <label>{{ $t('category') }}</label>
-                <div class="markets-info-img flex-box">
-                  <img class="class-icon" :src="item.cat_icon" :alt="item.cat_name" :title="item.cat_name" />
+                </div>
+                <!--                <div class="markets-info-row">-->
+                <!--                  <label>{{ $t('marketEndDate') }}</label>-->
+                <!--                  <p class="markets-common-p" :class="{ red: BigNumber(new Date().getTime() / 1000).gt(item.maturity_date) }">-->
+                <!--                    {{ item.maturity_date | timeFormat('MMM. DD,YYYY') }}-->
+                <!--                  </p>-->
+                <!--                </div>-->
+                <div class="bottom-item markets-info-img flex-box">
+                  <img :src="item.cat_icon" :alt="item.cat_name" :title="item.cat_name"/>
                   <p
-                    :style="{
+                      :style="{
                       color: item.color,
                     }"
                   >
@@ -76,20 +91,12 @@
                   </p>
                 </div>
               </div>
-              <div class="option-list">
-                <div class="item" v-for="(option, index) in item.options" :key="index">
-                  <div class="left">
-                    {{ option.name }}
-                  </div>
-                  <div class="right">{{ BigNumber(option.amount).toFixed(2) }} {{ item.base_token }}</div>
-                </div>
-              </div>
             </div>
           </router-link>
         </a-list-item>
       </a-list>
       <div v-if="loading" class="demo-loading-container">
-        <a-spin />
+        <a-spin/>
         loading
       </div>
     </div>
@@ -97,15 +104,15 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+import {mapState, mapGetters} from 'vuex';
 import BigNumber from 'bignumber.js';
 import infiniteScroll from 'vue-infinite-scroll';
-import { eventMaket } from '@/api/index';
-import { constants } from 'ethers';
+import {eventMaket} from '@/api/index';
+import {constants} from 'ethers';
 
 let loadingPage = false;
 export default {
-  directives: { infiniteScroll },
+  directives: {infiniteScroll},
   name: 'marketView',
   data() {
     return {
@@ -217,7 +224,7 @@ export default {
         page_num = 1;
       }
       let sort = this.sortList[this.sortBy];
-      let { data, code, msg, extra } = await eventMaket({
+      let {data, code, msg, extra} = await eventMaket({
         chain: this.chainType,
         page: page_num,
         limit: 6,
@@ -230,7 +237,7 @@ export default {
       if (code != 0) {
         return;
       }
-      extra.category_list.unshift({ cat_id: 0, cat_name: 'All' });
+      extra.category_list.unshift({cat_id: 0, cat_name: 'All'});
       this.categoryList = extra.category_list;
       if (code != 0) {
         console.log(msg);
@@ -260,6 +267,23 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+@media (prefers-color-scheme: dark) {
+
+}
+body[data-theme="dark"] {
+  .option-list {
+    .item {
+      .right {
+        background: var(--BGColor2)!important;
+        color: var(--FontColor1)!important;
+        border: 1px solid!important;
+        border-image: linear-gradient(90deg, rgba(54, 22, 147, 1), rgba(116, 60, 127, 1), rgba(209, 140, 76, 1)) 1 1!important;
+      }
+
+    }
+  }
+}
+
 .markets-banner {
   position: relative;
 
@@ -277,13 +301,11 @@ export default {
   .markets-banner-text {
     max-width: var(--content-width);
     margin: 0 auto;
+    font-size: 43px;
+    font-weight: 600;
+    color: var(--FontColor1);;
+    padding-top: 50px;
 
-    p {
-      padding-top: 50px;
-      font-size: 40px;
-      color: #333333;
-      font-family: Orelega One-Regular, Orelega One;
-    }
   }
 
   .market-select {
@@ -325,7 +347,7 @@ export default {
           }
         }
 
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
         font-size: 16px;
       }
     }
@@ -352,8 +374,9 @@ export default {
 
       /deep/ .ant-input {
         height: 54px;
-        @include bg_color_change($background-color-change3, $background-color-change4);
-        @include font_color($font-color-s, $font-color-s1);
+        background: var(--BGColor2);
+
+        color: var(--FontColor1);
         font-size: 16px;
         border: none;
         border-radius: 10px;
@@ -363,7 +386,7 @@ export default {
         right: 16px;
 
         .ant-input-search-icon {
-          @include font_color($font-color-s, $font-color-s1);
+          color: var(--FontColor1);
           font-size: 16px;
         }
       }
@@ -396,19 +419,37 @@ export default {
     height: 100%;
     display: flex;
     flex-direction: column;
-    font-family: 'Lucida-Grande';
-    @include font_color($font-color-s, $font-color-s1);
-    @include bg_color_change($background-color-change3, $background-color-change4);
+    font-family: "paralucent", sans-serif;
+    color: var(--FontColor1);
+    background: var(--BGColor2);
     @include box_shadow_color;
     border-radius: 10px;
     position: relative;
     box-sizing: border-box;
     border-width: 2px;
-    border-style: solid;
     @include border_color($background-color-change3, $background-color-change4);
 
     &:hover {
       border-color: var(--mainColor);
+    }
+
+    .markets-info-bottom {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 24px 0px;
+
+      .bottom-item {
+        font-weight: 500;
+        font-size: 12px;
+        color: var(--FontColor1);
+        text-align: center;
+        width: 90px;
+        line-height: 22px;
+        height: 22px;
+        background: var(--MarketBottomItemBG);
+        border-radius: 6px 6px 6px 6px;
+        border: 1px solid var(--LineColor2);
+      }
     }
 
     label {
@@ -419,7 +460,7 @@ export default {
 
     small {
       font-size: 12px;
-      @include font_color($font-color-s2, $font-color-s3);
+      color: var(--FontColor1);
     }
 
     .markets-total-p {
@@ -432,7 +473,7 @@ export default {
 
     .markets-odds-p {
       font-size: 24px;
-      font-family: 'Lucida-Grande-Bold';
+
       @include font_color($font-color-s9, $font-color-s8);
     }
 
@@ -460,34 +501,60 @@ export default {
     }
 
     .markets-info-img {
+      align-items: center;
+      justify-content: center;
+
       img {
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
       }
 
       p {
-        font-size: 14px;
         margin-left: 4px;
-        color: var(--mainColor);
       }
     }
 
     .option-list {
-      height: 60px;
-      mask-image: linear-gradient(white 65%, transparent 100%);
-      -webkit-mask-image: linear-gradient(white 65%, transparent 100%);
+      height: 120px;
+      position: relative;
       overflow: hidden;
       padding: 0 17px 5px;
+
+      .option-tip {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        justify-content: center;
+        color: #475467;
+        z-index: 2;
+        content: "";
+        width: 100%;
+        height: 100%;
+        bottom: -30%;
+        position: absolute;
+        left: 0;
+      }
+
+      .option-tip-bg {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        bottom: -30%;
+        position: absolute;
+        left: 0;
+        filter: blur(30px);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(95, 95, 95, 0.3) 100%);
+      }
+
       .item {
         display: flex;
-        margin-bottom: 5px;
         justify-content: space-between;
-
+        margin-top: 20px;
         height: 30px;
         align-items: center;
         font-size: 14px;
         font-weight: 400;
-        color: #333333;
+        color: var(--FontColor1);;
 
         .left {
           max-width: 130px;
@@ -498,21 +565,24 @@ export default {
         .right {
           width: 94px;
           height: 26px;
-          background: #d0e2dc;
+          background: #FFFAEB;
           border-radius: 4px 4px 4px 4px;
           display: flex;
           justify-content: center;
           align-items: center;
-          font-weight: 400;
-          color: #146e51;
+          font-weight: 500;
+          border: 1px solid #FEDF89;
+          color: #344054;
           overflow: hidden;
           white-space: nowrap;
+          font-size: 14px;
         }
 
         &:nth-child(2) {
           .right {
-            background: #d0d4e2;
-            color: #14386e;
+            background: #F4F3FF;
+            color: #5925DC;
+            border: 1px solid #D9D6FE;
           }
         }
       }
@@ -522,17 +592,17 @@ export default {
       padding: 5px 17px;
       display: flex;
       justify-content: space-between;
-      font-family: Orelega One-Regular, Orelega One;
+
 
       label {
         font-size: 14px;
-        font-family: Orelega One-Regular, Orelega One;
+
         font-weight: 400;
         color: #999999;
       }
 
       .address {
-        font-family: Orelega One-Regular, Orelega One;
+
         font-weight: 400;
         color: var(--mainColor);
       }
@@ -542,7 +612,7 @@ export default {
       .item {
         color: #146e51;
         font-size: 14px;
-        font-family: Orelega One-Regular, Orelega One;
+
         font-weight: 400;
       }
 
@@ -555,11 +625,11 @@ export default {
       align-items: flex-start;
       font-size: 15px;
       flex-grow: 1;
-      font-family: Orelega One-Regular, Orelega One;
+
       font-weight: 400;
-      color: #000000;
+      color: var(--FontColor1);
       padding: 0 17px 10px;
-      border-bottom: 1px solid #eaeaea;
+      border-bottom: 1px solid var(--LineColor2);
 
       .logo {
         width: 80px;
@@ -639,11 +709,12 @@ export default {
   bottom: 40px;
   width: 100%;
   text-align: center;
-  @include font_color($font-color-s, $font-color-s1);
+  color: var(--FontColor1);
 }
 
 /deep/ .ant-select-selection {
-  background: #fff !important;
+  background: var(--ButtonBGColor4) !important;
+  color: var(--FontColor1);
 }
 
 .predi-market-mobile {
@@ -659,12 +730,8 @@ export default {
 
     .markets-banner-text {
       padding: 0.4rem 0 0;
-
-      p {
-        font-size: 0.48rem;
-        line-height: 0.6rem;
-        padding-top: 0;
-      }
+      font-size: 8vw !important;
+      line-height: 0.6rem;
     }
 
     .market-select {
@@ -780,8 +847,8 @@ export default {
 
       .markets-info-img {
         img {
-          width: 0.56rem;
-          height: 0.56rem;
+          width: 0.35rem;
+          height: 0.35rem;
         }
 
         p {
@@ -822,4 +889,5 @@ export default {
     }
   }
 }
+
 </style>

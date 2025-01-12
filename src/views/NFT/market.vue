@@ -316,11 +316,9 @@ export default {
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  margin-bottom: 10px;
   font-size: 43px;
-  font-family: Orelega One-Regular, Orelega One;
-  font-weight: 400;
-  color: #333333;
+  font-weight: 600;
+  color: var(--FontColor1);;
   display: flex;
   justify-content: space-between;
 }
@@ -329,7 +327,7 @@ export default {
   position: relative;
   flex-grow: 1;
   z-index: 2;
-  font-family: 'Lucida-Grande';
+  font-family: "paralucent", sans-serif;
   align-items: center;
   font-size: 16px;
 
@@ -342,7 +340,7 @@ export default {
 
     .type {
       font-size: 14px;
-      font-family: Orelega One-Regular, Orelega One;
+
       font-weight: 400;
       color: #CCCCCC;
       display: block;
@@ -352,7 +350,7 @@ export default {
     }
 
     .ant-select {
-      font-family: Orelega One-Regular, Orelega One;
+
     }
 
     /deep/ .ant-select .ant-select-selection {
@@ -384,8 +382,8 @@ export default {
 
     /deep/ .ant-input {
       height: 54px;
-      @include bg_color_change($background-color-change3, $background-color-change4);
-      @include font_color($font-color-s, $font-color-s1);
+       background: var(--BGColor2);
+      color: var(--FontColor1);
       font-size: 16px;
       border: none;
       border-radius: 10px;
@@ -395,7 +393,7 @@ export default {
       right: 16px;
 
       .ant-input-search-icon {
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
         font-size: 16px;
       }
     }
@@ -409,7 +407,7 @@ export default {
       background: transparent;
       color: #ffffff;
       font-size: 16px;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
 
       .ant-select-arrow {
         width: 22px;
@@ -438,7 +436,7 @@ export default {
   }
 
   .markets-info {
-    @include bg_color_change($background-color-change3, $background-color-change4);
+     background: var(--BGColor2);
     @include box_shadow_color;
     border-radius: 17px;
     padding: 0 9px 10px;
@@ -452,7 +450,7 @@ export default {
       height: 40px;
       background: rgba(24, 140, 242,.1);
       width: 100%;
-      font-family: Orelega One-Regular, Orelega One;
+
       font-weight: 400;
       color: #573EF3;
       display: flex;
@@ -490,7 +488,7 @@ export default {
       padding: 14px 0 30px;
 
       .price-box {
-        font-family: Orelega One-Regular, Orelega One;
+
       }
 
       .flex-box {
@@ -504,9 +502,9 @@ export default {
       .id-box {
         display: flex;
         font-size: 18px;
-        font-family: Orelega One-Regular, Orelega One;
+
         font-weight: 400;
-        color: #000000;
+        color: var(--FontColor1);
         white-space: nowrap;
       }
 
@@ -520,13 +518,13 @@ export default {
         border-radius: 43px 43px 43px 43px;
         border: 1px solid #146E51;
         font-size: 12px;
-        font-family: Orelega One-Regular, Orelega One;
+
         font-weight: 400;
         color: #146E51;
       }
 
       p {
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
         font-size: 16px;
         padding-top: 12px;
         line-height: 20px;
@@ -621,7 +619,7 @@ export default {
   bottom: 40px;
   width: 100%;
   text-align: center;
-  @include font_color($font-color-s, $font-color-s1);
+  color: var(--FontColor1);
 }
 
 .nft-market-mobile {
@@ -653,8 +651,8 @@ export default {
         border-radius: 0.2rem;
         background: $background-linear-color;
         padding: 1px;
-        @include font_color($font-color-s, $font-color-s1);
-        font-family: 'Lucida-Grande-Bold';
+        color: var(--FontColor1);
+
         transition: ease-in-out, 0.2s, color;
 
         &:hover {

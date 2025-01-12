@@ -30,17 +30,17 @@ export default {
     margin-top: 60px;
     position: relative;
     padding: 30px 20px;
-    background: #ffffff;
+    background: var(--MintBGColor);
     box-shadow: 0px 15px 50px 15px rgba(0, 0, 0, 0.05);
     border-radius: 20px 20px 20px 20px;
     opacity: 1;
-    border: 1px solid #eaeaea;
+    border: 1px solid var(--LineColor2);
     z-index: 1;
 
     .title {
       font-size: 30px;
       font-weight: 400;
-      color: #333333;
+      color: var(--FontColor1);;
       line-height: 35px;
     }
 
@@ -70,7 +70,7 @@ export default {
     .select-box {
       display: flex;
 
-      background: #f4f4f4;
+      background: var(--BGColor2);
       width: 100%;
       border-radius: 10px;
 
@@ -102,7 +102,7 @@ export default {
     .input-box {
       margin: 0 0 13px 0;
       height: 60px;
-      background: #f4f4f4;
+      background: var(--BGColor2);
       border-radius: 10px;
 
       input {

@@ -486,7 +486,7 @@ export default {
     padding: 24px;
     height: 108px;
     color: #ffffff;
-    font-family: 'Lucida-Grande-Bold';
+
     background: linear-gradient(to right, #4601BD 0%, #2D1C58 100%);
     border-radius: 10px;
     &.portfolio-col2 {
@@ -507,7 +507,7 @@ export default {
 .market-select {
   display: flex;
   justify-content: space-between;
-  font-family: 'Lucida-Grande';
+  font-family: "paralucent", sans-serif;
   align-items: center;
   max-width: var(--content-width);
   margin: 54px 0 0;
@@ -529,14 +529,13 @@ export default {
     height: 54px;
     padding: 4px;
     @include bg_color_change($background-color-change15, $background-color-change14);
-    @include box_shadow_color;
     border-radius: 10px;
     justify-content: space-between;
     li {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Lucida-Grande-Bold';
+
       @include font_color($font-color-s7, $font-color-s1);
       width: 50%;
       height: 46px;
@@ -544,7 +543,7 @@ export default {
         @include bg_color_change($background-color-change3, $background-color-change12);
         @include box_shadow_color;
         border-radius: 10px;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
     }
   }
@@ -563,7 +562,7 @@ export default {
   }
   .table-deposited {
     div {
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
     }
   }
   .table-status {
@@ -603,7 +602,7 @@ export default {
     }
     p {
       font-size: 14px;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
       &.table-status-opera {
         color: var(--mainColor);
       }
@@ -642,7 +641,7 @@ export default {
     padding: 36px 48px 58px;
     .cyrox-modal-title {
       font-size: 18px;
-      font-family: 'Lucida-Grande-Bold';
+
       text-align: center;
       color: #ffffff;
     }
@@ -664,7 +663,7 @@ export default {
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
         font-size: 20px;
-        font-family: 'Lucida-Grande-Bold';
+
         color: #ffffff;
         width: 100%;
       }

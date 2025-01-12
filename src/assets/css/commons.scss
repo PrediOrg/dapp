@@ -1,4 +1,7 @@
 @charset "utf-8";
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -46,15 +49,22 @@ ol {
 }
 
 a {
-  text-decoration: none !important;
+  text-decoration: none ;
   user-select: none;
 }
 a:hover,
 a:before,
 a:after {
-  text-decoration: none !important;
+  text-decoration: none ;
 }
-
+a.normal{
+  font-weight: 500;
+  font-size: 16px;
+  color: #573EF3;
+  font-style: normal;
+  text-decoration-line: underline;
+  text-transform: none;
+}
 legend {
   color: #000;
 } /* for ie6 */
@@ -118,6 +128,7 @@ i {
 button {
   outline: none;
 }
+
 .auto_1200 {
   width: 1200px;
   margin: 0 auto;
@@ -165,7 +176,7 @@ button {
     }
     span {
       float: left;
-      color: #333333;
+      color: var(--FontColor1);;
       font-size: 16px;
       line-height: 89px;
     }
@@ -256,7 +267,7 @@ button {
   width: 795px;
   border: 1px solid rgba(167, 167, 167, 1);
   font-size: 12px;
-  color: #333333;
+  color: var(--FontColor1);;
   text-align: center;
   td {
     height: 34px;
@@ -385,7 +396,7 @@ button {
 }
 
 .shade {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255,255,255,0.4);;
   position: absolute;
   top: 0;
   left: 0;
@@ -565,7 +576,7 @@ button {
   }
   .fontSize16 {
     font-size: 16px;
-    color: #333333;
+    color: var(--FontColor1);;
   }
   .fontSize14 {
     font-size: 14px;
@@ -709,7 +720,7 @@ button {
   }
   .el-breadcrumb__inner.is-link,
   .el-breadcrumb__inner a {
-    color: #333333;
+    color: var(--FontColor1);;
   }
   .el-breadcrumb__inner {
     color: #666666;
@@ -723,7 +734,9 @@ button {
 html,
 body {
   width: 100%;
-  font-family: "Lucida-Grande";
+  font-family: "paralucent", sans-serif;
+  font-weight: 500;
+  font-style: normal;
   [data-theme="night"] & {
     background:$background-color-night;
   }
@@ -777,10 +790,10 @@ body {
   display: flex;
   width: 80px;
   height: 40px;
-  background: #fff;
+  background: var(--BGColor0);
   border-radius: 8px;
   user-select: none;
-  padding: 4px;
+  border: 1px solid var(--LineColor2);
 
   .list-choose {
     display: flex;
@@ -791,7 +804,7 @@ body {
     opacity: 0.3;
 
     &.active {
-      background: var(--mainColor);
+      background: var(--ButtonBGColor3);
       border-radius: 8px;
       opacity: 1;
     }
@@ -806,12 +819,12 @@ body {
   margin-left: 10px;
   width: 111px;
   height: 44px;
-  background: #ffffff;
+  background: var(--MintBGColor);
   box-shadow: 0px 9px 43px 9px rgba(0, 0, 0, 0.05);
   border-radius: 9px;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--LineColor2);
   font-size: 17px;
-  font-family: Orelega One-Regular, Orelega One;
+
   font-weight: 400;
   color: #146e51;
   display: flex;
@@ -832,11 +845,11 @@ body {
   .share-btn {
     width: 50px;
     height: 50px;
-    background: #ffffff;
+    background: var(--MintBGColor);
     box-shadow: 0px 22px 109px 22px rgba(0, 0, 0, 0.05);
     border-radius: 50%;
     opacity: 1;
-    border: 2px solid #eaeaea;
+    border: 2px solid var(--LineColor2);
     span{
       display: none;
     }
@@ -853,7 +866,7 @@ body {
   .left, .right {
     height: 100%;
     font-size: 14px;
-    font-family: Orelega One-Regular, Orelega One;
+
     font-weight: 400;
     line-height: 34px;
     text-align: center;
@@ -884,7 +897,7 @@ body {
   .left,.right{
     color: #146E51;
     font-size: 14px;
-    font-family: Orelega One-Regular, Orelega One;
+
     font-weight: 400;
   }
   .right{
@@ -897,7 +910,7 @@ body {
 }
 .list-list-item {
   box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.05);
-  background: #FFFFFF;
+   background: var(--MintBGColor);
   border-radius: 20px;
   margin-bottom: 10px;
   padding: 20px;
@@ -920,7 +933,7 @@ body {
         font-size: 16px;
       }
       &:disabled{
-        background: #f5f5f5!important;
+        background: #b1afaf !important;
       }
     }
   }
@@ -941,7 +954,6 @@ body {
   .main-content {
     display: flex;
     height: 100%;
-    background: #FFFFFF;
     align-items: center;
     justify-content: space-between;
 
@@ -952,9 +964,9 @@ body {
       .list-tip {
         .name {
           font-size: 14px;
-          font-family: Roboto-Medium, Roboto;
+          font-family: "paralucent", sans-serif;
           font-weight: 500;
-          color: #999999;
+          color: var(--FontColor3);
         }
 
         .value {
@@ -975,7 +987,7 @@ body {
     }
 
     .primary-btn-sha {
-      font-family: RussoOneRegular, Russo One;
+     font-family: "paralucent", sans-serif;
       width: 8vw;
       height: 38px;
       font-size: 14px;
@@ -1018,12 +1030,12 @@ body {
         font-size: 14px;
         font-family: Roboto-Bold, Roboto;
         font-weight: bold;
-        color: #333333;
+        color: var(--FontColor1);;
         width: 110px;
         span{
           &:last-child{
             margin-top: 20px;
-            color: #333333;
+            color: var(--FontColor1);;
           }
         }
       }
@@ -1047,7 +1059,7 @@ body {
       }
       .status{
         font-size: 20px;
-        font-family: Orelega One-Regular, Orelega One;
+
         font-weight: 400;
         color: #146E51;
         &.rent{
@@ -1105,15 +1117,15 @@ body {
           .name {
             font-size: 14px;
             width: 50%;
-            font-family: Roboto-Medium, Roboto;
+            font-family: "paralucent", sans-serif;
             font-weight: 500;
-            color: #999999;
+            color: var(--FontColor3);
           }
 
           .value {
             font-size: 14px;
             margin-top: 20px;
-
+            color: var(--FontColor1);
             span {
               margin-left: 10px;
             }

@@ -95,16 +95,21 @@ export default {
 .predi-nav {
   .nav-item {
     font-size: 16px;
-    font-family: Orelega One-Regular, Orelega One;
-    font-weight: 400;
-    color: #0E3757;
-    padding: 5px 15px;
-
+    color: var(--FontColor1);
+    padding: 8px 12px;
+    span{
+      font-family: "paralucent", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+    }
     &.active {
       opacity: 1;
-      background: #F2F4F7;
-      color: #182230;
+      background: var(--NAVBGColor);
       border-radius: 6px 6px 6px 6px;
+      span{
+        font-weight: 700;
+        color: var(--FontColor1);
+      }
     }
   }
   div {
@@ -119,7 +124,7 @@ export default {
   a {
     position: relative;
     @include font_color($font-color-s10, $font-color-s1);
-    font-family: 'Lucida-Grande-Bold';
+
     padding: 8px 12px;
     word-break: break-word;
     white-space: nowrap;
@@ -127,15 +132,12 @@ export default {
     display: flex;
     align-items: center;
     &.active {
-
       .predi-nav-text {
-        background: #182230;
+        background: var(--NAVBGColor);
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
       }
     }
     .predi-nav-count {
-      background: $background-linear-color1;
       transition: ease-in-out, 0.2s, color;
       border-radius: 18px;
       font-size: 12px;
@@ -146,16 +148,11 @@ export default {
         padding: 0 4px;
         min-width: 16px;
         height: 16px;
-        @include bg_color_change($background-color-theme, $background-color-night);
         border-radius: 18px;
         display: flex;
         align-items: center;
         justify-content: center;
-        span {
-          background: $background-linear-color1;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
+
       }
     }
   }
@@ -173,7 +170,7 @@ export default {
     justify-content: space-around;
     height: 0.8rem;
     padding: 0 0.06rem;
-    @include bg_color_change($background-color-change3, $background-color-change4);
+     background: var(--BGColor2);
     @include box_shadow_color;
     border-radius: 0.2rem;
     width: auto;

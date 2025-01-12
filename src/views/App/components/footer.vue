@@ -3,7 +3,10 @@
     <div class="footer-content">
       <div class="home-footer-con">
         <div class="left-part">
-          <img src="@/assets/images/logo_header.webp" alt="" class="logo">
+          <div class="logo-box">
+            <img class="logo" src="@/assets/images/logo.svg" alt="" />
+            <span>Predi</span>
+          </div>
           <div class="info">
             Empowering Visionaries Predicting Futures
           </div>
@@ -137,21 +140,32 @@ footer {
     align-items: center;
     position: relative;
     z-index: 2;
-
+    .logo-box{
+      display: flex;
+      align-items: center;
+      span{
+        font-size: 18px;
+        color: var(--FontColor1);
+        margin-left: 8px;
+        font-weight: 500;
+      }
+    }
     .logo {
-      width: 155px;
+      width: 40px;
       height: 40px;
     }
 
     .left-part {
       width: 358px;
       font-size: 17px;
-      font-family: PingFang SC-Medium, PingFang SC;
+
       font-weight: 500;
       color: #667085;
 
       .info {
-
+        font-family: "paralucent", sans-serif;
+        font-weight: 500;
+        font-style: normal;
         margin-top: 64px;
       }
     }
@@ -214,10 +228,10 @@ footer {
       display: flex;
       align-items: center;
       font-size: 17px;
-      font-family: PingFang SC-Medium, PingFang SC;
+
       font-weight: 500;
       justify-content: flex-end;
-      color: #333333;
+      color: var(--FontColor1);;
       margin-top: 15px;
       .address{
         color: #F18C18;
@@ -253,11 +267,13 @@ footer {
       margin-left: 0;
       width: var(--content-width);
       font-size: 14px;
-
-      .logo {
-        width: 23vw !important;
-        height: 6vw !important;
+      .logo-box{
         margin: 0 auto;
+        justify-content: center;
+      }
+      .logo {
+        width: 6vw !important;
+        height: 6vw !important;
       }
 
       .home-footer-copy {

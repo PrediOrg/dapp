@@ -267,7 +267,7 @@
 .ant-pagination{
   li{
     &.ant-pagination-item{
-      @include bg_color_change($background-color-change3, $background-color-change4);
+       background: var(--BGColor2);
       @include font_color($font-color-s2, $font-color-s1);
       border: none;
       border-radius: 100%;
@@ -279,7 +279,7 @@
     }
     a{
       &.ant-pagination-item-link{
-        @include bg_color_change($background-color-change3, $background-color-change4);
+         background: var(--BGColor2);
         @include border_color($border-color-s2, $border-color-s10);
         .ant-pagination-item-ellipsis{
           @include font_color($font-color-s2, $font-color-s3)
@@ -288,16 +288,16 @@
           @include font_color($font-color-s2, $font-color-s1)
         }
       }
-      @include font_color($font-color-s2, $font-color-s3);
+      color: var(--FontColor1);
     }
     &:hover{
       @include border_color($border-color-s7, $border-color-s8);
       a{
         &.ant-pagination-item-link{
-          @include font_color($font-color-s, $font-color-s1);
+          color: var(--FontColor1);
           @include border_color($border-color-s7, $border-color-s8);
         }
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
     }
   }

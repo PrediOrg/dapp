@@ -88,22 +88,29 @@
             </div>
             <div class="detail-form">
               <div class="option-list">
-                <div class="item" v-for="option in detail.options" :key="option.id">
+                <div class="item" :class="{'active': option.name==selectValue}" v-for="option in detail.options" @click="handleChange(option.name)" :key="option.id">
                   <div class="left">
+                    <div class="active-point">
+                      <div class="active-point-content">
+                      </div>
+                    </div>
                     {{ option.name }}
                   </div>
                   <div class="right">
-                    {{ BigNumber(option.amount).toFixed(2) }}
+                    {{ BigNumber(option.amount).toFixed(2) }} {{ detail.base_token }}
                   </div>
                 </div>
               </div>
               <div class="line" />
               <template v-if="now < detail.close_date && detail.status == 0">
-                <a-select ref="select" v-model="selectValue" @change="handleChange" class="select-box">
-                  <a-select-option :value="option.name" v-for="option in detail.options" :key="option.id">
-                    {{ option.name }}
-                  </a-select-option>
-                </a-select>
+<!--                <div class="select-box">-->
+<!--                  <a-select ref="select" v-model="selectValue" @change="handleChange" >-->
+<!--                    <a-select-option :value="option.name" v-for="option in detail.options" :key="option.id">-->
+<!--                      {{ option.name }}-->
+<!--                    </a-select-option>-->
+<!--                  </a-select>-->
+<!--                </div>-->
+
                 <label>Amount</label>
                 <div class="add-input flex-box">
                   <a-input-number type="number" v-model="userBuyAmount" :min="1" placeholder="0.0" />
@@ -114,7 +121,10 @@
                 </div>
                 <div class="in-line">
                   <label>Balance</label>
-                  <p class="detail-form-p detail-form-bigCoin">{{ balance | decimalsUnit }} {{ detail.base_token }}</p>
+                  <p class="detail-form-p detail-form-bigCoin">
+                    <a href="#" class="normal" @click="$router.push('/deposit')">Deposit</a>
+                    {{ balance | decimalsUnit }} {{ detail.base_token }}
+                  </p>
                 </div>
                 <div class="add-issue-button">
                   <a-button v-if="now > detail.close_date || detail.status != 0" type="primary" shape="round" size="large" block disabled>{{ $t('marketClosed') }} </a-button>
@@ -764,7 +774,7 @@ export default {
 
 .toggle:hover {
   background: #1298ff;
-  box-shadow: 0 0 2px #1298ff, 0 0 2px #1298ff, 2px 2px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 2px #1298ff, 0 0 2px #1298ff, 2px 2px 12px rgba(255,255,255,0.4);;
 
   img {
     transform: translateX(-8000px);
@@ -864,9 +874,9 @@ export default {
 
     span {
       font-size: 20px;
-      font-family: Orelega One-Regular, Orelega One;
+
       font-weight: 400;
-      color: #333333;
+      color: var(--FontColor1);;
       line-height: 26px;
     }
   }
@@ -883,7 +893,7 @@ export default {
 }
 
 .header-part {
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid var(--LineColor2);
   padding-bottom: 10px;
   position: relative;
 
@@ -902,7 +912,7 @@ export default {
 
   .title-tip {
     font-size: 17px;
-    font-family: Orelega One-Regular, Orelega One;
+
     font-weight: 400;
     color: #999999;
     padding-bottom: 10px;
@@ -937,7 +947,7 @@ export default {
     justify-content: space-between;
     padding: 10px 0;
     font-size: 16px;
-    @include font_color($font-color-s, $font-color-s1);
+    color: var(--FontColor1);
 
     span {
       display: flex;
@@ -954,7 +964,7 @@ export default {
       opacity: 1;
       border: 1px solid #146e51;
       font-size: 16px;
-      font-family: Orelega One-Regular, Orelega One;
+
       font-weight: 400;
       color: #146e51;
       text-align: center;
@@ -1006,7 +1016,7 @@ export default {
         button {
           border: none;
           font-size: 16px;
-          font-family: 'Lucida-Grande-Bold';
+
           height: 46px;
           background: var(--mainColor);
           border-radius: 10px;
@@ -1043,11 +1053,11 @@ export default {
           padding: 0 16px;
           border: none;
           @include bg_color_change($background-color-change3, $background-color-change12);
-          @include font_color($font-color-s, $font-color-s1);
+          color: var(--FontColor1);
           @include box_shadow_color;
           border-radius: 10px;
           font-size: 16px;
-          font-family: 'Lucida-Grande-Bold';
+
           display: inline-block;
           height: 46px;
 
@@ -1068,10 +1078,10 @@ export default {
 
   .detail-info {
     padding: 20px 26px;
-    @include bg_color_change($background-color-change3, $background-color-change4);
+    background: var(--MintBGColor);
     @include box_shadow_color_detail;
     border-radius: 10px;
-    @include font_color($font-color-s, $font-color-s1);
+    color: var(--FontColor1);
 
     .detail-content {
       margin-top: 30px;
@@ -1080,7 +1090,7 @@ export default {
 
     .detail-bottom {
       padding-top: 10px;
-      border-top: 1px solid #eaeaea;
+      border-top: 1px solid var(--LineColor2);
     }
 
     .in-line {
@@ -1131,7 +1141,7 @@ export default {
         font-size: 14px;
         margin-left: 4px;
         color: var(--mainColor);
-        font-family: 'Lucida-Grande-Bold';
+
       }
     }
 
@@ -1146,7 +1156,7 @@ export default {
       }
 
       span {
-        font-family: 'Lucida-Grande-Bold';
+
         font-size: 16px;
         color: var(--mainColor);
       }
@@ -1164,7 +1174,7 @@ export default {
         @include font_color($font-color-s9, $font-color-s8);
         line-height: 26px;
         font-size: 24px;
-        font-family: 'Lucida-Grande-Bold';
+
       }
 
       .detail-common-p {
@@ -1210,8 +1220,8 @@ export default {
         font-size: 14px;
         line-height: 20px;
         padding: 8px 0;
-        font-family: 'Lucida-Grande-Bold';
-        @include font_color($font-color-s, $font-color-s1);
+
+        color: var(--FontColor1);
       }
 
       .add-product-info {
@@ -1221,7 +1231,7 @@ export default {
           @include font_color($font-color-s10, $font-color-s3);
 
           u {
-            @include font_color($font-color-s, $font-color-s1);
+            color: var(--FontColor1);
             text-decoration: none;
             color: var(--mainColor);
 
@@ -1245,8 +1255,8 @@ export default {
         @include font_color($font-color-s10, $font-color-s11);
 
         a {
-          font-family: 'Lucida-Grande-Bold';
-          @include font_color($font-color-s, $font-color-s1);
+
+          color: var(--FontColor1);
         }
       }
     }
@@ -1261,7 +1271,7 @@ export default {
 
   .detail-nft {
     padding: 24px 32px;
-    @include bg_color_change($background-color-change3, $background-color-change4);
+     background: var(--BGColor2);
     @include box_shadow_color_detail;
     border-radius: 10px;
 
@@ -1317,7 +1327,7 @@ export default {
 
     .detail-nft-p {
       font-size: 14px;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
     }
 
     .detail-nft-id {
@@ -1330,7 +1340,7 @@ export default {
 
       p {
         font-size: 16px;
-        font-family: 'Lucida-Grande-Bold';
+
         background: var(--mainColor);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -1351,13 +1361,13 @@ export default {
       width: 100%;
       height: 1px;
       margin: 10px 0 20px;
-      background: #eaeaea;
+      background: var(--LineColor2);
       border-radius: 0px 0px 0px 0px;
     }
 
     .select-box {
       width: 100%;
-      background: #f4f4f4 !important;
+      background: var(--BGColor2);
       height: 46px;
       font-size: 16px;
       border-radius: 9px 9px 9px 9px;
@@ -1371,38 +1381,74 @@ export default {
       ::v-deep .ant-select-selection-selected-value {
         font-size: 14px;
         font-weight: 400;
-        color: #333333;
+        color: var(--FontColor1);;
       }
     }
 
     .option-list {
-      padding: 0 17px 5px;
+      padding: 0 0px 5px;
 
       .item {
         display: flex;
         margin-bottom: 5px;
         justify-content: space-between;
-
-        height: 30px;
+        cursor: pointer;
         align-items: center;
         font-size: 14px;
         font-weight: 400;
-        color: #333333;
+        color: var(--FontColor1);;
+        border: 2px solid var(--LineColor2);
+        padding: 16px;
+        border-radius: 12px;
+
+        &.active{
+          border: 2px solid var(--mainColor);
+          .left{
+            .active-point{
+              background: #4F48EA;
+              .active-point-content{
+                background: #FFFFFF;
+              }
+            }
+          }
+        }
 
         .left {
+          display: flex;
+          position: relative;
+          padding-left: 30px;
+          .active-point{
+            width: 20px;
+            height: 20px;
+            display: flex;
+            border-radius: 50%;
+
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            border: 1px solid #D0D5DD;
+            left: 0px;
+            .active-point-content{
+              width: 8px;
+              height: 8px;
+
+              border-radius: 50%;
+            }
+          }
         }
 
         .right {
           min-width: 100px;
-          height: 26px;
-          background: #573EF3;
+          height: 30px;
+          border: 1px solid;
+          border-image: linear-gradient(90deg, rgba(54, 22, 147, 1), rgba(116, 60, 127, 1), rgba(209, 140, 76, 1)) 1 1;
           border-radius: 4px 4px 4px 4px;
           display: flex;
           justify-content: center;
           align-items: center;
+          line-height: 30px;
           font-weight: 400;
-
-          color: #FFFFFF;
+          color: var(--FontColor1);
         }
       }
     }
@@ -1416,7 +1462,7 @@ export default {
     }
 
     .detail-form-p {
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
 
       &.detail-form-bigCoin {
         font-size: 16px;
@@ -1434,14 +1480,14 @@ export default {
       @include bg_color_change($background-color-change15, $background-color-change14);
       border-radius: 10px;
       justify-content: space-between;
-      background: #eaeaea;
+      background: var(--LineColor2);
 
       li {
         display: flex;
         cursor: pointer;
         align-items: center;
         justify-content: center;
-        font-family: 'Lucida-Grande-Bold';
+
         @include font_color($font-color-s7, $font-color-s1);
         width: 50%;
         height: 100%;
@@ -1480,12 +1526,12 @@ export default {
         border: none !important;
         background: none;
         box-shadow: none;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
 
       .add-input-after {
         padding: 0 12px;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
     }
 
@@ -1498,7 +1544,7 @@ export default {
         background: var(--mainColor);
         border-radius: 10px;
         font-size: 16px;
-        font-family: 'Lucida-Grande-Bold';
+
         color: #ffffff;
 
         &[disabled] {
@@ -1536,7 +1582,7 @@ export default {
 
         p {
           &:last-child {
-            @include font_color($font-color-s, $font-color-s1);
+            color: var(--FontColor1);
 
             &.detail-form-total {
               color: #00d871;
@@ -1593,11 +1639,11 @@ export default {
   .cyrox-modal-info {
     border-radius: 10px;
     padding: 10px;
-    font-family: Orelega One-Regular, Orelega One;
+
 
     .cyrox-modal-title {
       font-size: 18px;
-      font-family: 'Lucida-Grande-Bold';
+
       color: var(--mainColor);
       display: flex;
       flex-direction: column;
@@ -1613,7 +1659,7 @@ export default {
       font-size: 16px;
       text-align: center;
       line-height: 20px;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
       &.column {
         text-align: left;
       }
@@ -1632,7 +1678,7 @@ export default {
         @include box_shadow_color;
         border-radius: 10px;
         font-size: 20px;
-        font-family: 'Lucida-Grande-Bold';
+
         color: #ffffff;
         width: 100%;
       }

@@ -35,7 +35,7 @@
        id="grid6562" /></sodipodi:namedview><style
      type="text/css"
      id="style6543">
-	.st0{fill:#333333;}
+	.st0{fill:var(--FontColor1);;}
 </style><g
      id="g6555"
      transform="matrix(0.10589426,0,0,0.10910802,2.7814487,2.5105557)"

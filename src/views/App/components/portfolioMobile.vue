@@ -414,7 +414,7 @@ export default {
     padding: 24px;
     height: 108px;
     color: #ffffff;
-    font-family: 'Lucida-Grande-Bold';
+
     background: var(--mainColor);
     border-radius: 10px;
     &.portfolio-col2 {
@@ -435,7 +435,7 @@ export default {
 .market-select {
   display: flex;
   justify-content: space-between;
-  font-family: 'Lucida-Grande';
+  font-family: "paralucent", sans-serif;
   align-items: center;
   max-width: var(--content-width);
   margin: 54px 0 0;
@@ -456,7 +456,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Lucida-Grande-Bold';
+
       @include font_color($font-color-s7, $font-color-s1);
       width: 50%;
       height: 46px;
@@ -464,7 +464,7 @@ export default {
         @include bg_color_change($background-color-change3, $background-color-change12);
         @include box_shadow_color;
         border-radius: 10px;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
     }
   }
@@ -483,7 +483,7 @@ export default {
   }
   .table-bought {
     div {
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
     }
   }
   .table-status {
@@ -494,7 +494,7 @@ export default {
       width: 100px;
       height: 32px;
       background-color: var(--mainColor);
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
       [data-theme='night'] & {
         box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
       }
@@ -522,7 +522,7 @@ export default {
     }
     p {
       font-size: 14px;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
       &.table-status-opera {
         color: var(--mainColor);
       }
@@ -561,15 +561,15 @@ export default {
     padding: 36px 48px 58px;
     .cyrox-modal-title {
       font-size: 18px;
-      font-family: 'Lucida-Grande-Bold';
+
       text-align: center;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
     }
     .cyrox-modal-body {
       padding-top: 10px;
       font-size: 14px;
       line-height: 20px;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
       p {
         padding-top: 20px;
       }
@@ -583,8 +583,8 @@ export default {
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
         font-size: 20px;
-        font-family: 'Lucida-Grande-Bold';
-        @include font_color($font-color-s, $font-color-s1);
+
+        color: var(--FontColor1);
         width: 100%;
       }
     }
@@ -664,7 +664,7 @@ export default {
     padding: 0.24rem;
     margin-top: 0.28rem;
     border-radius: 0.2rem;
-    @include bg_color_change($background-color-change3, $background-color-change4);
+     background: var(--BGColor2);
     @include box_shadow_color;
     label {
       font-size: 0.24rem;
@@ -677,7 +677,7 @@ export default {
       display: flex;
       justify-content: space-between;
       padding-bottom: 0.24rem;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
       p {
         font-size: 0.28rem;
         line-height: 0.4rem;
@@ -697,7 +697,7 @@ export default {
     }
     .portfolio-list-event {
       font-size: 0.28rem;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
       line-height: 0.4rem;
     }
     .portfolio-list-row {
@@ -706,7 +706,7 @@ export default {
       }
       p {
         font-size: 0.28rem;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
         line-height: 0.4rem;
       }
     }
@@ -724,6 +724,6 @@ export default {
   bottom: 40px;
   width: 100%;
   text-align: center;
-  @include font_color($font-color-s, $font-color-s1);
+  color: var(--FontColor1);
 }
 </style>

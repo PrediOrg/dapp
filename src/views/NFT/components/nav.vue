@@ -90,8 +90,8 @@ export default {
       font-size: 18px;
       margin-top: 80px;
       //@include font_color($main-font-color, #fff);
-      color: #0E3757;
-      font-family: Orelega One-Regular, Orelega One;
+      color: var(--FontColor1);
+
       font-weight: 400;
       .ant-tabs-tab {
         opacity: 0.9;

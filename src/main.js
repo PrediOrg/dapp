@@ -9,6 +9,7 @@ import i18n from './i18n/index'
 import * as filters from '@/filter/index';
 import 'ant-design-vue/dist/antd.css';
 import "./assets/css/commons.scss";
+import "./assets/css/home.scss";
 import './assets/css/index.scss';
 import './assets/css/override.scss';
 import VueAwesomeSwiper from 'vue-awesome-swiper/dist/ssr'

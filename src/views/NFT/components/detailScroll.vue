@@ -179,13 +179,13 @@ export default {
     right: 0;
     top: -30px;
     /deep/.ant-select {
-      background: #FFFFFF;
+     background: var(--BGColor2);
       border-radius: 9px 9px 9px 9px;
       border: 1px solid #EAEAEA;
       padding-left: 10px;
       font-weight: 400;
-      color: #333333;
-      font-family: Orelega One-Regular, Orelega One;
+      color: var(--FontColor1);;
+
     }
 
     /deep/ .ant-select .ant-select-selection {
@@ -212,12 +212,12 @@ export default {
   }
   .cyrox-table-row {
     width: 100%;
-    font-family: Orelega One-Regular, Orelega One;
+
     p {
       padding-top: 8px;
       font-size: 14px;
       line-height: 20px;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
     }
   }
 

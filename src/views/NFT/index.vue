@@ -1,28 +1,15 @@
 <template>
   <div class="nftLicence" :class="{ 'mobile-style': device == 'mobile' }">
     <!--    <div class="markets-banner"/>-->
-    <div class="nft-licence-bg1" />
+    <div class="nft-licence-bg1"/>
     <div class="nft-mint-box">
       <div class="nft-mint">
         <h1 class="title pc">
           GET License
           <div class="right-part">
-            <div class="in-line">
-              <div class="name">Referral Rewards</div>
-              <div class="share-btn" v-clipboard:copy="copyShareLink" v-clipboard:success="onCopy">
-                <img src="@/assets/images/share-btn.png" alt="" class="icon" />
-                <span>Share</span>
-              </div>
-            </div>
-            <div class="in-line">
-              <div class="value">
-                <div class="reward-box">
-                  <img class="icon" src="@/assets/images/USDT.png" alt="" />
-                  {{ reward | decimalsPrecision(payToken.decimals, 4) }}
-                </div>
-              </div>
-              <!--              v-if="parseFloat(reward) !== 0"-->
-              <a-button type="primary" style="width: 100px" shape="round" size="large" @click="rewardCollect" block :loading="collectLoading">Withdraw </a-button>
+            <div class="share-btn" v-clipboard:copy="copyShareLink" v-clipboard:success="onCopy">
+              <img src="@/assets/images/share-btn.png" alt="" class="icon"/>
+              <span>Share</span>
             </div>
           </div>
         </h1>
@@ -31,7 +18,7 @@
           <div class="in-line">
             <div class="title">GET License</div>
             <div class="share-btn" v-clipboard:copy="copyShareLink" v-clipboard:success="onCopy">
-              <img src="@/assets/images/share-btn.png" alt="" class="icon" />
+              <img src="@/assets/images/share-btn.png" alt="" class="icon"/>
             </div>
           </div>
           <div class="in-line">
@@ -39,69 +26,89 @@
               <div class="name">Referral Rewards</div>
               <div class="value">
                 <div class="reward-box">
-                  <img class="icon" src="@/assets/images/USDT.png" alt="" />
+                  <img class="icon" src="@/assets/images/USDT.png" alt=""/>
                   {{ rewardEth | decimalsPrecision(payToken.decimals, 4) }}
                 </div>
               </div>
             </div>
             <div class="right-part">
               <div class="in-line">
-                <!--              v-if="parseFloat(reward) !== 0"-->
-                <a-button type="primary" style="width: 100px" shape="round" size="large" @click="rewardCollect" block :loading="collectLoading">Withdraw </a-button>
+                <a-button type="primary" shape="round" size="large" @click="rewardCollect" block
+                          :loading="collectLoading">Withdraw
+                </a-button>
               </div>
             </div>
           </div>
         </h1>
+
         <div class="mint-op">
           <div class="mint-op-box">
-            <div class="mint-header"></div>
+            <div class="mint-number">
+              <strong>Mint your licence</strong>
+              <span style="font-size: 15px; float: right; margin-top: 10px">{{ current }}/{{ max }}</span>
+            </div>
             <div class="issue-tip">
               {{ $t('NFT.issueTip') }}
             </div>
-            <div class="mint-number">
-              NFT License
-              <span style="font-size: 15px; float: right; margin-top: 10px">{{ current }}/{{ max }}</span>
-            </div>
             <div class="mint-price">
-              <p class="flex-box" @click="showChoosePrice = true">
+              <div class="flex-box" @click="showChoosePrice = true">
                 <label>{{ $t('NFT.price') }}</label>
                 <!--              <img class="trade-input-icon mg-r8" :src="ferc20.icon"/>-->
-                <span class="default">
-                  <img class="icon"  src="@/assets/images/USDT.png" alt="" />
-                  <strong>{{price}}USDT</strong>
-                  <img class="downIcon" src="@/assets/images/arrow-down-bold.svg" alt="" />
-                </span>
-              </p>
+                <div class="default">
+                  <div class="left-price">
+                    <img class="icon" src="@/assets/images/USDT.png" alt=""/>
+                    <strong>{{ price }}USDT</strong>
+                  </div>
+                  <img class="downIcon" src="@/assets/images/arrow-down-bold.svg" alt=""/>
+                </div>
+
+              </div>
               <div class="choose-box" v-show="showChoosePrice">
                 <div class="mask" @click.stop="showChoosePrice = false"></div>
                 <div class="choose-content animate__animated animate__fadeIn">
-<!--                  <div class="choose-item" @click.stop="chooseCoin(1)">-->
-<!--                    <img src="@/assets/images/ethIcon.png" alt="" />-->
-<!--                    <strong>{{ ethPrice }} ICP</strong>-->
-<!--                  </div>-->
+                  <!--                  <div class="choose-item" @click.stop="chooseCoin(1)">-->
+                  <!--                    <img src="@/assets/images/ethIcon.png" alt="" />-->
+                  <!--                    <strong>{{ ethPrice }} ICP</strong>-->
+                  <!--                  </div>-->
                   <div class="choose-item" @click.stop="chooseCoin(2)">
-                    <img src="@/assets/images/USDT.png" alt="" />
+                    <img src="@/assets/images/USDT.png" alt=""/>
                     <strong>{{ fercPrice }} USDT</strong>
                   </div>
                 </div>
               </div>
             </div>
-            <a-button type="primary" class="mint-btn" :disable="remain == 0" @click="buy()" shape="round" size="large" block :loading="loading">
+            <a-button type="primary" class="mint-btn" :disable="remain == 0" @click="buy()" shape="round" size="large"
+                      block :loading="loading">
               {{ $t('NFT.mintNow') }}
             </a-button>
           </div>
         </div>
+        <div class="share-box">
+          <div class="ref-title">Referral Rewards</div>
+          <div class="in-line">
+            <div class="value">
+              <div class="reward-box">
+                <img class="icon" width="20" height="20" src="@/assets/images/USDT.png" alt=""/>
+                {{ reward | decimalsPrecision(payToken.decimals, 4) }}
+              </div>
+            </div>
+            <!--              v-if="parseFloat(reward) !== 0"-->
+            <a-button type="primary" style="width: 100px" shape="round" size="large" @click="rewardCollect" block
+                      :loading="collectLoading">Withdraw
+            </a-button>
 
+          </div>
+        </div>
         <div class="usage">
           <h2 class="title">Usage Rights</h2>
           <div class="usage-content">
             <div class="usage-content-item">
-              <img src="@/assets/images/usage_icon2.png" alt="" class="content-icon" />
-              <div class="item-name">Issue Betting Products</div>
+              <img src="@/assets/images/usage_icon2.png" alt="" class="content-icon"/>
+              <div class="item-name">Issue Prediction Products</div>
             </div>
             <div class="usage-content-item">
-              <div class="nft-licence-bg2" />
-              <img src="@/assets/images/usage_icon1.png" alt="" class="content-icon" />
+              <div class="nft-licence-bg2"/>
+              <img src="@/assets/images/usage_icon1.png" alt="" class="content-icon"/>
               <div class="item-name">Governance</div>
             </div>
           </div>
@@ -110,15 +117,15 @@
           <h2 class="title">Properties</h2>
           <div class="content-list">
             <div class="list-item">
-              <img src="../../assets/images/propertie_icon1.png" alt="" class="list-icon" />
+              <img src="../../assets/images/propertie_icon1.png" alt="" class="list-icon"/>
               <div class="list-item-name">Tradable</div>
             </div>
             <div class="list-item">
-              <img src="../../assets/images/propertie_icon3.png" alt="" class="list-icon" />
+              <img src="../../assets/images/propertie_icon3.png" alt="" class="list-icon"/>
               <div class="list-item-name">Rentable</div>
             </div>
             <div class="list-item">
-              <img src="../../assets/images/propertie_icon2.png" alt="" class="list-icon" />
+              <img src="../../assets/images/propertie_icon2.png" alt="" class="list-icon"/>
               <div class="list-item-name">Usable</div>
             </div>
           </div>
@@ -126,14 +133,16 @@
       </div>
     </div>
 
-    <a-modal v-model="showSuccess" :centered="true" :footer="null" :width="device == 'mobile' ? '100%' : '436px'" class="cyrox-modal" :class="{ 'cyrox-modal-mobile': device == 'mobile' }">
+    <a-modal v-model="showSuccess" :centered="true" :footer="null" :width="device == 'mobile' ? '100%' : '436px'"
+             class="cyrox-modal" :class="{ 'cyrox-modal-mobile': device == 'mobile' }">
       <div class="cyrox-modal-info">
         <div class="cyrox-modal-title">{{ $t('NFT.success') }}</div>
         <div class="cyrox-modal-subTitle">{{ $t('NFT.getNFT') }}</div>
         <div class="swiper-slide">
           <div class="swiper-slide-info">
             <div class="swiper-slide-info-img">
-              <img :src="getTicket.thumb_image_400" style="width: 100%; height: 100%" />
+<!--              <img :src="getTicket.thumb_image_400" style="width: 100%; height: 100%"/>-->
+              <img  src="@/assets/images/nft.png" style="width: 100%; height: 100%" />
             </div>
             <div class="swiper-slide-info-selected">
               <div>Selected</div>
@@ -153,14 +162,14 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from 'vuex';
+import {mapState, mapGetters, mapActions} from 'vuex';
 import BigNumber from 'bignumber.js';
 import cdsSdk from '@/sdk';
-import { confirmTransaction } from '@/utils/trans';
-import { TicketSale_CONTRACT, ChainIdMap } from '@/config/constants';
-import { nftDetail, ticketSale } from '@/api/index';
-import { message } from 'ant-design-vue';
-import { constants } from 'ethers';
+import {confirmTransaction} from '@/utils/trans';
+import {TicketSale_CONTRACT, ChainIdMap} from '@/config/constants';
+import {nftDetail, ticketSale} from '@/api/index';
+import {message} from 'ant-design-vue';
+import {constants} from 'ethers';
 
 export default {
   name: 'PREDINFT',
@@ -198,7 +207,7 @@ export default {
     copyShareLink() {
       return window.location.origin + window.location.pathname + '?inviter=' + this.account;
     },
-    ...mapGetters(['chainType', 'payToken','ferc20', 'chainName']),
+    ...mapGetters(['chainType', 'payToken', 'ferc20', 'chainName']),
   },
   watch: {
     account: {
@@ -259,8 +268,8 @@ export default {
       this.showChoosePrice = false;
     },
     async init() {
-      if (this.chainId == this.$store.state.desireChainId && this.account ) {
-        let { reward,  } = await cdsSdk.rewardQuery(this.account);
+      if (this.chainId == this.$store.state.desireChainId && this.account) {
+        let {reward,} = await cdsSdk.rewardQuery(this.account);
         this.reward = reward.toString();
 
       }
@@ -276,7 +285,7 @@ export default {
       }
       try {
         let tx = await cdsSdk.withdrawReward();
-        let { receipt } = await confirmTransaction(tx.hash);
+        let {receipt} = await confirmTransaction(tx.hash);
         if (receipt.status != 0) {
           this.init();
           this.$notification['success']({
@@ -387,14 +396,14 @@ export default {
         } else {
           tx = await cdsSdk.buyNftErc20(inviter);
         }
-        let { receipt, extra } = await confirmTransaction(tx.hash, 1);
+        let {receipt, extra} = await confirmTransaction(tx.hash, 1);
 
         if (receipt.status != 0) {
           this.showSuccess = true;
           nftDetail({
             token_id: extra.ticket_id,
             chain: 1,
-          }).then(({ data, code }) => {
+          }).then(({data, code}) => {
             if (code != 0) {
               return;
             }
@@ -444,6 +453,104 @@ export default {
   z-index: 0;
 }
 
+.share-box {
+  margin-top: 128px;
+
+  .ref-title {
+    font-size: 36px;
+      color: var(--FontColor1);
+    line-height: 44px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .in-line {
+    margin: 64px auto 0;
+    font-size: 16px;
+    color: var(--mainColor);
+    display: flex;
+    justify-content: space-between;
+    padding: 36px 40px;
+    align-items: center;
+    width: 450px;
+    max-width: 100%;
+    height: 92px;
+    background: var(--MintBGColor);
+
+    border-radius: 16px;
+
+
+    .value {
+      font-size: 26px;
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+    }
+  }
+
+  .ant-btn {
+    width: 108px !important;
+    height: 43px;
+    border-radius: 9px 9px 9px 9px;
+    opacity: 1;
+  }
+
+  .reward-box {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: var(--FontColor1);
+
+    img {
+      margin-right: 10px;
+    }
+  }
+
+  .share-btn {
+    margin-left: 10px;
+    width: 111px;
+    height: 44px;
+    background: var(--MintBGColor);
+    box-shadow: 0px 9px 43px 9px rgba(0, 0, 0, 0.05);
+    border-radius: 9px;
+    border: 1px solid var(--LineColor2);
+    font-size: 17px;
+
+    font-weight: 400;
+    color: #146e51;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      margin-left: 8px;
+    }
+  }
+
+  &:last-child {
+    margin-top: 10px;
+  }
+
+  .name {
+    font-size: 20px;
+
+    font-weight: 400;
+    color: var(--FontColor1);;
+  }
+
+  .value {
+    font-size: 26px;
+
+    font-weight: 400;
+  }
+}
+
 .nft-mint-box {
   position: relative;
   z-index: 1;
@@ -461,9 +568,9 @@ export default {
 
       z-index: 2;
       font-size: 43px;
-      font-family: Orelega One-Regular, Orelega One;
-      font-weight: 400;
-      color: #333333;
+
+      font-weight: 600;
+      color: var(--FontColor1);;
       display: flex;
       justify-content: space-between;
 
@@ -498,57 +605,25 @@ export default {
 
         .name {
           font-size: 20px;
-          font-family: Orelega One-Regular, Orelega One;
+
           font-weight: 400;
-          color: #333333;
+          color: var(--FontColor1);;
         }
 
         .value {
           font-size: 26px;
-          font-family: Orelega One-Regular, Orelega One;
+
           font-weight: 400;
         }
       }
 
-      .ant-btn {
-        width: 111px !important;
-        height: 43px;
-        border-radius: 9px 9px 9px 9px;
-        opacity: 1;
-      }
 
-      .share-btn {
-        margin-left: 10px;
-        width: 111px;
-        height: 44px;
-        background: #ffffff;
-        box-shadow: 0px 9px 43px 9px rgba(0, 0, 0, 0.05);
-        border-radius: 9px;
-        border: 1px solid #eaeaea;
-        font-size: 17px;
-        font-family: Orelega One-Regular, Orelega One;
-        font-weight: 400;
-        color: #146e51;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-
-        .icon {
-          width: 20px;
-          height: 20px;
-        }
-
-        span {
-          margin-left: 8px;
-        }
-      }
     }
   }
 }
 
 .mint-op {
-  width: 360px;
+  width: 450px;
   margin: 100px auto 0;
   position: relative;
 
@@ -575,12 +650,11 @@ export default {
 }
 
 .mint-op-box {
-  @include font_color($font-color-s, $font-color-s1);
-  @include bg_color_change($background-color-change3, $background-color-change4);
+  color: var(--FontColor1);
   @include box_shadow_color;
   position: relative;
-
-  padding: 32px 25px;
+  background: var(--MintBGColor);
+  padding: 40px;
   font-size: 16px;
   border-radius: 16px;
 
@@ -602,27 +676,35 @@ export default {
   }
 
   .issue-tip {
-    font-size: 17px;
-    font-family: Orelega One-Regular, Orelega One;
-    font-weight: 400;
-    color: #999999;
+    font-size: 16px;
+    color:  var(--FontColor1);
+
   }
 
   .mint-number {
-    font-size: 29px;
-    font-family: Orelega One-Regular, Orelega One;
+    font-size: 30px;
     font-weight: 400;
-    color: #782581;
+
+    span {
+      color: #573EF3;
+    }
   }
 
   .mint-price {
-    background: #f4f4f4;
-    border-radius: 17px 17px 17px 17px;
-    padding: 30px 17px;
+
+    background: var(--BGColor2);
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    border-radius: 8px 8px 8px 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    padding: 0 25px;
     margin-top: 20px;
     position: relative;
+    height: 60px;
+    line-height: 60px;
 
     .choose-box {
+      height: 100%;
       .mask {
         z-index: 0;
         position: fixed;
@@ -634,27 +716,26 @@ export default {
 
       .choose-content {
         position: absolute;
-        top: 100px;
+        top: 60px;
         width: 100%;
         left: 0;
         z-index: 1;
-        background: #fff;
+        background: var(--MintBGColor);
         padding: 0 30px;
         box-shadow: 0px 15px 50px 15px rgba(0, 0, 0, 0.05);
         border-radius: 20px 20px 20px 20px;
-        border: 1px solid #eaeaea;
         animation-duration: 0.3s;
       }
 
       .choose-item {
-        padding: 30px 0;
+        padding: 20px 0;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
 
         &:last-child {
-          border-top: 1px #eaeaea solid;
+          border-top: 1px var(--LineColor2) solid;
         }
 
         img {
@@ -666,9 +747,9 @@ export default {
         strong {
           margin-left: 10px;
           font-size: 20px;
-          font-family: Orelega One-Regular, Orelega One;
+
           font-weight: 400;
-          color: #333333;
+          color: var(--FontColor1);
         }
       }
     }
@@ -678,36 +759,43 @@ export default {
       overflow: visible;
 
       .default {
+        flex-grow: 1;
+        padding-left: 16px;
         display: flex;
         align-items: center;
         cursor: pointer;
+        justify-content: space-between;
+        border-left: 1px solid rgba(0, 0, 0, 0.08);
+        .left-price{
+          display: flex;
+          align-items: center;
+        }
         .icon {
           margin-right: 10px;
-          width: 30px;
-          height: 30px;
+          width: 20px;
+          height: 20px;
           border-radius: 50%;
         }
 
         .downIcon {
           width: 20px;
           height: 20px;
-
           margin-left: 10px;
         }
       }
 
       label {
         font-size: 17px;
-        font-family: Orelega One-Regular, Orelega One;
+        width: 70px;
         font-weight: 400;
         color: #999999;
       }
 
       strong {
-        font-size: 26px;
-        font-family: Orelega One-Regular, Orelega One;
+        font-size: 16px;
+
         font-weight: 400;
-        color: #333333;
+        color: var(--FontColor1);;
       }
     }
   }
@@ -752,8 +840,8 @@ export default {
 }
 
 .markets-info {
-  @include font_color($font-color-s, $font-color-s1);
-  @include bg_color_change($background-color-change3, $background-color-change4);
+  color: var(--FontColor1);
+   background: var(--BGColor2);
   @include box_shadow_color;
 
   position: relative;
@@ -761,7 +849,7 @@ export default {
   margin: 0 auto;
   padding: 32px 25px;
   font-size: 16px;
-  font-family: 'Lucida-Grande';
+  font-family: "paralucent", sans-serif;
   border-radius: 10px;
 
   &:after {
@@ -796,7 +884,7 @@ export default {
   .markets-info-price {
     p {
       font-size: 24px;
-      font-family: 'Lucida-Grande-Bold';
+
       color: #00d871;
     }
   }
@@ -809,7 +897,7 @@ export default {
     span {
       font-size: 28px;
       line-height: 34px;
-      font-family: 'Lucida-Grande-Bold';
+
     }
   }
 
@@ -820,7 +908,7 @@ export default {
       border: none;
       height: 56px;
       @include bg_color_change($background-color-change3, $background-color-change12);
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
       @include box_shadow_color;
       border-radius: 10px;
       font-size: 22px;
@@ -845,7 +933,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 220px;
   position: relative;
 
   .usage-content {
@@ -861,19 +949,17 @@ export default {
         top: -70px !important;
       }
 
-      padding: 58px 40px;
-      background: #ffffff;
-      box-shadow: 0px 13px 43px 13px rgba(0, 0, 0, 0.05);
+      padding: 24px 40px;
+      background: var(--MintBGColor);
       border-radius: 17px 17px 17px 17px;
-      border: 1px solid #eaeaea;
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      width: 376px;
+      width: 378px;
 
       &:last-child {
-        margin-left: 20px;
+        margin-left: 40px;
       }
 
       .content-icon {
@@ -882,11 +968,10 @@ export default {
       }
 
       .item-name {
-        font-size: 26px;
+        font-size: 20px;
+          color: var(--FontColor1);
         white-space: nowrap;
-        font-family: Orelega One-Regular, Orelega One;
         font-weight: 400;
-        color: $main-font-color;
         margin-top: 20px;
       }
     }
@@ -897,17 +982,21 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 128px;
 
   .content-list {
     display: flex;
     margin-top: 50px;
 
     .list-item {
-      width: 230px;
+      width: 379px;
+     background: var(--MintBGColor);
+      border-radius: 16px;
+      padding: 24px 0;
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-left: 40px;
 
       &:first-child {
         margin-left: 0;
@@ -919,10 +1008,8 @@ export default {
       }
 
       .list-item-name {
-        font-size: 26px;
-        font-family: Orelega One-Regular, Orelega One;
-        font-weight: 400;
-        color: $main-font-color;
+        font-size: 20px;
+          color: var(--FontColor1);
         margin-top: 20px;
       }
     }
@@ -965,12 +1052,14 @@ export default {
     box-shadow: 0px 4px 15px 0px rgba(251, 251, 251, 0.2);
     border-radius: 10px;
     padding: 24px 48px 34px;
+
     .swiper-slide-info-img img {
       border-radius: 10px;
     }
+
     .cyrox-modal-title {
       font-size: 18px;
-      font-family: 'Lucida-Grande-Bold';
+
       text-align: center;
     }
 
@@ -1030,7 +1119,7 @@ export default {
             justify-content: center;
             align-items: center;
             font-size: 16px;
-            font-family: 'Lucida-Grande-Bold';
+
             height: 53px;
             background: rgba(255, 80, 62, 0.5);
             border-radius: 0px 0px 10px 10px;
@@ -1041,7 +1130,7 @@ export default {
       }
 
       .swiper-slide-Id {
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
         font-size: 16px;
         line-height: 22px;
         padding-top: 8px;
@@ -1057,7 +1146,7 @@ export default {
         background: #573EF3;
         border-radius: 10px;
         font-size: 16px;
-        font-family: 'Lucida-Grande-Bold';
+
         color: #ffffff;
         width: 100%;
       }
@@ -1108,17 +1197,21 @@ export default {
       .share-btn {
         width: 50px;
         height: 50px;
-        background: #ffffff;
+        background: var(--MintBGColor);
         box-shadow: 0px 22px 109px 22px rgba(0, 0, 0, 0.05);
         border-radius: 50%;
         opacity: 1;
-        border: 2px solid #eaeaea;
+        border: 2px solid var(--LineColor2);
       }
     }
 
     .mint-op {
-      margin-top: 20vh;
+      margin-top: 10vh;
       width: var(--content-width);
+
+      .mint-op-box {
+        padding: 20px;
+      }
     }
   }
 
@@ -1144,6 +1237,8 @@ export default {
 
       .list-item {
         width: 30%;
+        background: none;
+        margin-left: 20px;
 
         .list-icon {
           width: 50px;
@@ -1152,7 +1247,7 @@ export default {
 
         .list-item-name {
           font-size: 6vw;
-          font-family: Orelega One-Regular, Orelega One;
+
           font-weight: 400;
           color: $main-font-color;
           margin-top: 20px;

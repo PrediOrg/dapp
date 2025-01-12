@@ -428,7 +428,7 @@ export default {
     z-index: 1;
     width: 900px;
     height: 520px;
-    background: #ffffff;
+    background: var(--MintBGColor);
 
     border-radius: 17px 17px 17px 17px;
     border: 1px solid #dedede;
@@ -496,7 +496,7 @@ export default {
     margin-top: 30px;
     font-size: 40px;
     font-weight: 400;
-    color: #333333;
+    color: var(--FontColor1);;
   }
 
   .progress {
@@ -507,19 +507,19 @@ export default {
 
   .info {
     font-size: 18px;
-    font-family: Roboto-Medium, Roboto;
+    font-family: "paralucent", sans-serif;
     font-weight: 500;
     color: #666666;
     margin-top: 10px;
   }
 
   .send-box {
-    background: #ffffff;
+    background: var(--MintBGColor);
     box-shadow: 0px 13px 43px 13px rgba(0, 0, 0, 0.05);
     border-radius: 17px 17px 17px 17px;
     margin: 30px auto;
     width: 420px;
-    background: #ffffff;
+    background: var(--MintBGColor);
 
     padding: 30px 20px;
 

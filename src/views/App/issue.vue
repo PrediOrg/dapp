@@ -27,30 +27,43 @@
                 }"
                 class="swiper-slide-info"
               >
-                <div :class="'swiper-slide-info-title nft-title-start-' + item.total_supply">
-                  <div class="nft-star">
-                    <span
-                      v-for="i in item.total_supply"
-                      :key="i"
-                      :class="{
-                        grey: i > item.balance,
-                      }"
-                    ></span>
-                  </div>
-                  <div class="nft-star-number">
-                    <span>
-                      {{ item.chance }}
-                    </span>
-                  </div>
-                </div>
+<!--                <div :class="'swiper-slide-info-title nft-title-start-' + item.total_supply">-->
+<!--                  <div class="nft-star">-->
+<!--                    <span-->
+<!--                      v-for="i in item.total_supply"-->
+<!--                      :key="i"-->
+<!--                      :class="{-->
+<!--                        grey: i > item.balance,-->
+<!--                      }"-->
+<!--                    ></span>-->
+<!--                  </div>-->
+<!--                  <div class="nft-star-number">-->
+<!--                    <span>-->
+<!--                      {{ item.chance }}-->
+<!--                    </span>-->
+<!--                  </div>-->
+<!--                </div>-->
                 <div class="swiper-slide-info-img">
-                  <img style="width: 100%; height: 100%" :src="item.thumb_image_400" :data-id="item.token_id" />
+<!--                  <img style="width: 100%; height: 100%" :src="item.thumb_image_400" :data-id="item.token_id" />-->
+                  <img  src="@/assets/images/nft.png" style="width: 100%; height: 100%" :data-id="item.token_id" />
+
                 </div>
-                <div class="swiper-slide-Id" :class="item.token_id == ticketId ? 'swiper-slide-selectId' : ''">Predi License #{{ item.token_id }}</div>
+                <div class="swiper-slide-Id" :class="item.token_id == ticketId ? 'swiper-slide-selectId' : ''">
+                  <span>Predi License </span>
+                <strong>#{{ item.token_id }}</strong>
+                </div>
+                <div class="swiper-slide-Id" :class="item.token_id == ticketId ? 'swiper-slide-selectId' : ''">
+                  <span>Issuable quantity</span>
+                  <strong>
+                    {{ item.balance}}
+                  </strong>
+                  </div>
 
                 <div class="markets-info-rent">
                   <count-down v-if="item.is_owner != 1 && item.owner_status == 0" :value="availableTime(item.expired_at)" :hide-second="true"></count-down>
                 </div>
+
+
                 <div v-if="item.is_grey || item.balance <= 0" class="swiper-slide-info-selected swiper-slide-info-disabled">
                   <div>Disabled</div>
                 </div>
@@ -99,14 +112,16 @@
             </div>
             <div>
               <br />
-              <p>Options</p>
+              <label>Options</label>
               <div v-for="(option, index) in form.options" :key="index">
                 <br />
-                <a-textarea :maxLength="140" v-model="option.val" placeholder="option" />
-                <br />
+                <div class="add-option-textarea">
+                  <a-textarea :maxLength="140" v-model="option.val" placeholder="option" />
+                </div>
               </div>
               <br />
               <a-button @click="form.options.push({ val: '' })">Add</a-button>
+              <a-button @click="form.options.pop()" style="margin-left: 5px">Del</a-button>
             </div>
             <label class="flex-box space-between"> Battle Information </label>
             <!--add additional_information-->
@@ -192,7 +207,7 @@
             </ul>
             <div class="add-product">
               <h3>Betting Project: {{ form.content }}</h3>
-              <div class="add-product-info">
+              <div class="add-product-info">fund-box
                 <p>
                   At the expiration date ( <u>{{ form.maturityDate | timeFormat('MMM. DD,YYYY') }}</u> ), those who have chosen the correct option will share tokens from the product pool based on
                   their participation shares.
@@ -768,9 +783,9 @@ export default {
       border-radius: 10px;
       position: relative;
       overflow: hidden;
-      padding: 9px;
+      padding: 0 9px;
       padding-bottom: 30px !important;
-      border: 1px solid #eaeaea;
+      border: 1px solid var(--LineColor2);
 
       .markets-info-rent {
         width: 100%;
@@ -835,7 +850,7 @@ export default {
           justify-content: center;
           align-items: center;
           font-size: 16px;
-          font-family: 'Lucida-Grande-Bold';
+
           height: 30px;
           background: rgba(87,62,243,.5);
           border-radius: 0px 0px 10px 10px;
@@ -850,17 +865,18 @@ export default {
     }
 
     .swiper-slide-Id {
-      @include font_color($font-color-s, $font-color-s1);
-      font-size: 16px;
+      color: var(--FontColor1);
+      font-size: 14px;
       line-height: 22px;
       text-align: center;
-      padding-top: 8px;
-      font-family: Orelega One-Regular, Orelega One;
-      font-weight: 400;
-      color: #000000;
-
+      padding-top: 3px;
+      display: flex;
+      justify-content: space-between;
+      span{
+        opacity: 0.8;
+      }
       &.swiper-slide-selectId {
-        color: #FFFFFF;
+        color: var(--FontColor1);
       }
     }
   }
@@ -870,12 +886,12 @@ export default {
   position: relative;
   z-index: 1;
   width: var(--content-width);
-  @include font_color($font-color-s, $font-color-s1);
+  color: var(--FontColor1);
   margin: 60px auto 0px;
   font-size: 43px;
-  font-family: Orelega One-Regular, Orelega One;
-  font-weight: 400;
-  color: #333333;
+
+  font-weight: 600;
+  color: var(--FontColor1);;
 
   span {
     flex: 1;
@@ -896,13 +912,13 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #ffffff;
+   background: var(--MintBGColor);
     box-shadow: 0px 15px 50px 15px rgba(0, 0, 0, 0.05);
 
     a {
       font-size: 16px;
-      @include font_color($font-color-s, $font-color-s1);
-      font-family: 'Lucida-Grande-Bold';
+      color: var(--FontColor1);
+
       display: flex;
       align-items: center;
 
@@ -921,7 +937,7 @@ export default {
   }
 
   .add-nft {
-    @include bg_color_change($background-color-change3, $background-color-change4);
+     background: var(--BGColor2);
     @include box_shadow_color;
     border-radius: 10px;
     padding: 32px 46px 0;
@@ -933,7 +949,7 @@ export default {
       //@include font_color($font-color-s10, $font-color-s6);
       font-size: 18px;
       padding-bottom: 14px;
-      font-family: Orelega One-Regular, Orelega One;
+
       font-weight: 400;
       color: #999999;
     }
@@ -943,7 +959,7 @@ export default {
       color: var(--mainColor);
       display: flex;
       align-items: center;
-      font-family: Orelega One-Regular, Orelega One;
+
 
       span {
         margin-left: 14px;
@@ -966,6 +982,10 @@ export default {
     ::v-deep .ant-upload {
       width: 200px;
       height: 200px;
+      @include bg_color_change($background-color-change13, $background-color-change12);
+      .ant-upload-text{
+        color: var(--FontColor1);
+      }
     }
   }
 
@@ -973,7 +993,7 @@ export default {
     margin-top: 40px;
     width: 100%;
     height: 100%;
-    @include bg_color_change($background-color-change3, $background-color-change4);
+     background: var(--BGColor2);
     @include box_shadow_color;
     border-radius: 10px;
     padding: 8px 46px 40px;
@@ -984,16 +1004,15 @@ export default {
       padding-bottom: 8px;
       display: flex;
       font-size: 16px;
-      font-family: Orelega One-Regular, Orelega One;
+
       font-weight: 400;
-      color: #999999;
     }
 
     /deep/ .ant-select-selection--single {
       padding-left: 12px;
       height: 54px;
       @include bg_color_change($background-color-change13, $background-color-change12);
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
 
       [data-theme='night'] & {
         box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
@@ -1030,7 +1049,24 @@ export default {
         }
       }
     }
+    .add-option-textarea {
+      position: relative;
 
+      /deep/ textarea {
+        &.ant-input {
+          @include bg_color_change($background-color-change13, $background-color-change12);
+          border: none;
+          height: 50px;
+          color: var(--FontColor1);
+          border-radius: 10px;
+        }
+
+        &.ant-input:focus {
+          box-shadow: none;
+        }
+      }
+
+    }
     .add-row-textarea {
       position: relative;
 
@@ -1039,7 +1075,7 @@ export default {
           @include bg_color_change($background-color-change13, $background-color-change12);
           border: none;
           height: 100px;
-          @include font_color($font-color-s, $font-color-s1);
+          color: var(--FontColor1);
           border-radius: 10px;
         }
 
@@ -1080,7 +1116,7 @@ export default {
       font-size: 14px;
 
       &.active {
-        color: #333333;
+        color: var(--FontColor1);;
         font-weight: 400;
       }
 
@@ -1104,7 +1140,7 @@ export default {
 
       p:last-child {
         font-size: 16px;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
     }
 
@@ -1114,7 +1150,7 @@ export default {
       align-items: center;
       height: 54px;
       font-size: 16px;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
       @include bg_color_change($background-color-change13, $background-color-change12);
       border: none;
       border-radius: 10px;
@@ -1126,12 +1162,12 @@ export default {
         border: none !important;
         background: none;
         box-shadow: none;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
 
       .add-input-after {
         padding: 0 12px;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
     }
 
@@ -1151,7 +1187,7 @@ export default {
         justify-content: center;
         align-items: center;
         @include bg_color_change($background-color-change13, $background-color-change12);
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
 
         .logo {
           border-radius: 50%;
@@ -1184,7 +1220,7 @@ export default {
 
         p:last-child {
           font-size: 16px;
-          @include font_color($font-color-s, $font-color-s1);
+          color: var(--FontColor1);
           word-break: break-all;
         }
       }
@@ -1199,7 +1235,7 @@ export default {
         background: #573EF3;
         border-radius: 10px;
         font-size: 16px;
-        font-family: 'Lucida-Grande-Bold';
+
         color: #ffffff;
       }
     }
@@ -1227,20 +1263,20 @@ export default {
         font-size: 18px;
         line-height: 20px;
         padding: 8px 0;
-        color: #000000;
-        font-family: Orelega One-Regular, Orelega One;
+        color: var(--FontColor1);
+
       }
 
       .add-product-info {
         p {
           font-size: 12px;
           line-height: 18px;
-          font-family: Orelega One-Regular, Orelega One;
+
           font-weight: 400;
           color: #999999;
 
           u {
-            @include font_color($font-color-s, $font-color-s1);
+            color: var(--FontColor1);
             text-decoration: none;
             color: var(--mainColor);
           }
@@ -1268,8 +1304,8 @@ export default {
         @include font_color($font-color-s10, $font-color-s11);
 
         u {
-          font-family: 'Lucida-Grande-Bold';
-          @include font_color($font-color-s, $font-color-s1);
+
+          color: var(--FontColor1);
         }
       }
     }
@@ -1286,7 +1322,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.5);
     z-index: 99;
     border-radius: 10px;
   }
@@ -1330,23 +1366,23 @@ export default {
   }
 
   .cyrox-modal-info {
-    @include bg_color_change($background-color-change3, $background-color-change4);
+     background: var(--BGColor2);
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 36px 40px 48px;
 
     .cyrox-modal-title {
       font-size: 18px;
-      font-family: 'Lucida-Grande-Bold';
+
       text-align: center;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
     }
 
     .cyrox-modal-body {
       padding-top: 10px;
       font-size: 14px;
       line-height: 20px;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
 
       p {
         padding-top: 20px;

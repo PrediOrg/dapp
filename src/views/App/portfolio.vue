@@ -41,7 +41,6 @@ export default {
     padding: 24px;
     height: 108px;
     color: #ffffff;
-    font-family: "Lucida-Grande-Bold";
     background: var(--mainColor);
     border-radius: 10px;
     &.portfolio-col2 {
@@ -63,15 +62,14 @@ export default {
 .market-select {
   display: flex;
   justify-content: space-between;
-  font-family: 'Lucida-Grande';
+  font-family: "paralucent", sans-serif;
   align-items: center;
   max-width: var(--content-width);
   margin: 54px 0 0;
   font-size: 16px;
-  @include font_color($font-color-s2, $font-color-s3);
+  color: var(--FontColor1);
   .market-select-category {
     border-bottom-width: 1px;
-    border-bottom-style: solid;
   }
   .market-select-sort{
     margin-left: 10px;
@@ -92,7 +90,7 @@ export default {
   }
   .table-deposited {
     div {
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
     }
   }
   .table-status {
@@ -132,7 +130,7 @@ export default {
     }
     p {
       font-size: 14px;
-      @include font_color($font-color-s, $font-color-s1);
+      color: var(--FontColor1);
     }
     .table-status-appealing {
       font-size: 14px;
@@ -150,7 +148,7 @@ export default {
     .ant-statistic {
       /deep/.ant-statistic-content {
         font-size: 14px;
-        @include font_color($font-color-s, $font-color-s1);
+        color: var(--FontColor1);
       }
     }
     &.table-status-appeal {
@@ -178,7 +176,7 @@ export default {
     padding: 36px 48px 58px;
     .cyrox-modal-title {
       font-size: 18px;
-      font-family: 'Lucida-Grande-Bold';
+
       text-align: center;
       color: #ffffff;
     }
@@ -200,7 +198,7 @@ export default {
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
         font-size: 20px;
-        font-family: 'Lucida-Grande-Bold';
+
         color: #ffffff;
         width: 100%;
       }

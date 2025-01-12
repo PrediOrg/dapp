@@ -77,7 +77,7 @@ export default {
     color: var(--mainColor);
     display: flex;
     align-items: center;
-    font-family: Orelega One-Regular, Orelega One;
+
     font-weight: 400;
     &:first-child {
       margin-left: 0;
