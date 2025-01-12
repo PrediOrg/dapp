@@ -110,6 +110,7 @@ export default {
         height: 100%;
         padding: 0 20px;
         background: none;
+
         font-size: 30px;
       }
     }
