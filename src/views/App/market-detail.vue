@@ -130,7 +130,7 @@
                   <a-button v-if="now > detail.close_date || detail.status != 0" type="primary" shape="round" size="large" block disabled>{{ $t('marketClosed') }} </a-button>
                   <a-button v-else-if="detail.audit_status != 1" type="primary" shape="round" size="large" disabled block> Audit Checking </a-button>
                   <a-button v-else-if="insufficientFunds" type="primary" shape="round" size="large" disabled block> Insufficient Funds </a-button>
-                  <a-button v-else-if="!userDealt.hasTicket" type="primary" shape="round" size="large" disabled block> Buy a Ticket </a-button>
+                  <a-button v-else-if="!userDealt.hasTicket"  type="primary" shape="round" size="large" disabled block> Buy a Ticket </a-button>
                   <a-button v-else type="primary" shape="round" size="large" block :loading="connectedLoading" @click="userBuy()"> Buy </a-button>
                 </div>
               </template>
@@ -1025,7 +1025,9 @@ export default {
 
         button[disabled] {
           background: gray;
-          color: #b2b2b2;
+          span{
+            color: #b2b2b2;
+          }
         }
       }
 
