@@ -53,7 +53,7 @@ export default {
         },
         {
           url: '/nft/packet',
-          text: 'GET License',
+          text: 'License',
           badge: false,
           enable: true,
         },
