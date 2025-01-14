@@ -2,7 +2,7 @@
   <div :class="{ 'predi-market-mobile': device == 'mobile' }">
     <div class="markets-banner">
       <div class="markets-banner-text title">
-        Betting Markets
+        Markets
       </div>
       <div class="market-select">
         <div class="market-select-item flex-box">

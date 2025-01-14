@@ -17,7 +17,7 @@
             <div class="market-select-button">
               <a-button type="primary" size="large" @click="issue">
                 <a-icon type="plus" />
-                {{ $t('issue') }}
+                Create New
               </a-button>
             </div>
             <div class="fund-item" @click="$router.push('/deposit')">
@@ -61,7 +61,7 @@
           <div class="market-select-button" style="margin-left: 10px">
             <a-button type="primary" size="large" @click="issue">
               <a-icon type="plus" />
-              {{ $t('issue') }}
+              Create New
             </a-button>
           </div>
         </div>

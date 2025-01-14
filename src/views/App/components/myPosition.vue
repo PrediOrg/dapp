@@ -1,32 +1,22 @@
 <template>
   <div class="detail-form-tabs" :class="{ 'mobile-form-tabs': device == 'mobile' }">
-    <div class="banner-box">
-      <img class="banner" src="@/assets/images/market-banner.png" alt=""/>
-      <div class="btn-box">
-        <div class="btn" @click="$router.push('/nft')">Get License</div>
-        <!--        <a class="btn" :href="buyLink" target="_blank">Buy PRDS</a>-->
-        <!--        <a  class="btn"  target="_blank" href="https://medium.com/@predi/fbet-overview-1cf2bcc9e53d">-->
-        <!--          <Tooltip style="cursor: pointer"  title="PRDS token information"><svg t="1701762676678" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5925" width="20" height="64"><path d="M514.048 54.272q95.232 0 178.688 36.352t145.92 98.304 98.304 145.408 35.84 178.688-35.84 178.176-98.304 145.408-145.92 98.304-178.688 35.84-178.176-35.84-145.408-98.304-98.304-145.408-35.84-178.176 35.84-178.688 98.304-145.408 145.408-98.304 178.176-36.352zM515.072 826.368q26.624 0 44.544-17.92t17.92-43.52q0-26.624-17.92-44.544t-44.544-17.92-44.544 17.92-17.92 44.544q0 25.6 17.92 43.52t44.544 17.92zM567.296 574.464q-1.024-16.384 20.48-34.816t48.128-40.96 49.152-50.688 24.576-65.024q2.048-39.936-8.192-74.752t-33.792-59.904-60.928-39.936-87.552-14.848q-62.464 0-103.936 22.016t-67.072 53.248-35.84 64.512-9.216 55.808q1.024 26.624 16.896 38.912t34.304 12.8 33.792-10.24 15.36-31.232q0-12.288 7.68-30.208t20.992-34.304 32.256-27.648 42.496-11.264q46.08 0 73.728 23.04t25.6 57.856q0 17.408-10.24 32.256t-26.112 28.672-33.792 27.648-33.792 28.672-26.624 32.256-11.776 37.888l1.024 38.912q0 15.36 14.336 29.184t37.888 14.848q23.552-1.024 37.376-15.36t12.8-32.768l0-24.576z" p-id="5926" fill="#ffffff"></path></svg></Tooltip>-->
-        <!--        </a>-->
 
-      </div>
-    </div>
     <label>My Positions</label>
     <div class="in-line" v-for="(item, index) in userDealt.userBuy" :key="index">
       <label>{{ item.name }}</label>
       <p class="flex-box">
-        <img width="20" height="20" style="border-radius: 50%; margin-right: 4px" :src="payToken.icon" alt=""/>
+        <img width="20" height="20" style="border-radius: 50%; margin-right: 4px" :src="detail.token_icon" alt=""/>
         {{ item.amount | decimals(2) }}
-        {{ payToken.symbol }}
+        {{ detail.base_token }}
       </p>
     </div>
 
     <div class="in-line" v-if="userDealt.challenge > 0">
       <label>Challenge credit</label>
       <p class="flex-box">
-        <img width="20" height="20" style="border-radius: 50%; margin-right: 4px" :src="payToken.icon" alt=""/>
+        <img width="20" height="20" style="border-radius: 50%; margin-right: 4px" :src="detail.token_icon" alt=""/>
         {{ userDealt.challenge | decimals(2) }}
-        {{ payToken.symbol }}
+        {{detail.base_token }}
       </p>
     </div>
     <div class="in-line" v-if="userDealt.challenge > 0">
@@ -42,10 +32,22 @@
     <div class="in-line" v-if="userDealt.return > 0">
       <label>Return</label>
       <p class="flex-box">
-        <img width="20" height="20" style="border-radius: 50%; margin-right: 4px" :src="payToken.icon" alt=""/>
+        <img width="20" height="20" style="border-radius: 50%; margin-right: 4px" :src="detail.token_icon" alt="" />
         {{ userDealt.return | decimals(2) }}
-        {{ payToken.symbol }}
+        {{ detail.base_token }}
       </p>
+    </div>
+
+    <div class="banner-box" style="margin-top: 20px">
+      <img class="banner" src="@/assets/images/market-banner.png" alt=""/>
+      <div class="btn-box">
+        <div class="btn" @click="$router.push('/nft')">Get License</div>
+        <!--        <a class="btn" :href="buyLink" target="_blank">Buy PRDS</a>-->
+        <!--        <a  class="btn"  target="_blank" href="https://medium.com/@predi/fbet-overview-1cf2bcc9e53d">-->
+        <!--          <Tooltip style="cursor: pointer"  title="PRDS token information"><svg t="1701762676678" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5925" width="20" height="64"><path d="M514.048 54.272q95.232 0 178.688 36.352t145.92 98.304 98.304 145.408 35.84 178.688-35.84 178.176-98.304 145.408-145.92 98.304-178.688 35.84-178.176-35.84-145.408-98.304-98.304-145.408-35.84-178.176 35.84-178.688 98.304-145.408 145.408-98.304 178.176-36.352zM515.072 826.368q26.624 0 44.544-17.92t17.92-43.52q0-26.624-17.92-44.544t-44.544-17.92-44.544 17.92-17.92 44.544q0 25.6 17.92 43.52t44.544 17.92zM567.296 574.464q-1.024-16.384 20.48-34.816t48.128-40.96 49.152-50.688 24.576-65.024q2.048-39.936-8.192-74.752t-33.792-59.904-60.928-39.936-87.552-14.848q-62.464 0-103.936 22.016t-67.072 53.248-35.84 64.512-9.216 55.808q1.024 26.624 16.896 38.912t34.304 12.8 33.792-10.24 15.36-31.232q0-12.288 7.68-30.208t20.992-34.304 32.256-27.648 42.496-11.264q46.08 0 73.728 23.04t25.6 57.856q0 17.408-10.24 32.256t-26.112 28.672-33.792 27.648-33.792 28.672-26.624 32.256-11.776 37.888l1.024 38.912q0 15.36 14.336 29.184t37.888 14.848q23.552-1.024 37.376-15.36t12.8-32.768l0-24.576z" p-id="5926" fill="#ffffff"></path></svg></Tooltip>-->
+        <!--        </a>-->
+
+      </div>
     </div>
   </div>
 </template>
@@ -55,12 +57,12 @@ import {mapState, mapGetters} from 'vuex';
 import infiniteScroll from 'vue-infinite-scroll';
 import {getUserDealt} from '@/api/index';
 import {ChainMapById} from "@/config/constants";
-import {Tooltip} from "ant-design-vue";
+// import {Tooltip} from "ant-design-vue";
 
 export default {
   name: 'myPosition',
   directives: {infiniteScroll},
-  components: {Tooltip},
+  // components: {Tooltip},
   props: {
     detail: Object,
   },

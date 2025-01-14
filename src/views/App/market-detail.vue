@@ -150,7 +150,7 @@
               </div>
               <div class="in-line" v-if="device != 'mobile'">
                 <label>Collateral</label>
-                <p class="detail-common-p" v-if="detail.is_stake_nft">NFT License</p>
+                <p class="detail-common-p" v-if="detail.is_stake_nft">License</p>
                 <p v-else class="flex-box detail-common-p detail-common-spe">
                   <span class="trade-input-icon mg-r8"></span>{{ detail.credit_margin | decimals(2) }}
                   {{ detail.base_token }}
@@ -175,7 +175,7 @@
               <template v-if="device == 'mobile'">
                 <div class="in-line">
                   <label>Collateral</label>
-                  <p class="detail-common-p" v-if="detail.is_stake_nft">NFT License</p>
+                  <p class="detail-common-p" v-if="detail.is_stake_nft">License</p>
                   <p v-else class="flex-box detail-common-p detail-common-spe">
                     <span class="trade-input-icon mg-r8" :style="`background: url(${detail.token_icon}) no-repeat`"></span>{{ detail.credit_margin | decimals(2) }}
                     {{ detail.token_symbol }}
@@ -247,7 +247,7 @@
           </div>
         </a-col>
         <a-col :xs="24" :sm="24" :md="8" :lg="12">
-          <myPosition ref="scroll" @updateUserDealt="updateUserDealt" :detail="detail"></myPosition>
+          <myPosition  ref="scroll" @updateUserDealt="updateUserDealt" :detail="detail"></myPosition>
         </a-col>
       </a-row>
     </div>

@@ -83,7 +83,7 @@
                     <div class="framer-1hxcfed" data-framer-component-type="RichTextContainer"
                          style="outline: none; display: flex; flex-direction: column; justify-content: flex-start; flex-shrink: 0; transform: none;">
                       <p class="framer-text framer-styles-preset-3hq05c" data-styles-preset="u8FUT4Hlp">The next evolution in prediction markets. Create, trade, and own unique markets
-                        powered by blockchain and NFTs.</p></div>
+                        powered by blockchain and Licenses.</p></div>
                   </div>
                 </div>
                 <div class="ssr-variant hidden-1e8edyz">
@@ -174,7 +174,7 @@
                    style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none"
                    data-framer-component-type="RichTextContainer"><p
                   class="framer-text framer-styles-preset-se8omg" data-styles-preset="Al48OrleG"
-                  style="--framer-text-alignment:center;--framer-text-color:var(--LineColor, rgb(71, 84, 103))">Own the markets you create with NFT-backed security. Each market becomes a unique, tradable
+                  style="--framer-text-alignment:center;--framer-text-color:var(--LineColor, rgb(71, 84, 103))">Own the markets you create with License-backed security. Each market becomes a unique, tradable
                 asset.</p></div>
             </div>
             <div class="framer-pp5ina" data-framer-name="Card" name="Card">
@@ -272,15 +272,15 @@
                     <div class="framer-1x4gvk2" data-framer-component-type="RichTextContainer"
                          style="outline: none; display: flex; flex-direction: column; justify-content: flex-start; flex-shrink: 0; transform: none;">
                       <p class="framer-text framer-styles-preset-3hq05c" data-styles-preset="u8FUT4Hlp">Unlike Polymarket, our platform allows you to create your own prediction
-                        markets. Each market is minted as an NFT, granting you unique ownership and
+                        markets. Each market is minted as an License, granting you unique ownership and
                         control.</p></div>
                   </div>
                 </div>
                 <div class="ssr-variant hidden-1e8edyz">
                   <div class="framer-c20cm4-container"><a
                       class="framer-4MyKO framer-jTQU7 framer-hb8fvd framer-v-hb8fvd framer-1jpqomb"
-                      data-framer-name="Default " @click="$router.push('/nft')" target="_blank"
-                      rel="noopener"
+                      data-framer-name="Default " @click="$router.push('/nft')"
+                      rel="noopener" href="#"
                       style="background-color: var(--ButtonColor, rgb(87, 62, 243)); border-radius: 8px; opacity: 1;">
                     <div class="framer-duvjkw" data-framer-component-type="RichTextContainer"
                          style="outline: none; display: flex; flex-direction: column; justify-content: flex-start; flex-shrink: 0; --extracted-r6o4lv: var(--Color2, rgb(255, 255, 255)); --framer-link-text-color: rgb(0, 153, 255); --framer-link-text-decoration: underline; transform: none; opacity: 1;">
@@ -415,7 +415,7 @@
                   <div class="framer-2giprb" data-framer-component-type="RichTextContainer"
                        style="outline: none; display: flex; flex-direction: column; justify-content: flex-start; flex-shrink: 0; --extracted-r6o4lv: var(--token-efb762cf-bc24-4fbd-92cb-b75ee53fdca8, rgba(255, 255, 255, 0.1)); --framer-paragraph-spacing: 0px; transform: none; opacity: 1;">
                     <p class="framer-text framer-styles-preset-1svxohx" data-styles-preset="BmoJrMbam"
-                       style="--framer-text-color: var(--extracted-r6o4lv, var(--token-efb762cf-bc24-4fbd-92cb-b75ee53fdca8, rgba(255, 255, 255, 0.1)));">
+                      >
                       <a class="framer-text framer-styles-preset-17yh2lq" data-styles-preset="a0Ry9JFO_"
 
                          data-framer-page-link-current="true">Home</a></p></div>
@@ -537,7 +537,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 *{
   font-family: "paralucent", sans-serif!important;
 }
@@ -600,7 +606,7 @@ export default {
      Auther: Abdelrhman Said
  */
 
-  @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 
   * {
     margin: 0;
@@ -736,6 +742,7 @@ export default {
 :root {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale
+
 }
 
 * {
@@ -863,7 +870,7 @@ p.framer-text, div.framer-text, h1.framer-text, h2.framer-text, h3.framer-text, 
 }
 
 p.framer-text, div.framer-text, h1.framer-text, h2.framer-text, h3.framer-text, h4.framer-text, h5.framer-text, h6.framer-text, li.framer-text, ol.framer-text, ul.framer-text, span.framer-text:not([data-text-fill]) {
-  font-family: var(--framer-blockquote-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif));
+  font-family: var(--framer-blockquote-font-family, var(--framer-font-family,  Inter, Inter Placeholder, sans-serif))!important;
   font-style: var(--framer-blockquote-font-style, var(--framer-font-style, normal));
   font-weight: var(--framer-blockquote-font-weight, var(--framer-font-weight, 400));
   color: var(--framer-blockquote-text-color, var(--framer-text-color, #000));
@@ -926,7 +933,7 @@ li.framer-text > ul.framer-text:nth-child(2), li.framer-text > ol.framer-text:nt
 }
 
 code.framer-text, code.framer-text span.framer-text:not([data-text-fill]) {
-  font-family: var(--framer-code-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif));
+  font-family: var(--framer-code-font-family, var(--framer-font-family,  Inter, Inter Placeholder, sans-serif))!important;;
   font-style: var(--framer-blockquote-font-style, var(--framer-code-font-style, var(--framer-font-style, normal)));
   font-weight: var(--framer-blockquote-font-weight, var(--framer-code-font-weight, var(--framer-font-weight, 400)));
   color: var(--framer-blockquote-text-color, var(--framer-code-text-color, var(--framer-text-color, #000)));
@@ -944,7 +951,7 @@ blockquote.framer-text {
 }
 
 a.framer-text, a.framer-text span.framer-text:not([data-text-fill]), span.framer-text[data-nested-link], span.framer-text[data-nested-link] span.framer-text:not([data-text-fill]) {
-  font-family: var(--framer-blockquote-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif)));
+  font-family: var(--framer-blockquote-font-family, var(--framer-link-font-family, var(--framer-font-family,  Inter, Inter Placeholder, sans-serif))!important;);
   font-style: var(--framer-blockquote-font-style, var(--framer-link-font-style, var(--framer-font-style, normal)));
   font-weight: var(--framer-blockquote-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400)));
   color: var(--framer-blockquote-text-color, var(--framer-link-text-color, var(--framer-text-color, #000)));
@@ -955,7 +962,7 @@ a.framer-text, a.framer-text span.framer-text:not([data-text-fill]), span.framer
 }
 
 code.framer-text a.framer-text, code.framer-text a.framer-text span.framer-text:not([data-text-fill]), code.framer-text span.framer-text[data-nested-link], code.framer-text span.framer-text[data-nested-link] span.framer-text:not([data-text-fill]) {
-  font-family: var(--framer-code-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif));
+  font-family: var(--framer-code-font-family, var(--framer-font-family,  Inter, Inter Placeholder, sans-serif))!important;;
   font-style: var(--framer-blockquote-font-style, var(--framer-code-font-style, var(--framer-font-style, normal)));
   font-weight: var(--framer-blockquote-font-weight, var(--framer-code-font-weight, var(--framer-font-weight, 400)));
   color: var(--framer-blockquote-text-color, var(--framer-link-text-color, var(--framer-code-text-color, var(--framer-text-color, #000))));
@@ -963,7 +970,7 @@ code.framer-text a.framer-text, code.framer-text a.framer-text span.framer-text:
 }
 
 a.framer-text:hover, a.framer-text:hover span.framer-text:not([data-text-fill]), span.framer-text[data-nested-link]:hover, span.framer-text[data-nested-link]:hover span.framer-text:not([data-text-fill]) {
-  font-family: var(--framer-link-hover-font-family, var(--framer-blockquote-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif))));
+  font-family: var(--framer-link-hover-font-family, var(--framer-blockquote-font-family, var(--framer-link-font-family, var(--framer-font-family,  Inter, Inter Placeholder, sans-serif))!important;));
   font-style: var(--framer-link-hover-font-style, var(--framer-blockquote-font-style, var(--framer-link-font-style, var(--framer-font-style, normal))));
   font-weight: var(--framer-link-hover-font-weight, var(--framer-blockquote-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400))));
   color: var(--framer-link-hover-text-color, var(--framer-blockquote-text-color, var(--framer-link-text-color, var(--framer-text-color, #000))));
@@ -973,7 +980,7 @@ a.framer-text:hover, a.framer-text:hover span.framer-text:not([data-text-fill]),
 }
 
 code.framer-text a.framer-text:hover, code.framer-text a.framer-text:hover span.framer-text:not([data-text-fill]), code.framer-text span.framer-text[data-nested-link]:hover, code.framer-text span.framer-text[data-nested-link]:hover span.framer-text:not([data-text-fill]) {
-  font-family: var(var(--framer-code-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif)));
+  font-family: var(var(--framer-code-font-family, var(--framer-font-family,  Inter, Inter Placeholder, sans-serif))!important;);
   font-style: var(--framer-blockquote-font-style, var(--framer-code-font-style, var(--framer-font-style, normal)));
   font-weight: var(--framer-blockquote-font-weight, var(--framer-code-font-weight, var(--framer-font-weight, 400)));
   color: var(--framer-link-hover-text-color, var(--framer-blockquote-text-color, var(--framer-link-text-color, var(--framer-code-text-color, var(--framer-text-color, #000)))));
@@ -981,7 +988,7 @@ code.framer-text a.framer-text:hover, code.framer-text a.framer-text:hover span.
 }
 
 a.framer-text[data-framer-page-link-current], a.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]), span.framer-text[data-framer-page-link-current], span.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]) {
-  font-family: var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif)));
+  font-family: var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family,  Inter, Inter Placeholder, sans-serif))!important;);
   font-style: var(--framer-link-current-font-style, var(--framer-link-font-style, var(--framer-font-style, normal)));
   font-weight: var(--framer-link-current-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400)));
   color: var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-text-color, #000)));
@@ -991,7 +998,7 @@ a.framer-text[data-framer-page-link-current], a.framer-text[data-framer-page-lin
 }
 
 code.framer-text a.framer-text[data-framer-page-link-current], code.framer-text a.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]), code.framer-text span.framer-text[data-framer-page-link-current], code.framer-text span.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]) {
-  font-family: var(--framer-code-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif));
+  font-family: var(--framer-code-font-family, var(--framer-font-family,  Inter, Inter Placeholder, sans-serif))!important;;
   font-style: var(--framer-code-font-style, var(--framer-font-style, normal));
   font-weight: var(--framer-code-font-weight, var(--framer-font-weight, 400));
   color: var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-code-text-color, var(--framer-text-color, #000))));
@@ -999,7 +1006,7 @@ code.framer-text a.framer-text[data-framer-page-link-current], code.framer-text 
 }
 
 a.framer-text[data-framer-page-link-current]:hover, a.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]), span.framer-text[data-framer-page-link-current]:hover, span.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]) {
-  font-family: var(--framer-link-hover-font-family, var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif))));
+  font-family: var(--framer-link-hover-font-family, var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family,  Inter, Inter Placeholder, sans-serif))!important;));
   font-style: var(--framer-link-hover-font-style, var(--framer-link-current-font-style, var(--framer-link-font-style, var(--framer-font-style, normal))));
   font-weight: var(--framer-link-hover-font-weight, var(--framer-link-current-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400))));
   color: var(--framer-link-hover-text-color, var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-text-color, #000))));
@@ -1009,7 +1016,7 @@ a.framer-text[data-framer-page-link-current]:hover, a.framer-text[data-framer-pa
 }
 
 code.framer-text a.framer-text[data-framer-page-link-current]:hover, code.framer-text a.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]), code.framer-text span.framer-text[data-framer-page-link-current]:hover, code.framer-text span.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]) {
-  font-family: var(--framer-code-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif));
+  font-family: var(--framer-code-font-family, var(--framer-font-family,  Inter, Inter Placeholder, sans-serif))!important;;
   font-style: var(--framer-code-font-style, var(--framer-font-style, normal));
   font-weight: var(--framer-code-font-weight, var(--framer-font-weight, 400));
   color: var(--framer-link-hover-text-color, var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-code-text-color, var(--framer-text-color, #000)))));
@@ -1144,7 +1151,7 @@ ul.framer-text > li.framer-text:before {
 }
 
 [data-framer-component-type=DeprecatedRichText] a, [data-framer-component-type=DeprecatedRichText] a span:not([data-text-fill]) {
-  font-family: var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif));
+  font-family: var(--framer-link-font-family, var(--framer-font-family,  Inter, Inter Placeholder, sans-serif))!important;;
   font-style: var(--framer-link-font-style, var(--framer-font-style, normal));
   font-weight: var(--framer-link-font-weight, var(--framer-font-weight, 400));
   color: var(--framer-link-text-color, var(--framer-text-color, #000));
@@ -1154,7 +1161,7 @@ ul.framer-text > li.framer-text:before {
 }
 
 [data-framer-component-type=DeprecatedRichText] a:hover, [data-framer-component-type=DeprecatedRichText] a:hover span:not([data-text-fill]) {
-  font-family: var(--framer-link-hover-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif)));
+  font-family: var(--framer-link-hover-font-family, var(--framer-link-font-family, var(--framer-font-family,  Inter, Inter Placeholder, sans-serif))!important;);
   font-style: var(--framer-link-hover-font-style, var(--framer-link-font-style, var(--framer-font-style, normal)));
   font-weight: var(--framer-link-hover-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400)));
   color: var(--framer-link-hover-text-color, var(--framer-link-text-color, var(--framer-text-color, #000)));
@@ -1164,7 +1171,7 @@ ul.framer-text > li.framer-text:before {
 }
 
 [data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current], [data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current] span:not([data-text-fill]):not([data-nested-link]) {
-  font-family: var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif)));
+  font-family: var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family,  Inter, Inter Placeholder, sans-serif))!important;);
   font-style: var(--framer-link-current-font-style, var(--framer-link-font-style, var(--framer-font-style, normal)));
   font-weight: var(--framer-link-current-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400)));
   color: var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-text-color, #000)));
@@ -1174,7 +1181,7 @@ ul.framer-text > li.framer-text:before {
 }
 
 [data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current]:hover, [data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current]:hover span:not([data-text-fill]):not([data-nested-link]) {
-  font-family: var(--framer-link-hover-font-family, var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif))));
+  font-family: var(--framer-link-hover-font-family, var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family,  Inter, Inter Placeholder, sans-serif))!important;));
   font-style: var(--framer-link-hover-font-style, var(--framer-link-current-font-style, var(--framer-link-font-style, var(--framer-font-style, normal))));
   font-weight: var(--framer-link-hover-font-weight, var(--framer-link-current-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400))));
   color: var(--framer-link-hover-text-color, var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-text-color, #000))));
@@ -1902,7 +1909,7 @@ NavigationContainer [data-framer-component-type=NavigationContainer] > *, [data-
   --framer-font-weight-bold: 700;
   --framer-font-weight-bold-italic: 700;
   --framer-font-weight-italic: 500;
-  --framer-letter-spacing: -.02em;
+  --framer-letter-spacing: 0;
   --framer-line-height: 1.6em;
   --framer-paragraph-spacing: 20px;
   --framer-text-alignment: start;
@@ -1956,7 +1963,7 @@ NavigationContainer [data-framer-component-type=NavigationContainer] > *, [data-
   --framer-font-weight-bold: 700;
   --framer-font-weight-bold-italic: 700;
   --framer-font-weight-italic: 400;
-  --framer-letter-spacing: -.02em;
+  --framer-letter-spacing: 0;
   --framer-line-height: 1.6em;
   --framer-paragraph-spacing: 20px;
   --framer-text-alignment: start;
@@ -2436,7 +2443,7 @@ NavigationContainer [data-framer-component-type=NavigationContainer] > *, [data-
   --framer-font-weight-bold: 700;
   --framer-font-weight-bold-italic: 700;
   --framer-font-weight-italic: 400;
-  --framer-letter-spacing: -.02em;
+  --framer-letter-spacing: 0;
   --framer-line-height: 1.6em;
   --framer-paragraph-spacing: 20px;
   --framer-text-alignment: start;
@@ -2617,7 +2624,7 @@ NavigationContainer [data-framer-component-type=NavigationContainer] > *, [data-
   --framer-font-weight-bold: 700;
   --framer-font-weight-bold-italic: 700;
   --framer-font-weight-italic: 400;
-  --framer-letter-spacing: -.02em;
+  --framer-letter-spacing: 0;
   --framer-line-height: 1.6em;
   --framer-paragraph-spacing: 20px;
   --framer-text-alignment: start;
@@ -2740,7 +2747,7 @@ NavigationContainer [data-framer-component-type=NavigationContainer] > *, [data-
   --framer-font-weight-bold: 700;
   --framer-font-weight-bold-italic: 700;
   --framer-font-weight-italic: 400;
-  --framer-letter-spacing: -.02em;
+  --framer-letter-spacing: 0;
   --framer-line-height: 1.6em;
   --framer-paragraph-spacing: 20px;
   --framer-text-alignment: start;

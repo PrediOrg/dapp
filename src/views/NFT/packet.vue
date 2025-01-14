@@ -215,7 +215,7 @@
     <a-modal v-model="showHint" :centered="true" :footer="null" :width="device == 'mobile' ? '80%' : '400px'" class="cyrox-modal" :class="{ 'cyrox-modal-mobile': device == 'mobile' }">
       <div class="cyrox-modal-info">
         <div class="cyrox-modal-body">
-          <p>This NFT is on renting，please cancel it and then you can sell it.</p>
+          <p>This License is on renting，please cancel it and then you can sell it.</p>
         </div>
         <div class="cyrox-modal-btn">
           <a-button type="primary" @click="confirmCancel()">

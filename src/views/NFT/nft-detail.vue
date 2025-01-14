@@ -57,10 +57,10 @@
                   </template>
                   <template v-else>
                     <div class="detail-status-text" v-if="detail.balance > 0">
-                      <p>Current NFT can be sold or rented.</p>
+                      <p>Current License can be sold or rented.</p>
                     </div>
                     <div v-else class="detail-status-text">
-                      <p>{{ detail.user == account ? 'NFT can sell.' : 'NFT is unsold.' }}</p>
+                      <p>{{ detail.user == account ? 'License can sell.' : 'License is unsold.' }}</p>
                     </div>
                   </template>
                 </div>
@@ -151,17 +151,17 @@
             <div class="sub-title">Rules</div>
             <div class="detail-rules">
               <h3>Sell</h3>
-              <p>The NFT owners have right to sell OWNERSHIP of the NFT on the market.</p>
+              <p>The License owners have right to sell OWNERSHIP of the License on the market.</p>
               <p>2.5% fee will be charged on each transaction.</p>
               <h3>Rent</h3>
-              <p>Owners with NFT can rent their NFT issue times on the market and renters can use the NFT to issue betting products during the lease period.</p>
+              <p>Owners with License can rent their License issue times on the market and renters can use the NFT to issue prediction products during the lease period.</p>
               <p>The minimum rental period is 10 days.</p>
               <p>2.5% fee will be charged on each transaction.</p>
             </div>
           </div>
           <div class="panel-container">
             <div class="sub-title">Payoff</div>
-            <div class="detail-details">Get rewards by issuing bettings and inviting friends to participate.</div>
+            <div class="detail-details">Get rewards by issuing predictions and inviting friends to participate.</div>
           </div>
           <div class="panel-container">
             <div class="sub-title">Details</div>
@@ -182,7 +182,7 @@
                 </div>
                 <div class="relative" style="flex: 1">
                   <div class="flex-box">
-                    <label>NFT Owner</label>
+                    <label>License Owner</label>
                     <p class="detail-nft-p">
                       {{ detail.user | showAddress }}
                     </p>
@@ -193,7 +193,7 @@
                   </div>
                   <router-link to="/nft">
                     <div class="detail-nft-link flex-box">
-                      <p>Get Your NFT License</p>
+                      <p>Get Your License</p>
                       <img class="right-icon" src="~@/assets/images/right-icon.svg" />
                     </div>
                   </router-link>
@@ -246,7 +246,7 @@
         <div class="cyrox-modal-body">
           <p>
             Confirm "Cancel" the
-            {{ detail.owner_status == 2 ? 'sale' : 'rent' }} of current NFT
+            {{ detail.owner_status == 2 ? 'sale' : 'rent' }} of current License
           </p>
         </div>
         <div class="cyrox-modal-btn">

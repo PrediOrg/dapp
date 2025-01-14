@@ -6,7 +6,7 @@
     <div class="add-box">
       <div class="add-tickets" v-if="ticketList.length === 0">
         <a href="/nft">
-          Get License
+          Licenses
           <span>Go</span>
         </a>
       </div>
@@ -178,7 +178,7 @@
                     }"
                     @click="clickStakeNft()"
                   >
-                    Current NFT
+                    Current License
                   </div>
                 </a-col>
               </a-row>
@@ -487,7 +487,7 @@ export default {
     rowShadowClick() {
       if (this.ticketId == 0) {
         this.$notification['error']({
-          message: 'Please select a NFT License',
+          message: 'Please select a License',
         });
       }
     },
@@ -587,7 +587,7 @@ export default {
       let ticketId = this.ticketId;
       if (!ticketId) {
         this.$notification['error']({
-          message: 'Select a NFT License',
+          message: 'Select a License',
         });
         return;
       }
