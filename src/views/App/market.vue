@@ -402,6 +402,7 @@ body[data-theme="dark"] {
   /deep/ .ant-list-item {
     padding-bottom: 24px;
     height: 100%;
+
   }
 
   /deep/ .ant-row {
@@ -422,6 +423,7 @@ body[data-theme="dark"] {
     font-family: "paralucent", sans-serif;
     color: var(--FontColor1);
     background: var(--BGColor2);
+
     @include box_shadow_color;
     border-radius: 10px;
     position: relative;

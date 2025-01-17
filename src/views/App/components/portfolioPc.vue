@@ -736,4 +736,8 @@ export default {
     }
   }
 }
+//override
+.ant-spin-container{
+  border-radius: 5px;
+}
 </style>

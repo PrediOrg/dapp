@@ -22,12 +22,14 @@
   }
 }
 body {
+  --BGHomeColor2: #fff;
   --BGColor0: rgb(249, 250, 251);
   --ButtonColor: rgb(87, 62, 243);
   --FontColor1: rgb(20, 21, 25);
   --LineColor: rgb(71, 84, 103);
   --LineColor2: #EAECF0;
   --BGColor2: rgb(255, 255, 255);
+  --MintPrice: #fff;
   --Color2: rgb(255, 255, 255);
   --token-84a176a1-3447-495e-9092-ed348eda5f49: rgb(64, 58, 187);
   --token-eb5b0d19-1aa7-4883-8fb0-1863f8bd4814: rgba(0, 0, 0, .08);
@@ -48,12 +50,15 @@ body {
 
 @media (prefers-color-scheme: light) {
   body {
+    --BGHomeColor2: #fff;
+
     --BGColor0: rgb(249, 250, 251);
     --ButtonColor: rgb(87, 62, 243);
     --FontColor1: rgb(20, 21, 25);
     --LineColor: rgb(71, 84, 103);
     --LineColor2: #EAECF0;
     --BGColor2: rgb(255, 255, 255);
+    --MintPrice: #fff;
     --Color2: rgb(255, 255, 255);
     --token-84a176a1-3447-495e-9092-ed348eda5f49: rgb(64, 58, 187);
     --token-eb5b0d19-1aa7-4883-8fb0-1863f8bd4814: rgba(0, 0, 0, .08);
@@ -68,11 +73,14 @@ body {
 }
 @media (prefers-color-scheme: dark) {
   body {
+    --BGHomeColor2: #141519;
+
     --BGColor0: rgb(17, 21, 18);
     --FontColor1: rgb(245, 245, 246);
     --LineColor: rgb(148, 150, 156);
     --LineColor2: #1F242F;
-    --BGColor2: rgb(20, 21, 25);
+    --BGColor2: radial-gradient( 30% 55% at 89% 49%, #241A3C 0%, #1C1A20 100%);
+    --MintPrice: #141519;
     --Color2: rgb(255, 255, 255);
     --token-eb5b0d19-1aa7-4883-8fb0-1863f8bd4814: rgb(41, 42, 47);
     --token-efb762cf-bc24-4fbd-92cb-b75ee53fdca8: rgba(255, 255, 255, .3);
@@ -87,11 +95,14 @@ body {
   }
 }
 body[data-theme="dark"] {
+  --BGHomeColor2: #141519;
+
   --BGColor0: rgb(17, 21, 18);
   --FontColor1: rgb(245, 245, 246);
   --LineColor: rgb(148, 150, 156);
-  --BGColor2: rgb(20, 21, 25);
+  --BGColor2: radial-gradient( 30% 55% at 89% 49%, #241A3C 0%, #1C1A20 100%);
   --Color2: rgb(255, 255, 255);
+  --MintPrice: #141519;
   --LineColor2: #1F242F;
   --token-eb5b0d19-1aa7-4883-8fb0-1863f8bd4814: rgb(41, 42, 47);
   --token-efb762cf-bc24-4fbd-92cb-b75ee53fdca8: rgba(255, 255, 255, .3);
@@ -104,11 +115,13 @@ body[data-theme="dark"] {
   --MarketBottomItemBG: rgba(244,243,255,0.1);
 }
 body[data-theme="light"] {
+  --BGHomeColor2: #fff;
   --BGColor0: rgb(249, 250, 251);
   --ButtonColor: rgb(87, 62, 243);
   --FontColor1: rgb(20, 21, 25);
   --LineColor: rgb(71, 84, 103);
   --BGColor2: rgb(255, 255, 255);
+  --MintPrice: #fff;
   --LineColor2: #EAECF0;
   --Color2: rgb(255, 255, 255);
   --token-84a176a1-3447-495e-9092-ed348eda5f49: rgb(64, 58, 187);

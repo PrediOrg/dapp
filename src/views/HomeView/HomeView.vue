@@ -10,7 +10,7 @@
         <div class="ssr-variant hidden-1e8edyz">
           <div class="framer-tr6jlz-container">
             <div class="framer-CLdFL framer-1rimy18 framer-v-1rimy18" data-framer-name="Desktop"
-                 style="background-color: var(--BGColor2, rgb(255, 255, 255)); width: 100%; opacity: 1;">
+                 style="background-color: var(--BGHomeColor2, rgb(255, 255, 255)); width: 100%; opacity: 1;">
               <div class="framer-1ng1d4j" data-framer-name="Nav Wrapper" style="opacity: 1;">
                 <div class="framer-5lci55-container" style="opacity: 1;">
                   <div class="framer-hvMep framer-FhEkj framer-p3te6o framer-v-p3te6o"
@@ -1532,7 +1532,7 @@ NavigationContainer [data-framer-component-type=NavigationContainer] > *, [data-
 .framer-orBoP .framer-r0taek {
   align-content: center;
   align-items: center;
-  background-color: var(--BGColor2, #ffffff);
+  background-color: var(--BGHomeColor2, #ffffff);
   display: flex;
   flex: none;
   flex-direction: column;

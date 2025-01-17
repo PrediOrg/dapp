@@ -670,15 +670,16 @@ export default {
 
   .mint-btn {
     width: 100%;
-    height: 60px;
-    border-radius: 17px;
+    height:50px;
+    border-radius: 8px;
     margin-top: 20px;
   }
 
   .issue-tip {
     font-size: 16px;
     color:  var(--FontColor1);
-
+    opacity: 0.7;
+    font-weight: normal;
   }
 
   .mint-number {
@@ -692,10 +693,10 @@ export default {
 
   .mint-price {
 
-    background: var(--BGColor2);
+    background: var(--MintPrice);
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
     border-radius: 8px 8px 8px 8px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--LineColor2);
 
     padding: 0 25px;
     margin-top: 20px;
@@ -765,7 +766,7 @@ export default {
         align-items: center;
         cursor: pointer;
         justify-content: space-between;
-        border-left: 1px solid rgba(0, 0, 0, 0.08);
+        border-left: 1px solid var(--LineColor2);
         .left-price{
           display: flex;
           align-items: center;
@@ -1255,5 +1256,19 @@ export default {
       }
     }
   }
+}
+
+@media screen and (max-width: 810px) {
+.mint-op-box{
+  .mint-number {
+    font-size: 7vw;
+    font-weight: 400;
+
+  }
+  .issue-tip{
+    font-size: 4vw;
+  }
+}
+
 }
 </style>

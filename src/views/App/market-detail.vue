@@ -1080,7 +1080,7 @@ export default {
 
   .detail-info {
     padding: 20px 26px;
-    background: var(--MintBGColor);
+    background: var(--BGColor2);
     @include box_shadow_color_detail;
     border-radius: 10px;
     color: var(--FontColor1);

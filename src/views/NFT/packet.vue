@@ -20,7 +20,7 @@
         class="markets-add-list"
         :grid="{
           gutter: device == 'mobile' ? 12 : 24,
-          xs: 2,
+          xs: 1,
           sm: 2,
           md: 2,
           lg: 4,
@@ -469,7 +469,6 @@ export default {
 
     .markets-info-img {
       width: 100%;
-      @include bg_color_change($background-color-change7, $background-color-change8);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -527,7 +526,7 @@ export default {
         //color: var(--FontColor1);
         @include box_shadow_color;
         background: #573EF3;
-
+        font-weight: 500;
         border-radius: 10px;
         font-size: 16px;
         height: 42px;
@@ -750,7 +749,6 @@ export default {
       border-radius: 0.2rem;
 
       .markets-info-intro {
-        flex-direction: column;
         align-items: flex-start;
         padding: 0.1rem 0;
 
@@ -793,7 +791,7 @@ export default {
         button {
           width: 48%;
           border-radius: 0.2rem;
-          font-size: 0.32rem;
+          font-size: 0.26rem;
           height: 0.72rem;
         }
       }
