@@ -551,17 +551,18 @@ body[data-theme="dark"] {
       .item {
         display: flex;
         justify-content: space-between;
-        margin-top: 20px;
+        margin-top: 15px;
         height: 30px;
         align-items: center;
         font-size: 14px;
         font-weight: 400;
-        color: var(--FontColor1);;
+        color: var(--FontColor1);
 
         .left {
           max-width: 130px;
           white-space: nowrap;
           overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         .right {

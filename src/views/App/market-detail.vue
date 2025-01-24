@@ -136,6 +136,15 @@
               </template>
             </div>
             <div class="detail-content">
+
+              <div class="in-line">
+                <label>Prediction Token</label>
+                <div class="add-input-after">
+                  <a target="_blank" class="normal" href="https://docs.predi.org/join-us">List your token</a>
+                  <img style="border-radius: 50%" :src="`${detail.token_icon}`" width="22" height="22" />
+                  <span class="pd-l8">{{ detail.base_token }}</span>
+                </div>
+              </div>
               <div class="in-line">
                 <label>{{ $t('validityPeriod') }}(UTC)</label>
                 <p class="detail-common-p">
@@ -177,7 +186,7 @@
                   <label>Collateral</label>
                   <p class="detail-common-p" v-if="detail.is_stake_nft">License</p>
                   <p v-else class="flex-box detail-common-p detail-common-spe">
-                    <span class="trade-input-icon mg-r8" :style="`background: url(${detail.token_icon}) no-repeat`"></span>{{ detail.credit_margin | decimals(2) }}
+                    <img :src="detail.token_icon" class="trade-input-icon mg-r8" />{{ detail.credit_margin | decimals(2) }}
                     {{ detail.token_symbol }}
                   </p>
                 </div>
@@ -227,8 +236,8 @@
                 </div>
               </div>
             </div>
-            <a-divider class="add-divider" orientation="left"> </a-divider>
             <div class="add-product">
+              <label >Description</label>
               <div class="add-product-info">
                 <p>
                   At the expiration date (
@@ -1033,7 +1042,7 @@ export default {
 
       .detail-status-period {
         label {
-          font-size: 12px;
+          font-size: 14px;
           color: rgba(255, 255, 255, 0.8);
           padding-top: 20px;
           display: inline-block;
@@ -1102,6 +1111,8 @@ export default {
 
       .address {
         color: var(--mainColor);
+        max-width: 70%;
+        word-break: break-all;
       }
     }
 
@@ -1112,7 +1123,7 @@ export default {
     label {
       padding-top: 5px;
       padding-bottom: 5px;
-      font-size: 12px;
+      font-size: 14px;
       @include font_color($font-color-s10, $font-color-s5);
       display: block;
     }
@@ -1215,7 +1226,6 @@ export default {
     }
 
     .add-product {
-      margin-top: 24px;
       padding-bottom: 10px;
 
       h3 {
@@ -1228,12 +1238,12 @@ export default {
 
       .add-product-info {
         p {
-          font-size: 12px;
-          line-height: 18px;
+          font-size: 14px;
+          line-height: 1.5;
           @include font_color($font-color-s10, $font-color-s3);
-
+          color: var(--MarketDetailFontColor);
+          margin-top: 5px;
           u {
-            color: var(--FontColor1);
             text-decoration: none;
             color: var(--mainColor);
 
@@ -1285,7 +1295,7 @@ export default {
     label {
       padding-top: 5px;
       padding-bottom: 5px;
-      font-size: 12px;
+      font-size: 14px;
       @include font_color($font-color-s10, $font-color-s5);
       display: block;
     }
@@ -1458,7 +1468,7 @@ export default {
     label {
       padding-top: 5px;
       padding-bottom: 5px;
-      font-size: 12px;
+      font-size: 14px;
       @include font_color($font-color-s10, $font-color-s5);
       display: block;
     }
@@ -1634,7 +1644,6 @@ export default {
 .trade-input-icon {
   width: 20px;
   height: 20px;
-  background-size: contain;
 }
 
 .cyrox-modal {
@@ -1967,7 +1976,7 @@ export default {
   }
 
   .detail-form {
-    margin-top: 1.76rem;
+    margin-top: 0.76rem;
     padding: 0.08rem 0.24rem 0.24rem;
     border-radius: 0.2rem;
     position: relative;

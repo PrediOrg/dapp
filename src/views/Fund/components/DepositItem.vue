@@ -9,7 +9,7 @@
         </div>
         <div class="info-item">
           <div class="name">Locked amount</div>
-          <div class="value orange">{{ BigNumber(item.locked_amount).toFixed(2) }}</div>
+          <div class="value orange">{{ item.locked_amount?BigNumber(item.locked_amount).toFixed(2):"0.00" }}</div>
         </div>
         <div class="info-item">
           <div class="name">Unlock time</div>
@@ -370,7 +370,7 @@ export default {
     .select-box {
       display: flex;
 
-      background: var(--BGColor2);
+      background: var(--BGColor0);
       width: 100%;
       border-radius: 10px;
 
@@ -404,7 +404,7 @@ export default {
     .input-box {
       margin: 0 0 13px 0;
       height: 60px;
-      background: var(--BGColor2);
+      background: var(--BGColor0);
       border-radius: 10px;
 
       input {

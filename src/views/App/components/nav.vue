@@ -99,7 +99,7 @@ export default {
     padding: 8px 12px;
     span{
       font-family: "paralucent", sans-serif;
-      font-weight: 600;
+      font-weight: normal;
       font-style: normal;
     }
     &.active {

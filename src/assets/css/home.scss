@@ -43,7 +43,10 @@ body {
 
   --MintBGColor: rgb(255, 255, 255);
   --MarketBottomItemBG:#F9FAFB;
+  --PositionBannerBg:RGBA(235, 235, 235, 1);
+  --PositionButtonBg:#221A35;
 
+  --MarketDetailFontColor:#475467;
 }
 
 
@@ -69,17 +72,19 @@ body {
     --ButtonBGColor3: #e4e5e7;
     --ButtonBGColor4: #fff;
     --MintBGColor: rgb(255, 255, 255);
+    --PositionBannerBg:RGBA(235, 235, 235, 1);
+    --PositionButtonBg:#221A35;
+    --MarketDetailFontColor:#94969C;
   }
 }
 @media (prefers-color-scheme: dark) {
   body {
     --BGHomeColor2: #141519;
-
     --BGColor0: rgb(17, 21, 18);
     --FontColor1: rgb(245, 245, 246);
     --LineColor: rgb(148, 150, 156);
     --LineColor2: #1F242F;
-    --BGColor2: radial-gradient( 30% 55% at 89% 49%, #241A3C 0%, #1C1A20 100%);
+    --BGColor2: radial-gradient( 34% 70% at 50% 83%, #241A3C 0%, #1C1A20 100%);
     --MintPrice: #141519;
     --Color2: rgb(255, 255, 255);
     --token-eb5b0d19-1aa7-4883-8fb0-1863f8bd4814: rgb(41, 42, 47);
@@ -92,6 +97,10 @@ body {
     --MintBGColor: rgba(28, 26, 32, 1);
     --MarketBottomItemBG: rgba(244,243,255,0.1);
     --MarketOptionBgColor1: #FEDF89;
+    --PositionBannerBg: RGBA(20, 21, 25, 1);
+    --PositionButtonBg: rgba(34, 26, 53, 1);
+
+    --MarketDetailFontColor:#94969C;
   }
 }
 body[data-theme="dark"] {
@@ -100,7 +109,7 @@ body[data-theme="dark"] {
   --BGColor0: rgb(17, 21, 18);
   --FontColor1: rgb(245, 245, 246);
   --LineColor: rgb(148, 150, 156);
-  --BGColor2: radial-gradient( 30% 55% at 89% 49%, #241A3C 0%, #1C1A20 100%);
+  --BGColor2: radial-gradient( 34% 70% at 50% 83%, #241A3C 0%, #1C1A20 100%);
   --Color2: rgb(255, 255, 255);
   --MintPrice: #141519;
   --LineColor2: #1F242F;
@@ -113,6 +122,10 @@ body[data-theme="dark"] {
   --ButtonBGColor4: #221a35;
   --MintBGColor: rgba(28, 26, 32, 1);
   --MarketBottomItemBG: rgba(244,243,255,0.1);
+  --PositionBannerBg: RGBA(20, 21, 25, 1);
+  --PositionButtonBg: rgba(34, 26, 53, 1);
+
+  --MarketDetailFontColor:#94969C;
 }
 body[data-theme="light"] {
   --BGHomeColor2: #fff;
@@ -134,4 +147,6 @@ body[data-theme="light"] {
   --ButtonBGColor4: #fff;
   --MintBGColor: rgb(255, 255, 255);
   --MarketBottomItemBG:#F9FAFB;
+  --PositionBannerBg:RGBA(235, 235, 235, 1);
+  --MarketDetailFontColor:#475467;
 }

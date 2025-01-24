@@ -525,8 +525,9 @@ export default {
     @include border_color($border-color-s9, $border-color-s10);
   }
   .liguidity-tabs {
-    width: 242px;
-    height: 54px;
+    width: 150px;
+    height: 40px;
+    font-size: 14px;
     padding: 4px;
     @include bg_color_change($background-color-change15, $background-color-change14);
     border-radius: 10px;
@@ -538,7 +539,7 @@ export default {
 
       @include font_color($font-color-s7, $font-color-s1);
       width: 50%;
-      height: 46px;
+      height: 40px;
       &.active {
         @include bg_color_change($background-color-change3, $background-color-change12);
         @include box_shadow_color;
@@ -740,4 +741,13 @@ export default {
 .ant-spin-container{
   border-radius: 5px;
 }
+/deep/.ant-table-thead > tr > th{
+  background: none!important;
+  border-bottom: none!important;
+}
+/deep/.ant-table-tbody > tr > td{
+  border-bottom: none!important;
+
+}
+
 </style>

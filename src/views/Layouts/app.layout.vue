@@ -15,7 +15,7 @@
 
           <div class="fund-box">
             <div class="market-select-button">
-              <a-button type="primary" size="large" @click="issue">
+              <a-button type="primary"  @click="issue">
                 <a-icon type="plus" />
                 Create New
               </a-button>
@@ -59,7 +59,7 @@
             <div class="name">Cash</div>
           </div>
           <div class="market-select-button" style="margin-left: 10px">
-            <a-button type="primary" size="large" @click="issue">
+            <a-button type="primary"  @click="issue">
               <a-icon type="plus" />
               Create New
             </a-button>
@@ -362,7 +362,13 @@ header{
     .fund-box,
     .fund-box-m {
       display: flex;
-
+      align-items: center;
+      .market-select-button .ant-btn{
+        height: 40px;
+       span{
+         font-weight: 500;
+       }
+      }
       .fund-item {
         text-align: center;
         cursor: pointer;
