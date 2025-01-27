@@ -52,7 +52,7 @@ export default {
           enable: true,
         },
         {
-          url: '/nft/packet',
+          url: '/nft',
           text: 'License',
           badge: false,
           enable: true,

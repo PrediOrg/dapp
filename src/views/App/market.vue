@@ -447,6 +447,7 @@ body[data-theme="dark"] {
         text-align: center;
         width: 90px;
         line-height: 22px;
+        overflow: hidden;
         height: 22px;
         background: var(--MarketBottomItemBG);
         border-radius: 6px 6px 6px 6px;
