@@ -206,7 +206,7 @@
               <li>{{ $t('cdsInfoThree') }}</li>
             </ul>
             <div class="add-product">
-              <h3>Betting Project: {{ form.content }}</h3>
+              <h3>Prediction Project: {{ form.content }}</h3>
               <div class="add-product-info">fund-box
                 <p>
                   At the expiration date ( <u>{{ form.maturityDate | timeFormat('MMM. DD,YYYY') }}</u> ), those who have chosen the correct option will share tokens from the product pool based on
