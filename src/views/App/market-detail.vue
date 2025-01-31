@@ -5,7 +5,7 @@
         <a-col :xs="24" :sm="24" :md="16" :lg="12">
           <div class="detail-info">
             <div class="header-part">
-              <div class="title-tip">Betting product</div>
+              <div class="title-tip">Prediction product</div>
               <div class="add-header">
                 <div class="logo">
                   <img v-if="!detail.image" src="@/assets/images/battle-default.png" alt="" />
@@ -17,7 +17,7 @@
                     <!-- status:guarantee -->
                     <div class="detail-status-info" v-if="detail.status == 0">
                       <div class="detail-status-text">
-                        Betting in progress.
+                        Prediction in progress.
                         <span v-if="now > detail.close_date">Market Closed</span>
                       </div>
                       <!-- issuer -->
