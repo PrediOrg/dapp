@@ -217,8 +217,8 @@
                   <u>{{ form.subscribeEndDate | timeFormat('MMM. DD,YYYY') }}</u
                   >.
                 </p>
-                <p>The result can be confirmed in advance by Seller, if the event occurs before expiration date.</p>
-                <p>If the participants disagree with the result of event confirmed by Seller, they can "Challenge" it within 7 days of confirmation.</p>
+                <p>The result can be confirmed in advance by issuer, if the event occurs before expiration date.</p>
+                <p>If the participants disagree with the result of event confirmed by issuer, they can "Challenge" it within 7 days of confirmation.</p>
               </div>
               <div v-if="form.source" class="add-product-source">
                 Resolution Source:(<span>{{ form.source }}</span
