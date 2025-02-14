@@ -192,7 +192,7 @@ export default {
       ethPrice: 0,
       fercPrice: 100,
       remain: 0,
-      max: 3000,
+      max: 5000,
       current: 0,
     };
   },
