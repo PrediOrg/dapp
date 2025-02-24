@@ -1,7 +1,7 @@
 <template>
   <section>
     <!-- status:guaranteeing -->
-    <template v-if="item.status == 0"> Betting in progress. </template>
+    <template v-if="item.status == 0"> Prediction in progress. </template>
     <!-- status:seller confirmed -->
     <template v-else-if="item.status == 1">
       Event is waiting for confirmation.

@@ -206,7 +206,7 @@
               <li>{{ $t('cdsInfoThree') }}</li>
             </ul>
             <div class="add-product">
-              <h3>Betting Project: {{ form.content }}</h3>
+              <h3>Prediction Project: {{ form.content }}</h3>
               <div class="add-product-info">fund-box
                 <p>
                   At the expiration date ( <u>{{ form.maturityDate | timeFormat('MMM. DD,YYYY') }}</u> ), those who have chosen the correct option will share tokens from the product pool based on
@@ -217,8 +217,8 @@
                   <u>{{ form.subscribeEndDate | timeFormat('MMM. DD,YYYY') }}</u
                   >.
                 </p>
-                <p>The result can be confirmed in advance by Seller, if the event occurs before expiration date.</p>
-                <p>If the participants disagree with the result of event confirmed by Seller, they can "Challenge" it within 7 days of confirmation.</p>
+                <p>The result can be confirmed in advance by issuer, if the event occurs before expiration date.</p>
+                <p>If the participants disagree with the result of event confirmed by issuer, they can "Challenge" it within 7 days of confirmation.</p>
               </div>
               <div v-if="form.source" class="add-product-source">
                 Resolution Source:(<span>{{ form.source }}</span
@@ -234,14 +234,12 @@
       <div class="cyrox-modal-info">
         <div class="cyrox-modal-title">Event</div>
         <div class="cyrox-modal-body">
-          <p>[<span class="color-FFB255">Crypto</span>] Bitcoin price falls below 30k.</p>
-          <p>[<span class="color-FFB255">Crypto</span>] Shiba being delisted from coinbase.</p>
-          <p>[<span class="color-FFB255">Crypto</span>] USDT price plunge below $0.85.</p>
-          <p>[<span class="color-F23B97">Finance</span>] D.R. Horton's credit rating downgrade below BBB.</p>
-          <p>[<span class="color-D434C4">Technology</span>] China achieving mass production of 7nm chips.</p>
-          <p>[<span class="color-FF503E">Sports</span>] Paris failing to host 2024 Olympics.</p>
-          <p>[<span class="color-8535D3">Society</span>] Vladimir Putin losing Russia's 2024 Election.</p>
-          <p>[<span class="color-7DEBF4">Others</span>] Donald Trump's reopening his twitter account.</p>
+          <p>[<span class="color-FFB255">Crypto</span>] What will be Bitcoin's price range at the end of 2025?</p>
+          <p>[<span class="color-F23B97">Finance</span>] What will be the U.S. Federal Reserve's interest rate decision in Q3 2025? </p>
+          <p>[<span class="color-D434C4">Technology</span>] Which company will launch the first fully autonomous AI-driven robot assistant? </p>
+          <p>[<span class="color-FF503E">Sports</span>] Which team will win the 2026 FIFA World Cup?</p>
+          <p>[<span class="color-8535D3">Society</span>]Which social media platform will have the most monthly active users in 2025? </p>
+          <p>[<span class="color-7DEBF4">Others</span>] When will the Russia-Ukraine war end?</p>
         </div>
       </div>
     </a-modal>
