@@ -33,6 +33,7 @@
         width="80%"
         class="wallet-menu-drawer"
         @afterVisibleChange="handleDrawerVisibleChange"
+          :afterVisibleChange="handleDrawerVisibleChange"
       >
         <div class="menu-content">
           <!-- 主题切换 -->
@@ -778,13 +779,22 @@ button {
 }
 
 .wallet-menu-drawer {
+  /deep/ .ant-drawer-content {
+    background: var(--BGColor2);
+  }
+
+  /deep/ .ant-drawer-wrapper-body {
+    background: var(--BGColor2);
+  }
+
   .menu-content {
     padding: 20px;
 
     .menu-item {
       padding: 15px;
       margin-bottom: 10px;
-      background: var(--BGColor2);
+      background: var(--ButtonBGColor4);
+      border: 1px solid var(--LineColor2);
       border-radius: 10px;
       
       &.theme-switch {
@@ -799,14 +809,6 @@ button {
           align-items: center;
           justify-content: space-between;
           padding: 0 10px;
-          
-          .icon {
-            margin-right: 10px;
-          }
-
-          #mobile-toggle-theme {
-            cursor: pointer;
-          }
         }
       }
       
@@ -817,13 +819,11 @@ button {
           color: var(--FontColor1);
         }
         
-        // 复用现有的网络选择器样式
         .change-network {
           width: 100%;
-          height: 50px;
+          margin: 0;
           
-          /deep/ .ant-select-selection--single {
-            height: 50px;
+          /deep/ .ant-select-selection {
             background: var(--ButtonBGColor4);
             border: 1px solid var(--LineColor2);
           }
