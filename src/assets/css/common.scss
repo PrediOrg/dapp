@@ -1,0 +1,17 @@
+// 处理固定定位的元素
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  // 考虑安全区域
+  padding-bottom: env(safe-area-inset-bottom);
+  // 确保在Binance底栏上方
+  z-index: 100;
+}
+
+// 处理绝对定位元素
+.absolute-bottom {
+  position: absolute;
+  bottom: calc(env(safe-area-inset-bottom) + 60px);
+} 

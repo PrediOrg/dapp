@@ -1,0 +1,109 @@
+// 移动端样式适配
+.wallet-connect {
+  @media screen and (max-width: 768px) {
+    .wallet-button {
+      font-size: 16px;
+      padding: 12px 20px;
+      border-radius: 8px;
+    }
+    
+    .wallet-logo {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .transaction-info {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+}
+
+// 确保字体大小适配
+.transaction-text {
+  font-size: 16px;
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+// 添加安全区域适配
+.app-container {
+  // 适配底部安全区域
+  padding-bottom: calc(env(safe-area-inset-bottom) + 60px); // 60px是Binance底栏高度
+  min-height: calc(100vh - env(safe-area-inset-bottom));
+}
+
+// 确保内容不被底部导航遮挡
+.content-wrapper {
+  margin-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
+  margin-bottom: env(safe-area-inset-bottom); /* iOS 11.2 */
+}
+
+// 移动端样式适配
+.toggle-theme {
+  @media screen and (max-width: 768px) {
+    // 缩小整体尺寸
+    transform: scale(0.8);
+    
+    // 调整位置，避免占用太多空间
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    
+    // 减小点击区域
+    width: 40px;
+    height: 40px;
+    
+    // 优化图标大小
+    .theme-icon {
+      font-size: 20px;
+    }
+    
+    // 确保在Binance底栏上方
+    z-index: 99;
+  }
+}
+
+// 优化暗色主题图标
+.dark {
+  .toggle-theme {
+    @media screen and (max-width: 768px) {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+  }
+}
+
+// 移动端样式适配 - 针对framer容器
+.framer-17uat6s-container {
+  @media screen and (max-width: 768px) {
+    // 缩小整体尺寸
+    transform: scale(0.6) !important;
+    
+    // 调整位置
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    
+    // 减小占用空间
+    width: 40px !important;
+    height: 40px !important;
+    
+    // 确保在其他元素上方
+    z-index: 99 !important;
+    
+    // 调整边距
+    margin: 10px !important;
+    padding: 0 !important;
+  }
+}
+
+// 如果有嵌套的元素也需要调整
+.framer-17uat6s-container > * {
+  @media screen and (max-width: 768px) {
+    transform: scale(1) !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+} 

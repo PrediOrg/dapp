@@ -3,80 +3,92 @@
   <div class="flex-box" :class="{ 'predi-wallet-mobile': device == 'mobile' }">
     <!-- moblie -->
     <template v-if="device == 'mobile'">
-      <template v-if="account">
-        <template v-if="!isOnRightChain">
-          <a-button @click="switchNetwork(desireChainId)" :loading="connectedLoading">Wrong Network</a-button>
+      <template v-if="w3Account">
+        <template v-if="!isConnected">
+          <a-button @click="switchNetwork(desireChainId)" :loading="connectedLoading">
+            <span>Wrong Network</span>
+          </a-button>
         </template>
         <template v-else>
-          <a-popover placement="bottomRight">
-            <a-button :loading="connectedLoading">
-              <span> {{ account | showAddress }}</span>
-            </a-button>
-            <template slot="content">
-              <p @click="disConnect" class="color-0E1D51 ts-16 cursor">
-                <a-icon type="disconnect" />
-                <span class="pd-l8">Disconnect wallet</span>
-              </p>
-            </template>
-          </a-popover>
+          <a-button :loading="connectedLoading">
+            <span>{{ w3Account | showAddress }}</span>
+          </a-button>
         </template>
       </template>
-      <a-button class="connection" v-else @click="connect" :loading="connectedLoading">
+      <a-button class="connection" v-else @click="w3mConnect" :loading="connectedLoading">
         <span>Connect Wallet</span>
       </a-button>
-      <!--      <p class="header-more-title" @click="drawerClick">-->
-      <!--        <span :class="{ 'header-more-close': drawerVisible }"></span>-->
-      <!--      </p>-->
-      <a-drawer wrapClassName="mobile-menu" :closable="false" :visible="drawerVisible" width="100%">
-        <div class="mobile-drawer">
-          <!--<div class="mobile-drawer-ticket">
-            <a @click="ticketClick"
-              ><span>{{ $t("ticket") }}<i></i></span
-            ></a>
-          </div>-->
 
-          <!--          <a-select  class="change-network" dropdownClassName="drop-network" :value="chainId" @change="switchNetwork">-->
-          <!--            <a-select-option  v-for="(value, key, index) in networkObj" :key="index" :value="key" :disabled="networkObj[key].disabled">-->
-          <!--              <div class="flex-box">-->
-          <!--                <i class="network-icon" :class="`icon-${networkObj[key].icon}`"></i>-->
-          <!--                <span class="network-span">-->
-          <!--                  {{ networkObj[key].chainNameMobile }}-->
-          <!--                </span>-->
-          <!--              </div>-->
-          <!--            </a-select-option>-->
-          <!--          </a-select>-->
+      <!-- 添加菜单按钮 -->
+      <div class="menu-button" @click="showMenu = true">
+        <a-icon type="menu" style="font-size: 20px; color: var(--FontColor1);" />
+      </div>
 
-          <a-menu class="mobile-drawer-menu">
-            <!-- <a-menu-item key="0">
-              <a class="header-more-a" @click="setTheme">
-                Light/ Dark
-                <span class="header-more-span header-more-theme"></span>
-              </a>
-            </a-menu-item> -->
-            <!--<a-menu-item key="1">
-              <a class="header-more-a">
-                Language
-                <span class="header-more-span header-more-language"></span>
-              </a>
-            </a-menu-item>-->
-            <!--<a-menu-item key="1">
-              <a href="https://docs.predi.io/about" target="_blank" class="header-more-a">
-                About
-                <a-icon type="info-circle" theme="filled" />
-              </a>
-            </a-menu-item>-->
-            <!--<a-menu-item key="2">
-              <a
-                      href="https://docs.predi.io/faq"
-                      target="_blank"
-                      class="header-more-a"
-              >FAQ<span class="header-more-span header-more-faq"></span
-              ></a>
-            </a-menu-item>-->
-            <!--<a-menu-item key="3">
-              <a href="https://docs.predi.io/disclaimer" target="_blank" class="header-more-a">Disclaimer<span class="header-more-span header-more-discord"></span></a>
-            </a-menu-item>-->
-          </a-menu>
+      <!-- 菜单弹窗 -->
+      <a-drawer
+        placement="right"
+        :visible="showMenu"
+        @close="showMenu = false"
+        :closable="false"
+        width="80%"
+        class="wallet-menu-drawer"
+        @afterVisibleChange="handleDrawerVisibleChange"
+      >
+        <div class="menu-content">
+          <!-- 主题切换 -->
+          <div class="menu-item theme-switch">
+            <div class="item-title">Theme</div>
+            <div class="theme-box">
+              <svg t="1736430142309" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="19319" width="26" height="26">
+                <path d="M122.752 487.2H38.336c-12.896 0-23.264 10.336-23.264 23.264s10.368 23.232 23.264 23.232h84.416a23.232 23.232 0 1 0 0-46.496z m93.344-240.672c8.928 8.96 23.616 8.96 32.896 0a23.488 23.488 0 0 0 0-32.896L193.92 158.56a22.912 22.912 0 0 0-32.928 0 22.912 22.912 0 0 0 0 32.896l55.104 55.072z m6.816 521.056l-61.92 61.888a22.912 22.912 0 0 0 0 32.896 23.584 23.584 0 0 0 32.928 0l61.888-61.856a23.584 23.584 0 0 0 0-32.928 22.912 22.912 0 0 0-32.896 0z m290.016-636.224a23.2 23.2 0 0 0 23.264-23.232V35.872c0-12.896-10.368-23.264-23.264-23.264s-23.264 10.368-23.264 23.264v72.256c0 12.864 10.368 23.232 23.264 23.232z m474.24 355.84h-74.048c-12.896 0-23.264 10.336-23.264 23.264s10.368 23.232 23.264 23.232h74.048a23.232 23.232 0 1 0 0-46.496z m-474.24 388.032a23.456 23.456 0 0 0-23.264 23.264v86.176c0 12.896 10.368 23.264 23.264 23.264s23.264-10.368 23.264-23.264v-86.176a23.456 23.456 0 0 0-23.264-23.264z m319.008-716.672l-50.08 49.728a23.488 23.488 0 0 0 0 32.896c9.28 9.28 23.968 9.28 32.928 0l50.08-49.728a23.488 23.488 0 0 0 0-32.896 22.912 22.912 0 0 0-32.928 0z m-24.32 613.696a23.424 23.424 0 0 0-32.896 0 23.488 23.488 0 0 0 0 32.896l57.184 57.216a23.584 23.584 0 0 0 32.928 0 23.488 23.488 0 0 0 0-32.896l-57.216-57.216zM517.92 202.176c-166.304 0-301.504 134.816-301.504 301.12 0 166.656 135.2 301.472 301.504 301.472s301.12-134.816 301.12-301.472c0-166.304-134.848-301.12-301.12-301.12z m0 550.4a249.28 249.28 0 0 1-249.28-249.28 249.44 249.44 0 0 1 199.2-244.288 245.728 245.728 0 0 0-26.464 111.936 249.28 249.28 0 0 0 299.36 244.256 249.408 249.408 0 0 1-222.784 137.344z" fill="#98A2B3" p-id="19320"></path>
+              </svg>
+              <div class="framer-17uat6s-container" id="mobile-toggle-theme" style="opacity: 1;">
+                <div data-framer-component-type="Frame" data-framer-cursor="pointer"
+                     data-framer-highlight="true"
+                     style="display: flex; flex: 0 0 auto; width: 50px; height: 26px; align-items: center; justify-content: space-between; background: rgb(102, 112, 133); border-radius: 15px; cursor: pointer; position: relative; padding: 0px 7.5px; transform: none;">
+                  <div data-framer-component-type="Frame" id="mobile-tapLight"
+                       style="display: flex; flex: 0 0 auto; pointer-events: none; width: 22.5px; height: 22.5px; background: rgb(255, 255, 255); border-radius: 50%; position: absolute; transition: left 0.2s; align-items: center; justify-content: center; transform: none;">
+                    <div data-framer-component-type="Frame"
+                         style="display: block; flex: 0 0 auto; pointer-events: none; width: 22.5px; height: 22.5px; background: transparent; overflow: hidden; transform: none;">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                           fill="#000000" width="22.5" height="22.5"></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 网络切换 -->
+          <div class="menu-item network-switch">
+            <div class="item-title">Network</div>
+            <a-select 
+              class="change-network" 
+              dropdownClassName="drop-network" 
+              :value="desireChainId" 
+              @change="handleNetworkSwitch"
+            >
+              <a-select-option 
+                v-for="(value, key, index) in networkObj" 
+                :key="index" 
+                :value="key" 
+                :disabled="networkObj[key].disabled"
+              >
+                <div class="flex-box">
+                  <i class="network-icon" :class="`icon-${networkObj[key].icon}`"></i>
+                  <span class="network-span">
+                    {{ networkObj[key].chainNameMobile }}
+                  </span>
+                </div>
+              </a-select-option>
+            </a-select>
+          </div>
+
+          <!-- 其他菜单项 -->
+          <div class="menu-item disconnect" @click="disConnect">
+            <a-icon type="disconnect" style="color: var(--FontColor1);" />
+            <span>Disconnect</span>
+          </div>
         </div>
       </a-drawer>
     </template>
@@ -161,6 +173,8 @@ const projectId = process.env.VUE_APP_ProjectId;
 import { getAccount, watchAccount } from '@wagmi/core';
 import { ChainIdMap } from '@/config/constants';
 
+import ToggleTheme from '@/components/ToggleTheme.vue'
+
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
 const wagmiConfig = createConfig({
   autoConnect: true,
@@ -172,7 +186,9 @@ const ethereumClient = new EthereumClient(wagmiConfig, chains);
 const web3modal = new Web3Modal({ projectId }, ethereumClient);
 export default {
   name: 'WalletCom',
-  components: {},
+  components: {
+    ToggleTheme
+  },
   data() {
     return {
       Network,
@@ -182,6 +198,7 @@ export default {
       networkObj: Network,
       downVisible: false,
       showChooseNetWork: false,
+      showMenu: false
     };
   },
   filters: {
@@ -290,6 +307,50 @@ export default {
           }
         });
     },
+    handleNetworkSwitch(chainId) {
+      this.switchNetwork(chainId);
+      this.showMenu = false;
+    },
+    handleDrawerVisibleChange(visible) {
+      if (visible) {
+        this.$nextTick(() => {
+          const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const div = document.getElementById("mobile-tapLight");
+          const currentTheme = document.body.getAttribute("data-theme");
+
+          // 切换主题
+          if (isDarkMode || currentTheme === "dark") {
+            div.style.left = "calc(100% - 26.25px)";  // 第一种样式的 left 值
+            document.body.setAttribute("data-theme", "dark");
+          }
+
+          document.getElementById("mobile-toggle-theme").addEventListener("click", function() {
+            const div = document.getElementById("mobile-tapLight");
+            const currentTheme = document.body.getAttribute("data-theme");
+            // 切换主题
+            if (currentTheme === "dark") {
+              document.body.setAttribute("data-theme", "light");
+              div.style.left = "3.75px";  // 第二种样式的 left 值
+            } else {
+              document.body.setAttribute("data-theme", "dark");
+              div.style.left = "calc(100% - 26.25px)";  // 第一种样式的 left 值
+            }
+
+            // 同步PC端按钮状态
+            const pcLight = document.getElementById("tapLight");
+            if (pcLight) {
+              pcLight.style.left = currentTheme === "dark" ? "3.75px" : "calc(100% - 26.25px)";
+            }
+          });
+        });
+      }
+    },
+    beforeDestroy() {
+      const mobileToggle = document.getElementById("mobile-toggle-theme");
+      if (mobileToggle) {
+        mobileToggle.removeEventListener("click", this.handleMobileThemeToggle);
+      }
+    }
   },
   async created() {
     const account = getAccount();
@@ -304,6 +365,12 @@ export default {
     }
     this.getCon(this.w3Account);
   },
+  async mounted() {
+    // 其他代码保持不变
+  },
+  beforeDestroy() {
+    // 其他代码保持不变
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -691,6 +758,97 @@ button {
 
   p {
     background: red;
+  }
+}
+
+.menu-button {
+  width: 0.88rem;
+  height: 0.72rem;
+  margin-left: 0.22rem;
+  background: var(--BGColor2);
+  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.wallet-menu-drawer {
+  .menu-content {
+    padding: 20px;
+
+    .menu-item {
+      padding: 15px;
+      margin-bottom: 10px;
+      background: var(--BGColor2);
+      border-radius: 10px;
+      
+      &.theme-switch {
+        .item-title {
+          font-size: 16px;
+          margin-bottom: 15px;
+          color: var(--FontColor1);
+        }
+        
+        .theme-box {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 10px;
+          
+          .icon {
+            margin-right: 10px;
+          }
+
+          #mobile-toggle-theme {
+            cursor: pointer;
+          }
+        }
+      }
+      
+      &.network-switch {
+        .item-title {
+          font-size: 16px;
+          margin-bottom: 15px;
+          color: var(--FontColor1);
+        }
+        
+        // 复用现有的网络选择器样式
+        .change-network {
+          width: 100%;
+          height: 50px;
+          
+          /deep/ .ant-select-selection--single {
+            height: 50px;
+            background: var(--ButtonBGColor4);
+            border: 1px solid var(--LineColor2);
+          }
+        }
+      }
+      
+      &.disconnect {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        
+        .anticon {
+          font-size: 18px;
+          margin-right: 10px;
+        }
+        
+        span {
+          color: var(--FontColor1);
+        }
+        
+        &:active {
+          opacity: 0.8;
+        }
+      }
+    }
   }
 }
 </style>
