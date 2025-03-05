@@ -219,6 +219,7 @@
                 </p>
                 <p>The result can be confirmed in advance by issuer, if the event occurs before expiration date.</p>
                 <p>If the participants disagree with the result of event confirmed by issuer, they can "Challenge" it within 7 days of confirmation.</p>
+                <p>Attention: Predi is committed to fostering entertainment and social experiences. All forms of gambling-related activities are strictly prohibited on this platform.</p>
               </div>
               <div v-if="form.source" class="add-product-source">
                 Resolution Source:(<span>{{ form.source }}</span
