@@ -41,9 +41,9 @@
             <a href="https://medium.com/@prediorg" target="_black">
               <img src="@/assets/images/medium.png"  alt="" class="icon">
             </a>
-            <!--a href="https://predi.gitbook.io/predi/" target="_black">
+            <a href="https://docs.predi.org/" target="_black">
               <img src="@/assets/images/gitbook.png" alt="" class="icon">
-            </a-->
+            </a>
           </div>
         </div>
 
