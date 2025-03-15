@@ -124,11 +124,11 @@ export default {
         scarcity: "Scarcity",
         attributive: "Attributive",
         numbers: "Issue Number",
-        issueTip:"Issue 10 prediction Products/License",
+        issueTip:"Issue 10 prediction Markets/License",
         price: "Price",
         success: "Success",
         getNFT: "Get License successfully",
-        issueCDS: "Issue Products",
+        issueCDS: "Issue Predi Markets",
         buyNow: "Buy Now",
         mintNow: "Mint Now",
         rule: "Rule"
