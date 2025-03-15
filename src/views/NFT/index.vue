@@ -5,7 +5,7 @@
     <div class="nft-mint-box">
       <div class="nft-mint">
         <h1 class="title pc">
-          GET License
+          GET Predi License
           <div class="right-part">
             <div class="share-btn" v-clipboard:copy="copyShareLink" v-clipboard:success="onCopy">
               <img src="@/assets/images/share-btn.png" alt="" class="icon"/>
