@@ -65,6 +65,13 @@ export default {
           badge: false,
           enable: true,
         },
+          {
+          url: '/claim',
+          text: 'Claim',
+          count: 2244,
+          badge: false,
+          enable: true,
+        },
       ],
     };
   },

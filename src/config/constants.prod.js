@@ -5,7 +5,7 @@ const TicketMarket_CONTRACT = '';
 const Vault_CONTRACT = '0xB6390e82Ab79950E9e4Cc6e9f1131a322Fb87015';
 const PRDS = '0xfDEe9CD7090f8A30fa6Df9De3871A94392f6b10b';
 const BridgeAddr = '0x8B20023accFC177D05E1c28157cEda9e49Fc51f1';
-
+const PRDsClaim_CONTRACT  = "0x3cd8170ea2620fc57bf67d9eaee9af470a897cd6"
 const baseURL = 'https://api.predi.org';
 const Network = {
   '0x38': {
@@ -44,4 +44,4 @@ const ChainIdMap = {
 const ChainMapById = {
   '0x38': 'BSC',
 };
-export { ChainIdMap, ChainMapById, EtherScanMap, Network, Ticket_CONTRACT, TicketSale_CONTRACT, Vault_CONTRACT, TicketMarket_CONTRACT, BridgeAddr, baseURL };
+export { PRDsClaim_CONTRACT,ChainIdMap, ChainMapById, EtherScanMap, Network, Ticket_CONTRACT, TicketSale_CONTRACT, Vault_CONTRACT, TicketMarket_CONTRACT, BridgeAddr, baseURL };

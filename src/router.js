@@ -27,6 +27,11 @@ export default new Router({
           component: () => import('./views/App/market.vue'),
         },
         {
+          path: '/claim',
+          name: 'claim',
+          component: () => import('./views/App/claim.vue'),
+        },
+        {
           path: '/detail/:id',
           name: 'market-detail',
           component: () => import('./views/App/market-detail.vue'),

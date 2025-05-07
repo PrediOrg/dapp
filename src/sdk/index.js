@@ -1,5 +1,5 @@
 import { ethers, constants } from 'ethers';
-import { BridgeAddr, Vault_CONTRACT, TicketMarket_CONTRACT, Ticket_CONTRACT, TicketSale_CONTRACT } from '@/config/constants';
+import { PRDsClaim_CONTRACT ,ssssssssssssssssssssssBridgeAddr, Vault_CONTRACT, TicketMarket_CONTRACT, Ticket_CONTRACT, TicketSale_CONTRACT } from '@/config/constants';
 
 import { issueUnderlying } from '@/api/index';
 import { Buffer } from 'buffer';
@@ -10,6 +10,7 @@ const IERC20_ABI = require('./abi/IERC20.json');
 const TicketSale_ABI = require('./abi/TicketSale.json');
 const Ticket_ABI = require('./abi/Ticket.json');
 const TicketMarket_ABI = require('./abi/TicketMarket.json');
+const Claim_ABI = require('./abi/Claim.json');
 const cdsSdk = {};
 cdsSdk.MaxUint256 = constants.MaxUint256;
 cdsSdk.getProvider = () => {
@@ -30,7 +31,19 @@ cdsSdk.getSigner = () => {
   const signer = provider ? provider.getSigner() : null;
   return signer;
 };
-
+// claim
+cdsSdk.getClaimContract = () => {
+  return cdsSdk.connectContract(PRDsClaim_CONTRACT, Claim_ABI);
+};
+cdsSdk.hasClaimed = async (address) => {
+  const claimContract = cdsSdk.getClaimContract();
+  return claimContract.hasClaimed(address);
+};
+cdsSdk.claimPRDs = async () => {
+  const claimContract = cdsSdk.getClaimContract();
+  return claimContract.claim();
+};
+// claim end
 cdsSdk.connectContract = (contract, contractABI) => {
   let signer = cdsSdk.getSigner();
   return new ethers.Contract(contract, contractABI, signer);
