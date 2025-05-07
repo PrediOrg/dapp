@@ -1,5 +1,9 @@
 # Predi Dapp
 
+##Node version
+```
+16.20.0
+```
 ## Project setup
 ```
 npm install
